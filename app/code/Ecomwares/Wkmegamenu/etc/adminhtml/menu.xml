@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Ecomwares_Wkmegamenu::megamenu" module="Ecomwares_Wkmegamenu" title="MegaMenu" sortOrder="30"
+             resource="Ecomwares_Wkmegamenu::megamenu" parent="Ecomwares_Wokiee::modules"/>
+        <add id="Ecomwares_Wkmegamenu::settings" module="Ecomwares_Wkmegamenu" title="Settings" sortOrder="10"
+             resource="Ecomwares_Wkmegamenu::settings" parent="Ecomwares_Wkmegamenu::megamenu"
+             action="adminhtml/system_config/edit/section/ys_megamenu"/>
+    </menu>
+</config>

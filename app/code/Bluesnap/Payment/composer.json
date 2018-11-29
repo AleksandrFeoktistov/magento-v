@@ -1,0 +1,28 @@
+{
+  "name": "bluesnap/m2-module-payment",
+  "description": "Bluesnap Payment for Magento 2",
+  "require": {
+    "magento/framework": ">100.0"
+  },
+  "type": "magento2-module",
+  "version": "1.0.7",
+  "license": [
+    "OSL-3.0"
+  ],
+  "autoload": {
+    "files": [ "registration.php" ],
+    "psr-4": {
+      "Bluesnap\\Payment\\": ""
+    }
+  },
+  "support": {
+    "docs": "https://developers.bluesnap.com"
+  },
+  "authors": [
+    {
+      "name": "BlueSnap Payment Services Ltd",
+      "email": "info@bluesnap.com",
+      "homepage": "http://bluesnap.com"
+    }
+  ]
+}

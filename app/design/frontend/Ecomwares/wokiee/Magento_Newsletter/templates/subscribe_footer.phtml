@@ -1,0 +1,37 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+$config = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/footer_settings');
+?>
+<!-- subscribe-box -->
+<div class="tt-newsletter">
+    <div class="tt-mobile-collapse">
+        <h4 class="tt-collapse-title">
+            <?= $config['news_title']; ?>
+        </h4>
+        <div class="tt-collapse-content">
+            <p>
+                <?= $config['news_txt']; ?>
+            </p>
+            <form class="form form-inline form-default"
+                  novalidate
+                  action="<?php /* @escapeNotVerified */ echo $block->getFormActionUrl() ?>"
+                  method="post"
+                  data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+                  id="newsletter-validate-detail">
+                <div class="form-group">
+                    <input name="email" type="email" id="newsletter" placeholder="<?php echo __('Enter your e-mail') ?>" class="form-control" data-validate="{required:true, 'validate-email':true}"/>
+                    <button type="submit" class="btn"><?= $config['news_btn']; ?></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- /subscribe-box -->

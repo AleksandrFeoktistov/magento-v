@@ -1,0 +1,79 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+
+<div class="tt-mobile-add">
+    <h6 class="tt-title" translate="'Shopping Cart'"/>
+    <button class="tt-close" translate="'Close'"/>
+</div>
+<div class="tt-dropdown-inner">
+    <div class="tt-cart-layout">
+
+        <if args="getCartParam('summary_count')">
+            <div class="tt-cart-content">
+
+                <div class="minicart-items-wrapper">
+                    <div class="tt-cart-list minicart-items" id="mini-cart" data-bind="foreach: { data: getCartItems(), as: 'item' }">
+                        <each args="$parent.getRegion($parent.getItemRenderer(item.product_type))"
+                              render="{name: getTemplate(), data: item, afterRender: function() {$parents[1].initSidebar()}}"
+                        />
+                    </div>
+                </div>
+
+                <each args="getRegion('subtotalContainer')" render=""/>
+                <each args="getRegion('extraInfo')" render=""/>
+
+                <div class="tt-cart-btn">
+                    <div class="tt-item" if="getCartParam('possible_onepage_checkout')">
+                        <button
+                                id="top-cart-btn-checkout"
+                                type="button"
+                                class="btn action primary checkout"
+                                data-action="close"
+                                data-bind="
+                                    attr: {
+                                        title: $t('Proceed to Checkout')
+                                    },
+                                    click: closeMinicart()
+                                "
+                                translate="'Proceed to Checkout'"
+                                />
+                        <div data-bind="html: getCartParam('extra_actions')"></div>
+                    </div>
+                    <div class="tt-item">
+                        <a data-bind="attr: {href: shoppingCartUrl}" class="btn-link-02 tt-hidden-mobile action viewcart"><span translate="'View and Edit Cart'"/></a>
+                        <a data-bind="attr: {href: shoppingCartUrl}" class="btn btn-border tt-hidden-desctope action viewcart"><span translate="'View and Edit Cart'"/></a>
+                    </div>
+                </div>
+
+            </div>
+        </if>
+
+        <ifnot args="getCartParam('summary_count')">
+            <div class="tt-cart-empty">
+                <i class="icon-f-39"></i>
+                <p data-bind="visible: closeSidebar()"
+                   translate="'You have no items in your shopping cart.'"
+                        />
+            </div>
+            <if args="getCartParam('cart_empty_message')">
+                <p class="minicart empty text" text="getCartParam('cart_empty_message')"/>
+                <div class="actions">
+                    <div class="secondary">
+                        <a class="action viewcart" data-bind="attr: {href: shoppingCartUrl}">
+                            <span translate="'View and Edit Cart'"/>
+                        </a>
+                    </div>
+                </div>
+            </if>
+        </ifnot>
+
+        <div id="minicart-widgets" class="minicart-widgets">
+            <each args="getRegion('promotion')" render=""/>
+        </div>
+    </div>
+</div>
+<each args="getRegion('sign-in-popup')" render=""/>

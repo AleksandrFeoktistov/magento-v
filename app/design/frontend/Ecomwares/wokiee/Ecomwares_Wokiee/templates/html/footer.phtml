@@ -1,0 +1,152 @@
+<?php
+$footer = $this->getSystemValue('wokiee_settings/footer_settings/footer');
+$tm_helper = $this->helper('Ecomwares\Wokiee\Helper\Data');
+$tm_copyright = $tm_helper->getSystemValue('wokiee_settings/footer_settings/footer_copyright');
+$back_to_top = $tm_helper->getSystemValue('wokiee_settings/general/show_back_to_top');
+
+$footer_top = $tm_helper->getSystemValue('wokiee_settings/footer_settings/footer_top');
+if ($footer_top == 'none') {
+    $footer_top = '';
+} else {
+    $footer_top = ' class="'.$footer_top.'"';
+}
+
+if ($tm_helper->getSystemValue('wokiee_settings/footer_settings/footer_color') == 'dark') {
+    $footer_color = 'tt-color-scheme-03';
+} else {
+    $footer_color = 'tt-color-scheme-01';
+}
+?>
+
+<?php if($footer == 0 || $footer == 1): ?>
+<footer<?= $footer_top; ?>>
+    <div class="tt-footer-col <?= $footer_color; ?>">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-2 col-xl-3">
+                    <?php echo $block->getChildHtml('ys_footer_categories') ?>
+                </div>
+                <div class="col-md-6 col-lg-2 col-xl-3">
+                    <?php echo $block->getChildHtml('ys_footer_links') ?>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <?php echo $block->getChildHtml('ys_footer_contacts') ?>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <?php echo $this->getChildHtml('footer.newsletter'); ?>
+                    <?php echo $this->getChildHtml('footer_socials'); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php echo $this->getChildHtml("bottom_line"); ?>
+</footer>
+<?php endif ?>
+
+<?php if($footer == 2): ?>
+<footer<?= $footer_top; ?>>
+    <div class="tt-footer-default tt-color-scheme-02">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-9">
+                    <div class="tt-newsletter-layout-01">
+                        <?php echo $this->getChildHtml('footer.newsletter'); ?>
+                    </div>
+                </div>
+                <div class="col-md-auto">
+                    <?php echo $this->getChildHtml('footer_socials'); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tt-footer-col <?= $footer_color; ?>">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-2 col-xl-3">
+                    <?php echo $block->getChildHtml('ys_footer_categories') ?>
+                </div>
+                <div class="col-md-6 col-lg-2 col-xl-3">
+                    <?php echo $block->getChildHtml('ys_footer_links') ?>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <?php echo $block->getChildHtml('ys_footer_about') ?>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="tt-newsletter">
+                        <?php echo $block->getChildHtml('ys_footer_contacts') ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php echo $this->getChildHtml("bottom_line"); ?>
+</footer>
+<?php endif ?>
+
+<?php if($footer == 3): ?>
+<footer<?= $footer_top; ?>>
+    <div class="tt-footer-col <?= $footer_color; ?>">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-lg-3 col-xl-3">
+                    <?php echo $block->getChildHtml('ys_footer_categories') ?>
+                </div>
+                <div class="col-md-3 col-lg-3 col-xl-3">
+                    <?php echo $block->getChildHtml('ys_footer_links') ?>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-6">
+                    <?php echo $this->getChildHtml('footer.newsletter'); ?>
+                    <?php echo $this->getChildHtml('footer_socials'); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php echo $this->getChildHtml("bottom_line"); ?>
+</footer>
+<?php endif ?>
+
+<?php if($footer == 4): ?>
+<footer<?= $footer_top; ?>>
+    <div class="tt-footer-center <?= $footer_color; ?>">
+        <div class="container">
+            <div class="tt-row">
+                <?php echo $this->getChildHtml('footer.newsletter'); ?>
+                <?php echo $this->getChildHtml('footer_socials'); ?>
+            </div>
+        </div>
+    </div>
+    <?php echo $this->getChildHtml("bottom_line"); ?>
+</footer>
+<?php endif ?>
+
+<?php if($footer == 5): ?>
+<footer<?= $footer_top; ?>>
+    <?php echo $this->getChildHtml("bottom_line"); ?>
+</footer>
+<?php endif ?>
+
+<?php if($footer == 6): ?>
+    <footer<?= $footer_top; ?>>
+        <div class="tt-footer-custom <?= $footer_color; ?>">
+            <div class="container">
+                <div class="tt-row">
+                    <div class="tt-col-center">
+                        <div class="tt-col-item">
+                            <div class="tt-box-copyright">
+                                <?php if($tm_copyright): ?>
+                                    <?php echo $tm_copyright; ?>
+                                <?php else: ?>
+                                    <?php echo $this->getChildHtml("single_copyright"); ?>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<?php endif ?>
+
+<?php if($back_to_top): ?>
+<a href="#" class="tt-back-to-top"><?= __('Back to top') ?></a>
+<?php endif ?>

@@ -1,0 +1,24 @@
+<?php
+$_helper = $this->helper('Magento\Catalog\Helper\Output');
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$product = $objectManager->get('Magento\Framework\Registry')->registry('current_product');
+
+$tm_helper = $this->helper('Ecomwares\Wokiee\Helper\Data');
+$view_labels = $tm_helper->getSystemValue('wokiee_settings/product_view/view_labels');
+$newLabel = $tm_helper->newLabel($product);
+$saleLabel = $tm_helper->saleLabel($product);
+$featuredLabel = $tm_helper->featuredLabel($product);
+$getBestsellers = $tm_helper->getBestsellers($product);
+?>
+<?php if($view_labels || $newLabel || $saleLabel || $featuredLabel || $getBestsellers): ?>
+<div class="tt-label-wrapper">
+    <div class="tt-label">
+        <?php
+            echo $newLabel;
+            echo $saleLabel;
+            echo $featuredLabel;
+            echo $getBestsellers;
+        ?>
+    </div>
+</div>
+<?php endif ?>

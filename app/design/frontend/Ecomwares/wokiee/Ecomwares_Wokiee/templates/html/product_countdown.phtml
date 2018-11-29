@@ -1,0 +1,11 @@
+<?php
+$_helper = $this->helper('Magento\Catalog\Helper\Output');
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$product = $objectManager->get('Magento\Framework\Registry')->registry('current_product');
+
+$tm_helper = $this->helper('Ecomwares\Wokiee\Helper\Data');
+$view_countdown = $tm_helper->getSystemValue('wokiee_settings/product_view/view_countdown');
+?>
+<?php if($view_countdown): ?>
+    <?php echo $tm_helper->getCountdownProduct($product); ?>
+<?php endif ?>

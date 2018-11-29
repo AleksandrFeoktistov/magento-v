@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left-blog" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <remove src="Magefan_Blog::css/blog-m.css" />
+        <remove src="Magefan_Blog::css/blog-custom.css" />
+        <remove src="Magefan_Blog::css/comments.css" />
+    </head>
+    <body>
+        <referenceContainer name="sidebar.additional">
+            <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+            <referenceBlock name="wishlist_sidebar" remove="true"/>
+            <referenceBlock name="catalog_recently_viewed" remove="true"/>
+            <referenceBlock name="sale.reorder.sidebar" remove="true"/>
+        </referenceContainer>
+    </body>
+    <move element="page.main.title" before="-" destination="main.content.container"/>
+</page>

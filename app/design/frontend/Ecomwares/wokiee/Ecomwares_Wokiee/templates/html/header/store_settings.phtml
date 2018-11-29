@@ -1,0 +1,24 @@
+<?php
+$countCurrencies = $this->helper('Ecomwares\Wokiee\Helper\Data')->countCurrencies();
+$objectManager =  \Magento\Framework\App\ObjectManager::getInstance();
+$storeManager  = $objectManager->get('\Magento\Store\Model\StoreManagerInterface');
+$storeID       = $storeManager->getWebsite()->getStores();
+$countStores = count($storeID);
+?>
+
+<?php if($countCurrencies > 1 || $countStores > 1): ?>
+<div class="tt-desctop-parent-multi tt-parent-box">
+    <div class="tt-multi-obj tt-dropdown-obj">
+        <button class="tt-dropdown-toggle"><i class="icon-f-79"></i></button>
+        <div class="tt-dropdown-menu">
+            <div class="tt-mobile-add">
+                <button class="tt-close"><?= /* @escapeNotVerified */ __('Close') ?></button>
+            </div>
+            <div class="tt-dropdown-inner">
+                <?php echo $this->getChildHtml("store_language"); ?>
+                <?php echo $this->getChildHtml("currency"); ?>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif; ?>

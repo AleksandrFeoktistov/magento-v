@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sections>
+        <web>
+            <default>
+                <cms_home_page>wokiee_home_page_11</cms_home_page>
+            </default>
+        </web>
+        <wokiee_settings>
+            <header_settings>
+                <header>3</header>
+                <menu_color>tt-color-scheme-01</menu_color>
+                <menu_type>tt-hover-01</menu_type>
+                <menu_right>0</menu_right>
+                <header_color>none</header_color>
+                <topline>0</topline>
+                <topline_width>container</topline_width>
+            </header_settings>
+            <footer_settings>
+                <footer>4</footer>
+                <footer_top>nomargin</footer_top>
+                <footer_color>light</footer_color>
+                <news_title>NEWSLETTER SIGNUP</news_title>
+                <news_btn>JOIN US</news_btn>
+            </footer_settings>
+        </wokiee_settings>
+    </sections>
+</config>

@@ -1,0 +1,61 @@
+<?php
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * Blog post list item template
+ *
+ * @var $block \Magefan\Blog\Block\Post\AbstractPost
+ */
+?>
+<?php
+    $_post = $this->getPost();
+    $_postUrl = $_post->getPostUrl();
+    $_postName = $block->escapeHtml($_post->getTitle(), null, true);
+?>
+<div class="tt-post post-holder-<?php echo $_post->getId() ?>">
+    <?php if ($featuredImage = $_post->getFeaturedImage()) { ?>
+    <div class="tt-post-img">
+        <a href="<?php echo $_postUrl ?>" title="<?php echo $_postName ?>">
+            <img src="<?php echo $featuredImage ?>" alt="<?php echo $_postName ?>" />
+        </a>
+    </div>
+    <?php } ?>
+    <div class="tt-post-content">
+        <?php if ($_categoriesCount = $_post->getCategoriesCount()) { ?>
+        <div class="tt-tag">
+            <?php $n = 0; foreach($_post->getParentCategories() as $ct) { $n++; ?>
+                <a title="<?php echo $block->escapeHtml($ct->getTitle()) ?>" href="<?php echo $ct->getCategoryUrl() ?>"><?php echo $block->escapeHtml($ct->getTitle()) ?></a>
+                <?php if ($n != $_categoriesCount) { ?>, <?php } ?>
+            <?php } ?>
+        </div>
+        <?php } ?>
+        <h2 class="tt-title"><a href="<?php echo $_postUrl ?>"><?php echo $_postName; ?></a></h2>
+        <div class="tt-description">
+            <?php echo $block->getShorContent() ?>
+        </div>
+        <div class="tt-meta">
+            <div class="tt-autor">
+                <?php if($_post->getAuthor()!=null):?>
+                    <?php echo __('by') ?> <span><?php echo $_post->getAuthor()->getName(); ?></span>
+                <?php endif;?>
+                <?php echo __('on') ?> <?php echo $_post->getPublishDate('F d, Y') ?>
+            </div>
+            <div class="tt-comments">
+                <?php if ($_post->getCommentsCount()) { ?>
+                    <a href="<?php echo $block->escapeHtml($_post->getTitle()) ?>"><i class="tt-icon icon-f-88"></i><?php echo $block->escapeHtml($_post->getCommentsCount()) ?></a>
+                <?php } else { ?>
+                    <a href="#"><i class="tt-icon icon-f-88"></i>0</a>
+                <?php } ?>
+            </div>
+        </div>
+        <div class="tt-btn">
+            <a href="<?php echo $_postUrl ?>" class="btn"><?php echo __('Read more') ?></a>
+        </div>
+    </div>
+</div>

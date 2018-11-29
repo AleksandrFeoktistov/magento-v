@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+
+        <referenceBlock name="wokiee_header" remove="true"/>
+        <referenceBlock name="footer_block" remove="true"/>
+        <referenceBlock name="product_socials" remove="true"/>
+
+        <referenceContainer name="product.info.col.media" htmlClass="col-12 col-md-5 col-lg-6" />
+        <referenceContainer name="product.info.col.main" htmlClass="col-12 col-md-7 col-lg-6" />
+
+    </body>
+</page>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Ecomwares_Wkmegamenu::css/perfect-scrollbar.min.css" />
+        <css src="Ecomwares_Wkmegamenu::css/slick.css" />
+        <css src="Ecomwares_Wkmegamenu::css/slick-theme.css" />
+        <css src="Ecomwares_Wkmegamenu::css/megamenu.css" />
+    </head>
+    <body>
+        <referenceBlock name="wokiee_header">
+            <block class="Ecomwares\Wkmegamenu\Block\Megamenu" name="ys_megamenu" template="Ecomwares_Wkmegamenu::tonymenu.phtml" before="-"/>
+        </referenceBlock>
+        <referenceContainer name="before.body.end">
+            <block class="Ecomwares\Wkmegamenu\Block\Megamenu" name="ys_megamenu_initialize" template="Ecomwares_Wkmegamenu::initialize.phtml" />
+        </referenceContainer>
+    </body>
+</page>

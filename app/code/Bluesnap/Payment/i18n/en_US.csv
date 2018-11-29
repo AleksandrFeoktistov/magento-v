@@ -1,0 +1,8 @@
+"cc_type","Credit Card Type"
+"cc_expiry","Credit Card Expiry"
+"cc_last_4_digits","Credit Card Last 4 Digits"
+"cvv_response_code","CVV Response Code"
+"avs_response_code_zip","AVS Response Code (Zip)"
+"avs_response_code_address","AVS Response Code (Address)"
+"avs_response_code_name","AVS Response Code (Name)"
+"last_transaction_id","Last Transaction ID"

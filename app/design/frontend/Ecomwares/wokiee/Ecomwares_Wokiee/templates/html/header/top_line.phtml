@@ -1,0 +1,23 @@
+<?php
+$topline = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/header_settings/topline');
+$topline_width = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/header_settings/topline_width');
+$topline_color = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/header_settings/topline_color');
+$topline_mobile = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/header_settings/topline_mobile');
+if($topline_color == '') { $topline_color = 'tt-color-scheme-01'; }
+if($topline_width == '') { $topline_width = 'container'; }
+if($topline_mobile) { $t_mob = ''; } else { $t_mob = ' mobile-hide'; }
+?>
+<?php if($topline): ?>
+    <div class="tt-header-top-row <?= $topline_color.$t_mob; ?>">
+        <div class="<?= $topline_width; ?>">
+            <div class="tt-header-row tt-top-row">
+                <div class="tt-col-left tt-col-large2">
+                    <?php echo $this->getChildHtml("ys_header_info"); ?>
+                </div>
+                <div class="tt-col-right ml-auto">
+                    <?php echo $this->getChildHtml("header_socials"); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif ?>

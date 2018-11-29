@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
+    <update handle="2columns-left"/>
+
+    <referenceContainer name="main.content.row" htmlClass="row flex-sm-row-reverse">
+        <referenceContainer name="main.columns.left.col" htmlClass="col-md-4 col-lg-3 col-xl-3 leftColumn rightColumn aside" htmlTag="div"/>
+    </referenceContainer>
+
+</layout>

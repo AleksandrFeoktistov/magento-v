@@ -1,0 +1,32 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Product list toolbar
+ *
+ * @var $block \Magento\Catalog\Block\Product\ProductList\Toolbar
+ */
+use Magento\Catalog\Model\Product\ProductList\Toolbar;
+?>
+<?php
+$list_listing_mode = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/product_listing/list_listing_mode');
+?>
+<?php if ($block->isEnabledViewSwitcher()): ?>
+    <div class="tt-quantity">
+        <a href="#" class="tt-col-one" data-value="tt-col-one"></a>
+        <a href="#" class="tt-col-two" data-value="tt-col-two"></a>
+        <a href="#" class="tt-col-three" data-value="tt-col-three"></a>
+        <a href="#" class="tt-col-four" data-value="tt-col-four"></a>
+        <a href="#" class="tt-col-six" data-value="tt-col-six"></a>
+    </div>
+    <?php if($list_listing_mode): ?>
+    <a href="#" class="tt-grid-switch icon-h-43"></a>
+    <?php endif; ?>
+<?php endif; ?>

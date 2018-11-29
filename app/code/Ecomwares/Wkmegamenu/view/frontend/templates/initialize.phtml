@@ -1,0 +1,24 @@
+<script>
+    require([
+        "jquery",
+        'plugins/TonyMenu'
+    ], function($) {
+        var $menu_header = $('.TonyM--header'),
+            $menu_sidebar = $('.TonyM--sidebar'),
+            $menu_btn = $('.tt-menu-toggle, .TonyM__close');
+
+        if($menu_header.length) {
+            $menu_header.TonyM({
+                btn: $menu_btn
+            });
+
+            $(window).on('resize updateTonymenu', function() {
+                window.innerWidth < 1025 ? $menu_header.TonyM('displace', '.tt-mobile-parent-menu-cst') : $menu_header.TonyM('displace', 'return');
+            }).trigger('updateTonymenu');
+        }
+
+        if($menu_sidebar.length) {
+            $menu_sidebar.TonyM();
+        }
+    });
+</script>

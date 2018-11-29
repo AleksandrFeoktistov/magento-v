@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * TNW_Stripe extension
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the OSL 3.0 License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * https://opensource.org/licenses/osl-3.0.php
+ *
+ * @category  TNW
+ * @package   TNW_Stripe
+ * @copyright Copyright (c) 2017-2018
+ * @license   Open Software License (OSL 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+  <module name="TNW_Stripe" setup_version="2.1.11">
+    <sequence>
+      <module name="Magento_Customer"/>
+      <module name="Magento_Payment"/>
+      <module name="Magento_Checkout"/>
+      <module name="Magento_Catalog"/>
+      <module name="Magento_Quote"/>
+      <module name="Magento_Vault"/>
+      <module name="TNW_Marketing"/>
+    </sequence>
+  </module>
+</config>

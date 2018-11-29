@@ -1,0 +1,56 @@
+.message {
+  position: relative;
+  padding: 10px 20px 10px 40px;
+  margin: 15px 0;
+  font-size: 15px;
+  &:before {
+    position: absolute;
+    font-family: @default_font_icon;
+    speak: none;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    left: 12px;
+    top: 9px;
+  }
+}
+.message.info {
+  background: #e7f4fe;
+  color: #1393f5;
+  &:before {
+    content: "\ea28";
+  }
+}
+.message.notice {
+  background: #f7f8fa;
+  color: #191919;
+  &:before {
+    content: "\ea28";
+  }
+}
+.message.error {
+  background: #feeaeb;
+  color: #f8353e;
+  &:before {
+    content: "\ea29";
+  }
+}
+.message.warning {
+  background: #fff8e8;
+  color: #fdbc20;
+  &:before {
+    content: "\ea27";
+  }
+}
+.message.success {
+  background: #ecfbf9;
+  color: #42d6c3;
+  &:before {
+    content: "\ea11";
+  }
+}

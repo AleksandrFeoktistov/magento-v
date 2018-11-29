@@ -1,0 +1,39 @@
+<?php
+$tm_helper = $this->helper('Ecomwares\Wokiee\Helper\Data');
+$tm_copyright = $tm_helper->getSystemValue('wokiee_settings/footer_settings/footer_copyright');
+
+if ($tm_helper->getSystemValue('wokiee_settings/footer_settings/footer_color') == 'dark') {
+    $footer_color = 'tt-color-scheme-04';
+    $footer_icons = $this->getChildHtml("ys_footer_payment_icons_d");
+} else {
+    $footer_color = '';
+    $footer_icons = $this->getChildHtml("ys_footer_payment_icons");
+}
+?>
+<div class="tt-footer-custom <?= $footer_color; ?>">
+    <div class="container">
+        <div class="tt-row">
+            <div class="tt-col-left">
+                <?php if($this->getConfigOption('footer_settings/logo_footer')): ?>
+                <div class="tt-col-item tt-logo-col">
+                    <a class="tt-logo tt-logo-alignment" href="<?php echo $this->getBaseUrl(); ?>"><img class="tt-retina" src="<?php echo $this->getMediaUrl()?>f_logo/<?php echo $this->getConfigOption('footer_settings/logo_footer');?>" alt="<?php echo $this->getSystemValue('design/head/default_title') ?>"></a>
+                </div>
+                <?php endif; ?>
+                <div class="tt-col-item">
+                    <div class="tt-box-copyright">
+                        <?php if($tm_copyright): ?>
+                            <?php echo $tm_copyright; ?>
+                        <?php else: ?>
+                            <?php echo $this->getChildHtml("copyright"); ?>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+            <div class="tt-col-right">
+                <div class="tt-col-item">
+                    <?= $footer_icons; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

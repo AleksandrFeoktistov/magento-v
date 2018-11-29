@@ -1,0 +1,79 @@
+<?php
+$config = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/promo_line');
+if (empty($config['promo_days'])) {
+    $p_mode = 1;
+} else {
+    $p_mode = $config['promo_days'];
+}
+?>
+
+<?php if($config['promo_enable']): ?>
+    <?php if ($block->isHomePage()):?>
+    <div class="tt-top-panel" data-expires="<?= $p_mode; ?>" data-once="<?= $config['promo_mode']; ?>">
+        <div class="container">
+            <div class="tt-row">
+                <div class="tt-description">
+                    <?= $config['promo_txt']; ?>
+                </div>
+                <button class="tt-btn-close"></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        require(['jquery','jquery/jquery.cookie'], function ($) {
+
+            function ttTopPanel(toppanel) {
+                var $toppanel = $(toppanel);
+
+                if ($toppanel.attr('data-once') == 'once') {
+
+                    show_panel = $.cookie('ttTopPanelOnce');
+                    if(show_panel == null) {
+                        $toppanel.addClass('visible-panel');
+                    }
+                    $toppanel.on('click', function(e) {
+                        e.preventDefault;
+                        var target = e.target;
+                        if ($('.tt-btn-close').is(target)){
+                            $(this).slideUp(200);
+                            setTimeout(function () {
+                                $($toppanel).removeClass('visible-panel');
+                            }, 1000);
+                            $.cookie('ttTopPanelOnce', 'no', {
+                                expires: 500
+                            });
+                        };
+                    });
+
+
+                } else {
+
+                    show_panel = $.cookie('ttTopPanel');
+                    if(show_panel == null) {
+                        $toppanel.addClass('visible-panel');
+                    }
+                    $toppanel.on('click', function(e) {
+                        e.preventDefault;
+                        var target = e.target;
+                        if ($('.tt-btn-close').is(target)){
+                            $(this).slideUp(200);
+                            setTimeout(function () {
+                                $($toppanel).removeClass('visible-panel');
+                            }, 1000);
+                            $.cookie('ttTopPanel', 'no', {
+                                expires: parseInt($toppanel.attr('data-expires'), 10)
+                            });
+                        };
+                    });
+
+                }
+
+            }
+
+            ttTopPanel('.tt-top-panel');
+
+        });
+    </script>
+    <?php endif ?>
+<?php endif ?>

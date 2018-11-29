@@ -1,0 +1,25 @@
+<?php
+$getProudctCollection = $this->getCollection();
+
+$imageBlock = $block->getLayout()->createBlock('Magento\Catalog\Block\Product\ListProduct');
+?>
+
+
+<?php foreach ($getProudctCollection as $product) : ?>
+    <div>
+        <div>
+            <?php /* @escapeNotVerified */ $productImage = $imageBlock->getImage($product, 'sidebar_thumbnail'); ?>
+            <a href="<?php echo $product->getProductUrl(); ?>" class="product-item-photo">
+                <?php echo $productImage->toHtml(); ?>
+            </a>
+        </div>
+        <div>
+            <a href="<?php echo $product->getProductUrl(); ?>" class="product-item-link">
+                <?php echo $product->getName();?>
+            </a>
+        </div>
+        <?php echo $block->getProductPrice($product); ?>
+        <?= $block->getRatingSummary($product) ?>
+    </div>
+
+<?php endforeach; ?>

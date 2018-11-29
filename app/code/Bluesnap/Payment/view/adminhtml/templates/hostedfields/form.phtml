@@ -1,0 +1,62 @@
+<?php
+$code = $block->escapeHtml($block->getMethodCode());
+?>
+<fieldset class="admin__fieldset payment-method" id="payment_form_<?php /* @noEscape */ echo $code; ?>"
+          style="display:none">
+    <input type="hidden" name="payment[token]" id="bluesnap_hosted_fields_token">
+    <input type="hidden" name="payment[cc_expiry]" id="bluesnap_hosted_fields_cc_expiry">
+    <input type="hidden" name="payment[cc_type]" id="bluesnap_hosted_fields_cc_type">
+    <input type="hidden" name="payment[cc_last_4_digits]" id="bluesnap_hosted_fields_cc_last_4_digits">
+
+    <div style="display: none" id="invalid-ssl-message" class="admin__field-error validation-advice">
+        <?php echo __('This payment method requires your website to have a valid SSL certificate'); ?>
+    </div>
+
+    <div class="admin__field _required first">
+        <label class="label admin__field-label" for="<?php /* @noEscape */ echo $code; ?>_cc_type">
+            <span><?php echo $block->escapeHtml(__('Credit Card Number')); ?></span>
+        </label>
+        <div class="admin__field-control">
+            <div class="admin__control-text hosted-control bluesnap-ccn">
+	            <div data-bluesnap="ccn"></div>
+	            <div class="cctype">
+	                <img id="bluesnap_hosted_fields_cctype_icon"/>
+	            </div>
+            </div>
+			<div style="display: none" id="ccn-validation-empty" class="admin__field-error validation-advice"><?php echo __('Credit Card Number is a required field'); ?></div>
+			<div style="display: none" id="ccn-validation-invalid" class="admin__field-error validation-advice"><?php echo __('Invalid Credit Card Number'); ?></div>
+        </div>
+    </div>
+    
+    <div class="admin__field _required">
+        <label class="admin__field-label" for="<?php /* @noEscape */ echo $code; ?>_expiration">
+            <span><?php echo $block->escapeHtml(__('Expiration Date')); ?></span>
+        </label>
+        <div class="admin__field-control">
+	        <div class="admin__control-text hosted-control">
+            	<div data-bluesnap="exp"></div>
+	        </div>
+			<div style="display: none" id="exp-validation-empty" class="admin__field-error validation-advice"><?php echo __('Expiry Date is a required field'); ?></div>
+			<div style="display: none" id="exp-validation-invalid" class="admin__field-error validation-advice"><?php echo __('Invalid Expiry Date'); ?></div>
+        </div>
+    </div>
+
+    <div class="admin__field _required bluesnap-cvv-field">
+        <label class="admin__field-label" for="<?php /* @noEscape */ echo $code; ?>_cc_cid">
+            <span><?php echo $block->escapeHtml(__('Card Verification Number')); ?></span>
+        </label>
+        <div class="admin__field-control _with-tooltip bluesnap-cvv-control">
+	        <div class="admin__control-text hosted-control hosted-cid">
+            	<div data-bluesnap="cvv"></div>
+	        </div>
+			<div class="admin__field-tooltip">
+				<span class="admin__field-tooltip-action action-help" tabindex="1"></span>
+				<div class="admin__field-tooltip-content">
+					<img src="<?php echo $block->getViewFileUrl('Bluesnap_Payment::images/cvv.png'); ?>" alt="CVV Information" />
+				</div>
+            </div>
+			<div style="display: none" id="cvv-validation-empty" class="admin__field-error validation-advice"><?php echo __('CVV is a required field'); ?></div>
+			<div style="display: none" id="cvv-validation-invalid" class="admin__field-error validation-advice"><?php echo __('Invalid CVV'); ?></div>
+    	</div>
+	</div>
+</fieldset>

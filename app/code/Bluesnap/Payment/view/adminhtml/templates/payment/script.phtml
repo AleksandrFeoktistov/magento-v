@@ -1,0 +1,23 @@
+<?php
+/** @var Magento\Braintree\Block\Payment $block */
+
+$code = $block->escapeHtml($block->getCode());
+
+?>
+<script>
+    //<![CDATA[
+    require(
+        [
+            'Bluesnap_Payment/js/bluesnap',
+            'jquery',
+            'domReady!'
+        ], function(Bluesnap, $) {
+            var config = <?php /* @noEscape */ echo $block->getPaymentConfig(); ?>,
+                payment,
+                form = $('#payment_form_<?php /* @noEscape */ echo $code; ?>');
+
+            config.active = form.length > 0 && !form.is(':hidden');
+            payment = new Bluesnap(config);
+        });
+    //]]>
+</script>

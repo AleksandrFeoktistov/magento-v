@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
+
+    <referenceContainer name="content.top">
+        <container name="filter.onecolumn.layout" htmlTag="div" htmlClass="filters_side_block" />
+        <block class="Ecomwares\Wokiee\Block\Template" name="btn_close_one" template="html/btn_close.phtml" before="-" />
+    </referenceContainer>
+
+    <move element="filter.onecolumn.layout" destination="content.top" after="-"/>
+    <move element="btn_close_one" destination="filter.onecolumn.layout" before="-"/>
+    <move element="catalog.leftnav" destination="filter.onecolumn.layout"/>
+</layout>

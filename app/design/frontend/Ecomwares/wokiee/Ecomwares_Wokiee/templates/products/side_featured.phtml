@@ -1,0 +1,88 @@
+<?php
+/* comment */
+$collapsible = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/sidebar/collapsible');
+$opened = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/sidebar/opened');
+if ($collapsible) {
+    $c_class = ' collapsible';
+} else {
+    $c_class = '';
+}
+if ($collapsible && $opened) {
+    $o_class = ' open';
+} else {
+    $o_class = '';
+}
+
+$theme_helper = $this->helper('Ecomwares\Wokiee\Helper\Data');
+$side_ft_prod = $theme_helper->getSystemValue('wokiee_settings/sidebar/side_ft_prod');
+$side_ft_prod_type = $theme_helper->getSystemValue('wokiee_settings/sidebar/side_ft_prod_type');
+$productsLimit = $theme_helper->getSystemValue('wokiee_settings/sidebar/side_ft_prod_limit');
+$shuffle = $theme_helper->getSystemValue('wokiee_settings/sidebar/side_ft_prod_shuf');
+$productType = 'featured';
+$check_category = 0;
+
+if ($side_ft_prod_type == 'current') {
+    $currentCategory = $block->getCurrentCategory();
+    if(!empty($currentCategory)) {
+        $check_category = 1;
+        $categoryId = $currentCategory->getId();
+        $getProudctCollection = $block->getCategoryProduct($categoryId,$productsLimit,$shuffle,$productType);
+    }
+} else {
+    $categoryId = $theme_helper->getSystemValue('wokiee_settings/sidebar/side_ft_prod_id');
+    if(!empty($categoryId)) {
+        $check_category = 1;
+        $getProudctCollection = $block->getCategoryProduct($categoryId,$productsLimit,$shuffle,$productType);
+    }
+}
+
+$imageBlock = $block->getLayout()->createBlock('Magento\Catalog\Block\Product\ListProduct');
+?>
+
+<?php if ($check_category == 1 && $side_ft_prod): ?>
+    <?php if ($getProudctCollection->count()): ?>
+        <div class="block block-specials-products<?= $c_class.$o_class; ?>">
+            <div class="block-title"><?= /* @escapeNotVerified */ $theme_helper->getSystemValue('wokiee_settings/sidebar/side_ft_prod_title') ?></div>
+            <div class="block-content">
+                <ol class="product-items">
+                    <?php foreach ($getProudctCollection as $product) : ?>
+                        <li class="product-item">
+                            <div class="product-item-info">
+                                <?php /* @escapeNotVerified */ $productImage = $imageBlock->getImage($product, 'sidebar_thumbnail'); ?>
+                                <a href="<?php echo $product->getProductUrl(); ?>" class="product-item-photo">
+                                    <?php echo $productImage->toHtml(); ?>
+                                    <span class="tt-label-location">
+                                        <span class="tt-label-featured"><?= /* @escapeNotVerified */ __('Featured') ?></span>
+                                    </span>
+                                </a>
+                                <div class="product-item-details">
+                                    <strong class="product-item-name">
+                                        <a href="<?php echo $product->getProductUrl(); ?>" class="product-item-link">
+                                            <?php echo $product->getName();?>
+                                        </a>
+                                    </strong>
+                                    <?php echo $block->getProductPrice($product); ?>
+                                    <?php if ($product->isSaleable()): ?>
+                                        <div class="product-item-actions">
+                                            <div class="actions-primary">
+                                                <?php $postParams = $block->getAddToCartPostParams($product); ?>
+                                                <form data-role="tocart-form" action="<?php /* @escapeNotVerified */ echo $postParams['action']; ?>" method="post">
+                                                    <input type="hidden" name="product" value="<?php /* @escapeNotVerified */ echo $postParams['data']['product']; ?>">
+                                                    <input type="hidden" name="<?php /* @escapeNotVerified */ echo Magento\Framework\App\Action\Action::PARAM_NAME_URL_ENCODED; ?>" value="<?php /* @escapeNotVerified */ echo $postParams['data'][Magento\Framework\App\Action\Action::PARAM_NAME_URL_ENCODED]; ?>">
+                                                    <?php echo $block->getBlockHtml('formkey')?>
+                                                    <button type="submit" title="<?php /* @escapeNotVerified */ echo __('Add to Cart') ?>" class="action tocart primary">
+                                                        <span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ol>
+            </div>
+        </div>
+    <?php endif; ?>
+<?php endif; ?>

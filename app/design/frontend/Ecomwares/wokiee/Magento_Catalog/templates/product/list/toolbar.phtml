@@ -1,0 +1,49 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Product list toolbar
+ *
+ * @var $block \Magento\Catalog\Block\Product\ProductList\Toolbar
+ */
+use Magento\Catalog\Model\Product\ProductList\Toolbar;
+?>
+
+<?php
+$list_count = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/product_listing/list_count');
+?>
+
+<?php if ($block->getCollection()->getSize()): ?>
+    <div class="toolbar toolbar-products" data-mage-init='<?= /* @escapeNotVerified */ $block->getWidgetOptionsJson() ?>'>
+        <div class="tt-filters-options">
+            <?php if ($this->helper('Ecomwares\Wokiee\Helper\Data')->checkPage() == 'catalog_category_view'): ?>
+            <h1 class="tt-title">
+                <?= $block->getLayout()->getBlock('page.main.title')->getPageTitle(); ?>
+                <?php if ($list_count): ?>
+                    <span class="tt-title-total">(<?= $block->getTotalNum(); ?>)</span>
+                <?php endif; ?>
+            </h1>
+            <?php endif; ?>
+            <div class="tt-btn-toggle">
+                <a href="#"><?= /* @escapeNotVerified */ __('Filter') ?></a>
+            </div>
+            <div class="tt-sort">
+                <?php if ($block->isExpanded()): ?>
+                    <?php include ($block->getTemplateFile('Magento_Catalog::product/list/toolbar/sorter_custom.phtml')) ?>
+                <?php endif; ?>
+                <?php include ($block->getTemplateFile('Magento_Catalog::product/list/toolbar/limiter_custom.phtml')) ?>
+            </div>
+            <?php if ($block->isExpanded()): ?>
+                <?php include ($block->getTemplateFile('Magento_Catalog::product/list/toolbar/viewmode_custom.phtml')) ?>
+            <?php endif; ?>
+        </div>
+        <?= $block->getPagerHtml() ?>
+    </div>
+<?php endif ?>

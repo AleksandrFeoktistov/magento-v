@@ -1,0 +1,405 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="BluesnapHostedFieldsFacade" type="Magento\Payment\Model\Method\Adapter">
+        <arguments>
+            <argument name="code" xsi:type="const">Bluesnap\Payment\Model\Ui\ConfigProvider::HOSTEDFIELDS_CODE</argument>
+            <argument name="formBlockType" xsi:type="string">Bluesnap\Payment\Block\Form</argument>
+            <argument name="infoBlockType" xsi:type="string">Bluesnap\Payment\Block\Info</argument>
+            <argument name="valueHandlerPool" xsi:type="object">BluesnapValueHandlerPool</argument>
+            <argument name="validatorPool" xsi:type="object">BluesnapValidatorPool</argument>
+            <argument name="commandPool" xsi:type="object">BluesnapCommandPool</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapVaultFacade" type="Magento\Vault\Model\Method\Vault">
+        <arguments>
+            <argument name="config" xsi:type="object">BluesnapVaultPaymentConfig</argument>
+            <argument name="valueHandlerPool" xsi:type="object">BluesnapVaultPaymentValueHandlerPool</argument>
+            <argument name="vaultProvider" xsi:type="object">BluesnapHostedFieldsFacade</argument>
+            <argument name="code" xsi:type="const">Bluesnap\Payment\Model\Ui\ConfigProvider::VAULT_CODE</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapVaultPaymentConfig" type="Magento\Payment\Gateway\Config\Config">
+        <arguments>
+            <argument name="methodCode" xsi:type="const">Bluesnap\Payment\Model\Ui\ConfigProvider::VAULT_CODE</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="BluesnapVaultPaymentValueHandler" type="VaultPaymentDefaultValueHandler">
+        <arguments>
+            <argument name="configInterface" xsi:type="object">BluesnapVaultPaymentConfig</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="BluesnapVaultPaymentValueHandlerPool" type="VaultPaymentValueHandlerPool">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="default" xsi:type="string">BluesnapVaultPaymentValueHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="default" xsi:type="string">BluesnapConfigValueHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapConfigValueHandler" type="Magento\Payment\Gateway\Config\ConfigValueHandler">
+        <arguments>
+            <argument name="configInterface" xsi:type="object">Bluesnap\Payment\Gateway\Config\Config</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Bluesnap\Payment\Gateway\Config\Config">
+        <arguments>
+            <argument name="methodCode" xsi:type="const">Bluesnap\Payment\Model\Ui\ConfigProvider::HOSTEDFIELDS_CODE</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="BluesnapValidatorPool" type="Magento\Payment\Gateway\Validator\ValidatorPool">
+        <arguments>
+            <argument name="validators" xsi:type="array">
+                <item name="country" xsi:type="string">BluesnapCountryValidator</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapCountryValidator" type="Magento\Payment\Gateway\Validator\CountryValidator">
+        <arguments>
+            <argument name="config" xsi:type="object">Bluesnap\Payment\Gateway\Config\Config</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Bluesnap\Payment\Block\Info">
+        <arguments>
+            <argument name="config" xsi:type="object">Bluesnap\Payment\Gateway\Config\Config</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="BluesnapCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="authorize" xsi:type="string">BluesnapAuthorizeStrategyCommand</item>
+                <item name="capture" xsi:type="string">BluesnapCaptureStrategyCommand</item>
+                <item name="capture_only" xsi:type="string">BluesnapCaptureCommand</item>
+                <item name="auth_only" xsi:type="string">BluesnapAuthorizeCommand</item>
+                <item name="auth_capture" xsi:type="string">BluesnapAuthCaptureCommand</item>
+                <item name="token" xsi:type="string">BluesnapTokenCommand</item>
+                <item name="retrieve" xsi:type="string">BluesnapRetrieveCommand</item>
+                <item name="cancel" xsi:type="string">BluesnapAuthReversalCommand</item>
+                <item name="void" xsi:type="string">BluesnapAuthReversalCommand</item>
+                <item name="refund" xsi:type="string">BluesnapRefundCommand</item>
+                <item name="convert" xsi:type="string">BluesnapConvertCommand</item>
+                <item name="vault_authorize" xsi:type="string">BluesnapAuthorizeStrategyCommand</item>
+                <item name="vault_sale" xsi:type="string">BluesnapCaptureStrategyCommand</item>
+                <item name="create_vaulted_shopper" xsi:type="string">BluesnapCreateVaultedShopperCommand</item>
+                <item name="update_vaulted_shopper" xsi:type="string">BluesnapUpdateVaultedShopperCommand</item>
+                <item name="get_vaulted_shopper" xsi:type="string">BluesnapGetVaultedShopperCommand</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <!-- For vaulted payment, we need to register the command pool here, and attach it to the Provider Code (hostedfields) -->
+    <virtualType name="BluesnapCommandManager" type="Magento\Payment\Gateway\Command\CommandManager">
+        <arguments>
+            <argument name="commandPool" xsi:type="object">BluesnapCommandPool</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Payment\Gateway\Command\CommandManagerPool">
+        <arguments>
+            <argument name="executors" xsi:type="array">
+                <item name="bluesnap_hostedfields" xsi:type="string">BluesnapCommandManager</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="BluesnapAuthorizeCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
+        <arguments>
+            <argument name="requestBuilder" xsi:type="object">BluesnapAuthorizeRequest</argument>
+            <argument name="transferFactory" xsi:type="object">Bluesnap\Payment\Gateway\Http\TransferFactory</argument>
+            <argument name="client" xsi:type="object">Bluesnap\Payment\Gateway\Http\Client</argument>
+            <argument name="handler" xsi:type="object">Bluesnap\Payment\Gateway\Response\AuthorizeHandler</argument>
+            <argument name="validator" xsi:type="object">Bluesnap\Payment\Gateway\Validator\ResponseValidator</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapCaptureStrategyCommand" type="Bluesnap\Payment\Gateway\Command\CaptureStrategyCommand">
+        <arguments>
+            <argument name="commandPool" xsi:type="object">BluesnapCommandPool</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapAuthorizeStrategyCommand" type="Bluesnap\Payment\Gateway\Command\AuthorizeStrategyCommand">
+        <arguments>
+            <argument name="commandPool" xsi:type="object">BluesnapCommandPool</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapHttpClientLogger" type="Magento\Payment\Model\Method\Logger">
+        <arguments>
+            <argument name="config" xsi:type="object">Bluesnap\Payment\Gateway\Config\Config</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Bluesnap\Payment\Gateway\Http\Client">
+        <arguments>
+            <argument name="logger" xsi:type="object">BluesnapHttpClientLogger</argument>
+        </arguments>
+    </type>
+
+    <type name="Bluesnap\Payment\Controller\Vault\GetBilling">
+        <arguments>
+            <argument name="commandPool" xsi:type="object">BluesnapCommandPool</argument>
+            <argument name="logger" xsi:type="object">BluesnapHttpClientLogger</argument>
+        </arguments>
+    </type>
+
+    <type name="Bluesnap\Payment\Controller\Hostedfields\Token">
+        <arguments>
+            <argument name="commandPool" xsi:type="object">BluesnapCommandPool</argument>
+            <argument name="logger" xsi:type="object">BluesnapHttpClientLogger</argument>
+        </arguments>
+    </type>
+
+    <type name="Bluesnap\Payment\Controller\Adminhtml\Hostedfields\Token">
+        <arguments>
+            <argument name="commandPool" xsi:type="object">BluesnapCommandPool</argument>
+            <argument name="logger" xsi:type="object">BluesnapHttpClientLogger</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="BluesnapAuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
+        <arguments>
+            <argument name="builders" xsi:type="array">
+                <item name="customer" xsi:type="string">Bluesnap\Payment\Gateway\Request\AuthorizeDataBuilder</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapCaptureCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
+        <arguments>
+            <argument name="requestBuilder" xsi:type="object">BluesnapCaptureRequest</argument>
+            <argument name="transferFactory" xsi:type="object">Bluesnap\Payment\Gateway\Http\TransferFactory</argument>
+            <argument name="client" xsi:type="object">Bluesnap\Payment\Gateway\Http\Client</argument>
+            <argument name="handler" xsi:type="object">Bluesnap\Payment\Gateway\Response\CaptureHandler</argument>
+            <argument name="validator" xsi:type="object">Bluesnap\Payment\Gateway\Validator\ResponseValidator</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapCaptureRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
+        <arguments>
+            <argument name="builders" xsi:type="array">
+                <item name="customer" xsi:type="string">Bluesnap\Payment\Gateway\Request\CaptureDataBuilder</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapAuthCaptureCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
+        <arguments>
+            <argument name="requestBuilder" xsi:type="object">BluesnapAuthCaptureRequest</argument>
+            <argument name="transferFactory" xsi:type="object">Bluesnap\Payment\Gateway\Http\TransferFactory</argument>
+            <argument name="client" xsi:type="object">Bluesnap\Payment\Gateway\Http\Client</argument>
+            <argument name="handler" xsi:type="object">Bluesnap\Payment\Gateway\Response\AuthCaptureHandler</argument>
+            <argument name="validator" xsi:type="object">Bluesnap\Payment\Gateway\Validator\ResponseValidator</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapAuthCaptureRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
+        <arguments>
+            <argument name="builders" xsi:type="array">
+                <item name="customer" xsi:type="string">Bluesnap\Payment\Gateway\Request\AuthCaptureDataBuilder</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapTokenCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
+        <arguments>
+            <argument name="requestBuilder" xsi:type="object">BluesnapTokenRequest</argument>
+            <argument name="transferFactory" xsi:type="object">Bluesnap\Payment\Gateway\Http\TransferFactory</argument>
+            <argument name="client" xsi:type="object">Bluesnap\Payment\Gateway\Http\Client</argument>
+            <argument name="handler" xsi:type="object">Bluesnap\Payment\Gateway\Response\TokenHandler</argument>
+            <argument name="validator" xsi:type="object">Bluesnap\Payment\Gateway\Validator\ResponseValidator</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapTokenRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
+        <arguments>
+            <argument name="builders" xsi:type="array">
+                <item name="customer" xsi:type="string">Bluesnap\Payment\Gateway\Request\TokenDataBuilder</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapRetrieveCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
+        <arguments>
+            <argument name="requestBuilder" xsi:type="object">BluesnapRetrieveRequest</argument>
+            <argument name="transferFactory" xsi:type="object">Bluesnap\Payment\Gateway\Http\TransferFactory</argument>
+            <argument name="client" xsi:type="object">Bluesnap\Payment\Gateway\Http\Client</argument>
+            <argument name="handler" xsi:type="object">Bluesnap\Payment\Gateway\Response\RetrieveHandler</argument>
+            <argument name="validator" xsi:type="object">Bluesnap\Payment\Gateway\Validator\ResponseValidator</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapRetrieveRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
+        <arguments>
+            <argument name="builders" xsi:type="array">
+                <item name="customer" xsi:type="string">Bluesnap\Payment\Gateway\Request\RetrieveDataBuilder</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapAuthReversalCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
+        <arguments>
+            <argument name="requestBuilder" xsi:type="object">BluesnapAuthReversalRequest</argument>
+            <argument name="transferFactory" xsi:type="object">Bluesnap\Payment\Gateway\Http\TransferFactory</argument>
+            <argument name="client" xsi:type="object">Bluesnap\Payment\Gateway\Http\Client</argument>
+            <argument name="handler" xsi:type="object">Bluesnap\Payment\Gateway\Response\AuthReversalHandler</argument>
+            <argument name="validator" xsi:type="object">Bluesnap\Payment\Gateway\Validator\ResponseValidator</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapAuthReversalRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
+        <arguments>
+            <argument name="builders" xsi:type="array">
+                <item name="customer" xsi:type="string">Bluesnap\Payment\Gateway\Request\AuthReversalDataBuilder</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapRefundCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
+        <arguments>
+            <argument name="requestBuilder" xsi:type="object">BluesnapRefundRequest</argument>
+            <argument name="transferFactory" xsi:type="object">Bluesnap\Payment\Gateway\Http\TransferFactory</argument>
+            <argument name="client" xsi:type="object">Bluesnap\Payment\Gateway\Http\Client</argument>
+            <argument name="handler" xsi:type="object">Bluesnap\Payment\Gateway\Response\RefundHandler</argument>
+            <argument name="validator" xsi:type="object">Bluesnap\Payment\Gateway\Validator\ResponseValidator</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapRefundRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
+        <arguments>
+            <argument name="builders" xsi:type="array">
+                <item name="customer" xsi:type="string">Bluesnap\Payment\Gateway\Request\RefundDataBuilder</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapConvertCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
+        <arguments>
+            <argument name="requestBuilder" xsi:type="object">BluesnapConvertRequest</argument>
+            <argument name="transferFactory" xsi:type="object">Bluesnap\Payment\Gateway\Http\TransferFactory</argument>
+            <argument name="client" xsi:type="object">Bluesnap\Payment\Gateway\Http\Client</argument>
+            <argument name="handler" xsi:type="object">Bluesnap\Payment\Gateway\Response\ConvertHandler</argument>
+            <argument name="validator" xsi:type="object">Bluesnap\Payment\Gateway\Validator\ResponseValidator</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapConvertRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
+        <arguments>
+            <argument name="builders" xsi:type="array">
+                <item name="customer" xsi:type="string">Bluesnap\Payment\Gateway\Request\ConvertDataBuilder</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapCreateVaultedShopperCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
+        <arguments>
+            <argument name="requestBuilder" xsi:type="object">BluesnapCreateVaultedShopperRequest</argument>
+            <argument name="transferFactory" xsi:type="object">Bluesnap\Payment\Gateway\Http\TransferFactory</argument>
+            <argument name="client" xsi:type="object">Bluesnap\Payment\Gateway\Http\Client</argument>
+            <argument name="handler" xsi:type="object">Bluesnap\Payment\Gateway\Response\CreateVaultedShopperHandler</argument>
+            <argument name="validator" xsi:type="object">Bluesnap\Payment\Gateway\Validator\ResponseValidator</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapCreateVaultedShopperRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
+        <arguments>
+            <argument name="builders" xsi:type="array">
+                <item name="customer" xsi:type="string">Bluesnap\Payment\Gateway\Request\CreateVaultedShopperDataBuilder</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapUpdateVaultedShopperCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
+        <arguments>
+            <argument name="requestBuilder" xsi:type="object">BluesnapUpdateVaultedShopperRequest</argument>
+            <argument name="transferFactory" xsi:type="object">Bluesnap\Payment\Gateway\Http\TransferFactory</argument>
+            <argument name="client" xsi:type="object">Bluesnap\Payment\Gateway\Http\Client</argument>
+            <argument name="handler" xsi:type="object">Bluesnap\Payment\Gateway\Response\UpdateVaultedShopperHandler</argument>
+            <argument name="validator" xsi:type="object">Bluesnap\Payment\Gateway\Validator\ResponseValidator</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapUpdateVaultedShopperRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
+        <arguments>
+            <argument name="builders" xsi:type="array">
+                <item name="customer" xsi:type="string">Bluesnap\Payment\Gateway\Request\UpdateVaultedShopperDataBuilder</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapGetVaultedShopperCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
+        <arguments>
+            <argument name="requestBuilder" xsi:type="object">BluesnapGetVaultedShopperRequest</argument>
+            <argument name="transferFactory" xsi:type="object">Bluesnap\Payment\Gateway\Http\TransferFactory</argument>
+            <argument name="client" xsi:type="object">Bluesnap\Payment\Gateway\Http\Client</argument>
+            <argument name="handler" xsi:type="object">Bluesnap\Payment\Gateway\Response\GetVaultedShopperHandler</argument>
+            <argument name="validator" xsi:type="object">Bluesnap\Payment\Gateway\Validator\ResponseValidator</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="BluesnapGetVaultedShopperRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
+        <arguments>
+            <argument name="builders" xsi:type="array">
+                <item name="customer" xsi:type="string">Bluesnap\Payment\Gateway\Request\GetVaultedShopperDataBuilder</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Bluesnap\Payment\Model\IpnHandler">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="REFUND" xsi:type="object">Bluesnap\Payment\Model\Ipn\RefundHandler</item>
+                <item name="CHARGEBACK" xsi:type="object">Bluesnap\Payment\Model\Ipn\ChargebackHandler</item>
+                <item name="fallback" xsi:type="object">Bluesnap\Payment\Model\Ipn\FallbackHandler</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Bluesnap\Payment\Model\Ipn\AbstractHandler">
+        <arguments>
+            <argument name="logger" xsi:type="object">BluesnapIpnLogger</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="BluesnapIpnLogger" type="Magento\Payment\Model\Method\Logger">
+        <arguments>
+            <argument name="config" xsi:type="object">Bluesnap\Payment\Gateway\Config\Config</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Bluesnap\Payment\Model\Currency\Import\Bluesnap">
+        <arguments>
+            <argument name="commandPool" xsi:type="object">BluesnapCommandPool</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Directory\Model\Currency\Import\Config">
+        <arguments>
+            <argument name="servicesConfig" xsi:type="array">
+                <item name="bluesnap" xsi:type="array">
+                    <item name="label" xsi:type="string">Bluesnap</item>
+                    <item name="class" xsi:type="string">Bluesnap\Payment\Model\Currency\Import\Bluesnap</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Customer\Api\CustomerRepositoryInterface">
+        <plugin name="bluesnap_customer_repository" type="Bluesnap\Payment\Model\Customer\Api\CustomerRepositoryInterfacePlugin"/>
+    </type>
+
+    <preference for="Magento\Sales\Block\Order\Totals" type="Bluesnap\Payment\Block\Sales\Order\Totals"/>
+</config>

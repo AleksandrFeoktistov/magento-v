@@ -1,0 +1,31 @@
+<?php
+$sticky_menu = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/header_settings/sticky_menu');
+$st_m_search = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/header_settings/st_m_search');
+$st_m_cart = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/header_settings/st_m_cart');
+$st_m_account = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/header_settings/st_m_account');
+$st_m_settings = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/header_settings/st_m_settings');
+if ($sticky_menu == 1) {
+    $stm = '';
+} else {
+    $stm = ' disabled';
+}
+?>
+<div class="tt-stuck-nav<?= $stm; ?>">
+    <div class="container">
+        <div class="tt-header-row ">
+            <div class="tt-stuck-parent-menu"></div>
+            <?php if($st_m_search): ?>
+            <div class="tt-stuck-parent-search tt-parent-box"></div>
+            <?php endif ?>
+            <?php if($st_m_cart): ?>
+            <div class="tt-stuck-parent-cart tt-parent-box"></div>
+            <?php endif ?>
+            <?php if($st_m_account): ?>
+            <div class="tt-stuck-parent-account tt-parent-box"></div>
+            <?php endif ?>
+            <?php if($st_m_settings): ?>
+            <div class="tt-stuck-parent-multi tt-parent-box"></div>
+            <?php endif ?>
+        </div>
+    </div>
+</div>

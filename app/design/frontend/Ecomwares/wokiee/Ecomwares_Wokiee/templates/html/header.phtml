@@ -1,0 +1,192 @@
+<?php
+$header = $this->getSystemValue('wokiee_settings/header_settings/header');
+$ys_helper = $this->helper('Ecomwares\Wokiee\Helper\Data');
+$header_color = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/header_settings/header_color');
+$menu_right = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/header_settings/menu_right');
+$menu_color = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/header_settings/menu_color');
+$menu_type = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/header_settings/menu_type');
+if ($header_color == 'none') {
+    $h_c = '';
+} else {
+    $h_c = ' '.$header_color;
+}
+if ($menu_right == '0') {
+    $align = '';
+} else {
+    $align = ' obj-aligment-right';
+}
+if ($menu_color == 'default') {
+    $m_c = '';
+} else {
+    $m_c = ' '.$menu_color;
+}
+if ($menu_color == 'default') {
+    $m_t = '';
+    $m_space = ' tt-menu-small';
+} else {
+    $m_t = ' '.$menu_type;
+    $m_space = '';
+}
+?>
+
+<?php if($header == 0 || $header == 1): ?>
+<header class="theme_header">
+    <?php echo $this->getChildHtml("promo_line"); ?>
+    <?php echo $this->getChildHtml("top_line"); ?>
+    <div class="tt-mobile-parent-menu-cst"></div>
+    <?php echo $this->getChildHtml("mobile_header"); ?>
+    <div class="tt-desktop-header<?= $h_c; ?>">
+        <div class="container">
+            <div class="tt-header-holder">
+                <div class="tt-col-obj tt-obj-logo">
+                    <?php echo $this->getChildHtml("logo"); ?>
+                </div>
+                <div class="tt-col-obj tt-obj-menu<?= $align; ?>">
+                    <div class="tt-desctop-parent-menu tt-parent-box">
+                        <div class="tt-desctop-menu">
+                            <?php echo $this->getChildHtml("ys_megamenu"); ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="tt-col-obj tt-obj-options obj-move-right">
+                    <div class="tt-desctop-parent-search tt-parent-box">
+                        <?php echo $this->getChildHtml("top.search"); ?>
+                    </div>
+                    <div class="tt-desctop-parent-cart tt-parent-box">
+                        <?php echo $this->getChildHtml("minicart"); ?>
+                    </div>
+                    <div class="tt-desctop-parent-account tt-parent-box">
+                        <?php echo $this->getChildHtml("top_links"); ?>
+                    </div>
+                    <?php echo $this->getChildHtml("store_settings"); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php echo $this->getChildHtml("stuck_nav"); ?>
+</header>
+<?php endif ?>
+
+<?php if($header == 2): ?>
+    <header class="theme_header">
+        <?php echo $this->getChildHtml("promo_line"); ?>
+        <?php echo $this->getChildHtml("top_line"); ?>
+        <div class="tt-mobile-parent-menu-cst"></div>
+        <?php echo $this->getChildHtml("mobile_header"); ?>
+        <div class="tt-desktop-header<?= $h_c; ?>">
+            <div class="container">
+                <div class="tt-header-holder">
+                    <div class="tt-obj-logo">
+                        <?php echo $this->getChildHtml("logo"); ?>
+                    </div>
+                    <div class="tt-obj-options obj-move-right tt-position-absolute">
+                        <div class="tt-desctop-parent-search tt-parent-box">
+                            <?php echo $this->getChildHtml("top.search"); ?>
+                        </div>
+                        <div class="tt-desctop-parent-cart tt-parent-box">
+                            <?php echo $this->getChildHtml("minicart"); ?>
+                        </div>
+                        <div class="tt-desctop-parent-account tt-parent-box">
+                            <?php echo $this->getChildHtml("top_links"); ?>
+                        </div>
+                        <?php echo $this->getChildHtml("store_settings"); ?>
+                    </div>
+                </div>
+            </div>
+            <div class="<?= $m_c; ?>">
+                <div class="container">
+                    <div class="tt-header-holder">
+                        <div class="tt-obj-menu">
+                            <div class="tt-desctop-parent-menu tt-parent-box">
+                                <div class="tt-desctop-menu<?= $m_t.$m_space; ?>">
+                                    <?php echo $this->getChildHtml("ys_megamenu"); ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php echo $this->getChildHtml("stuck_nav"); ?>
+    </header>
+<?php endif ?>
+
+<?php if($header == 3): ?>
+    <header class="theme_header">
+        <?php echo $this->getChildHtml("promo_line"); ?>
+        <?php echo $this->getChildHtml("top_line"); ?>
+        <div class="tt-mobile-parent-menu-cst"></div>
+        <?php echo $this->getChildHtml("mobile_header"); ?>
+        <div class="tt-desktop-header<?= $h_c; ?>">
+            <div class="container">
+                <div class="tt-header-holder">
+                    <div class="tt-obj-logo obj-aligment-center">
+                        <?php echo $this->getChildHtml("logo"); ?>
+                    </div>
+                    <div class="tt-obj-options obj-move-right tt-position-absolute">
+                        <div class="tt-desctop-parent-search tt-parent-box">
+                            <?php echo $this->getChildHtml("top.search"); ?>
+                        </div>
+                        <div class="tt-desctop-parent-cart tt-parent-box">
+                            <?php echo $this->getChildHtml("minicart"); ?>
+                        </div>
+                        <div class="tt-desctop-parent-account tt-parent-box">
+                            <?php echo $this->getChildHtml("top_links"); ?>
+                        </div>
+                        <?php echo $this->getChildHtml("store_settings"); ?>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="tt-header-holder">
+                    <div class="tt-obj-menu obj-aligment-center">
+                        <div class="tt-desctop-parent-menu tt-parent-box">
+                            <div class="tt-desctop-menu tt-menu-small">
+                                <?php echo $this->getChildHtml("ys_megamenu"); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php echo $this->getChildHtml("stuck_nav"); ?>
+    </header>
+<?php endif ?>
+
+<?php if($header == 4): ?>
+    <header class="theme_header">
+        <?php echo $this->getChildHtml("promo_line"); ?>
+        <?php echo $this->getChildHtml("top_line"); ?>
+        <div class="tt-mobile-parent-menu-cst"></div>
+        <?php echo $this->getChildHtml("mobile_header"); ?>
+        <div class="tt-desktop-header tt-header-static<?php if (!$block->isHomePage()):?> tt-header-static-subpage<?php endif ?><?= $h_c; ?>">
+            <div class="container-fluid">
+                <div class="tt-header-holder">
+                    <div class="tt-obj-logo">
+                        <?php echo $this->getChildHtml("logo"); ?>
+                    </div>
+                    <div class="tt-obj-menu obj-aligment-center">
+                        <div class="tt-desctop-parent-menu tt-parent-box">
+                            <div class="tt-desctop-menu">
+                                <?php echo $this->getChildHtml("ys_megamenu"); ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tt-obj-options obj-move-right">
+                        <div class="tt-desctop-parent-search tt-parent-box">
+                            <?php echo $this->getChildHtml("top.search"); ?>
+                        </div>
+                        <div class="tt-desctop-parent-cart tt-parent-box">
+                            <?php echo $this->getChildHtml("minicart"); ?>
+                        </div>
+                        <div class="tt-desctop-parent-account tt-parent-box">
+                            <?php echo $this->getChildHtml("top_links"); ?>
+                        </div>
+                        <?php echo $this->getChildHtml("store_settings"); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php echo $this->getChildHtml("stuck_nav"); ?>
+    </header>
+<?php endif ?>

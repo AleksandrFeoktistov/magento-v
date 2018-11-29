@@ -1,0 +1,160 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+	#payment_form_bluesnap_hostedfields iframe,
+	#bluesnap_hostedfields-form .bluesnap-hosted-control iframe {
+		height: 30px !important;
+	}
+	
+	.bluesnap_hostedfields .field{
+		clear: both;
+	}
+		
+	.bluesnap-hosted-control {
+		position: relative;
+		border: 1px solid #ccc;
+		border-radius: 2px;
+		padding: 5px 10px;
+		max-width: 17em;
+		min-height: 30px;
+		-webkit-transition: all 0.2s ease;
+		transition: all 0.2s ease;
+		&.no-border {
+			border: none;
+			padding: 0;
+		}
+		&.exp {
+			max-width: 8em;	
+		}
+		&.cvv {
+			max-width: 6em;
+		}
+		&.card-number .ccn {
+			padding-right: 44px;
+		}
+		&.dcc {
+			max-width: 17em;
+		}
+		&.card-number .cctype {
+			background-color: #eee;
+			border-left: 1px solid #ccc;
+			bottom: 0;
+			float: left;
+			padding: 5px 7px;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 46px;
+			border-radius: 2px;
+		}
+	}
+		
+	.bluesnap-hosted-control.control._with-tooltip .field-tooltip {
+		right: -32px;
+		top: 4px;
+	}
+	
+	.bluesnap-hosted-control.cvv.control._with-tooltip .field-tooltip .field-tooltip-content{
+		width: 400px;
+	}
+	
+	.dcc-note {
+		margin: 1rem 0;
+		&-small {
+			color: #999;
+			font-size: 86%;
+		}
+	}	
+		
+	// Validaion - Messages
+	.bluesnap-hosted-validation-msg {
+		clear: both;
+		font-size: 13px;
+		margin: 5px 0 0 1px;
+		.invalid {
+			color: #e02b27;	    
+		}
+	}
+	
+	// Validaion - Input boxes
+	.bluesnap-hosted-control.validation-failed {
+		border-color: #e02b27;
+	}
+	
+	.bluesnap-hosted-control.card-number.validation-failed .cctype {
+		background-color: #e55552;
+		border-left-color: #e02b27;
+	}
+	
+	.bluesnap-hosted-control.validation-passed {
+		border-color: #57a957;
+	}
+	
+	.bluesnap-hosted-control.card-number.validation-passed .cctype {
+		background-color: #78ba79;
+		border-left-color: #57a957;
+	}
+	
+	
+	// Clearfix
+	.bluesnap-hosted-control:after {
+		display:block;content:".";clear:both;font-size:0;line-height:0;height:0;overflow:hidden;
+	}
+	
+	.bluesnap-payment-method-note {
+		margin-top: 1rem;
+		color: #999;
+	}
+
+	.vaulted-field label {
+		font-weight: 600;
+		margin-bottom: 8px;
+		display: block;
+	}
+
+}
+
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+	.bluesnap-hosted-control.cvv.control._with-tooltip .field-tooltip .field-tooltip-content {
+		right: auto;
+		left: -10px;
+		max-width: 300px;
+		&:after,
+		&:before {
+			right: auto;
+			left: 10px;
+		}
+	}
+
+}
+
+
+//
+//  XS breakpoint
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+
+	#payment_form_bluesnap_hostedfields {
+		.bluesnap-hosted-control.cvv.control._with-tooltip .field-tooltip .field-tooltip-content {
+			left: -90px;
+			max-width: 286px;
+			padding: .3rem;
+		}
+		&:after,
+		&:before {
+			right: auto;
+			left: 90px;
+		}
+	}
+
+}

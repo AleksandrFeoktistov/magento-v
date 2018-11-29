@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <container name="product.info.wrapper" htmlTag="div" htmlClass="row">
+                <container name="product.info.col.media" htmlTag="div" htmlClass="col-md-12 col-lg-6" />
+                <container name="product.info.col.main" htmlTag="div" htmlClass="col-md-12 col-lg-6">
+                    <container name="product.info.col.main.wrap" htmlTag="div" htmlClass="tt-product-single-info" />
+                </container>
+            </container>
+            <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.details.bot" template="Magento_Catalog::product/view/details.bottom.phtml">
+                <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.description.bot" as="description.bot" template="Magento_Catalog::product/view/attribute.phtml" group="detailed_info_bot">
+                    <arguments>
+                        <argument name="at_call" xsi:type="string">getDescription</argument>
+                        <argument name="at_code" xsi:type="string">description</argument>
+                        <argument name="css_class" xsi:type="string">description</argument>
+                        <argument name="at_label" xsi:type="string">none</argument>
+                        <argument name="title" translate="true" xsi:type="string">Details</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Catalog\Block\Product\View\Attributes" name="product.attributes.bot" as="additional.bot" template="Magento_Catalog::product/view/attributes.phtml" group="detailed_info_bot">
+                    <arguments>
+                        <argument translate="true" name="title" xsi:type="string">More Information</argument>
+                    </arguments>
+                </block>
+
+            </block>
+        </referenceContainer>
+        <referenceContainer name="content.aside">
+            <block class="Magento\Catalog\Block\Product\View\Additional" name="product.info.additional.bot" as="product_additional_data_bot"/>
+        </referenceContainer>
+
+        <block class="Ecomwares\Wokiee\Block\Template" name="product_socials" template="html/product_socials.phtml"/>
+        <block class="Ecomwares\Wokiee\Block\Template" name="product_labels" template="html/product_labels.phtml"/>
+        <block class="Ecomwares\Wokiee\Block\Template" name="product_countdown" template="html/product_countdown.phtml"/>
+
+        <move element="product.info.wrapper" destination="content" before="-" />
+        <move element="product.info.media" destination="product.info.col.media"/>
+        <move element="product.info.main" destination="product.info.col.main.wrap"/>
+        <move element="product.info.details.bot" destination="main.content" after="main.content.indent"/>
+        <move element="product_socials" destination="main.content" after="product.info.details.bot"/>
+        <move element="catalog.product.related" destination="main.content" after="product_socials"/>
+        <move element="product.info.upsell" destination="main.content" after="catalog.product.related"/>
+
+        <move element="product.info.stock.sku" destination="product.info.main" before="-"/>
+        <move element="page.main.title" destination="product.info.main" before="-"/>
+        <move element="product_labels" destination="product.info.main" before="-"/>
+        <move element="product.info.review" destination="product.info.price" after="product.price.final"/>
+        <move element="product.info.overview" destination="product.info.main" after="product.info.price"/>
+        <move element="product_countdown" destination="product.info.main" after="product.info.overview"/>
+        <move element="product.info.type" destination="product.info.stock.sku" after="product.info.sku"/>
+        <move element="product.info.details" destination="product.info.main" after="-"/>
+
+        <move element="product.info.description.bot" destination="product.info.details.bot"/>
+        <move element="product.attributes.bot" destination="product.info.details.bot" before="-"/>
+
+
+
+    </body>
+</page>

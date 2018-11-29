@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="content">
+            <block class="Bluesnap\Payment\Block\HostedFieldsScript" name="bluesnap.hostedfieldscript" template="Bluesnap_Payment::hostedfields/script.phtml"/>
+            <block class="Bluesnap\Payment\Block\Payment" name="bluesnap_payment_script" as="bluesnap_payment_script" after="billing_method" template="Bluesnap_Payment::payment/script.phtml" />
+        </referenceBlock>
+    </body>
+</page>

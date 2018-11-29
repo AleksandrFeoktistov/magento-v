@@ -1,0 +1,66 @@
+<?php
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_LayeredNavigation
+ * @copyright   Copyright (c) 2017 Mageplaza (http://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+ */
+?>
+<?php
+/** @type \Mageplaza\LayeredNavigation\Model\Layer\Filter\Attribute $filter */
+$filter = $this->getFilter();
+$attributeCode = $filter->getRequestVar();
+
+/** @type \Mageplaza\Layerednavigation\Model\Layer\Filter $filterModel */
+$filterModel = $this->helper('\Mageplaza\LayeredNavigation\Helper\Data')->getFilterModel();
+?>
+<ol class="items">
+    <?php /** @type  $filterItem */ foreach ($filterItems as $filterItem): ?>
+        <li class="item">
+            <?php if($filterModel->getIsSliderTypes($filter)): ?>
+                <div id="ln_slider_container_<?php echo $attributeCode ?>" class="ln_slider_container">
+                    <div id="ln_slider_<?php echo $attributeCode ?>"></div>
+                    <div id="ln_slider_text_<?php echo $attributeCode ?>"></div>
+                </div>
+            <?php else: ?>
+                <a href="<?php echo $block->escapeUrl($filterModel->getItemUrl($filterItem)) ?>">
+                    <?php if ($filterModel->isMultiple($filter)): ?>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="<?php echo $filterItem->getLabel() ?>" <?php echo $filterModel->isSelected($filterItem) ? 'checked="checked"' : ''  ?> <?php if ($filterItem->getCount() == 0) { echo 'disabled'; } ?> />
+                            <label for="<?php echo $filterItem->getLabel() ?>">
+                                <span class="check"></span>
+                                <span class="box"></span>
+                                <?php echo $filterItem->getLabel() ?>
+                                <?php if ($filterModel->isShowCounter($filter)): ?>
+                                    <em class="count"><?php echo $filterItem->getCount()?></em>
+                                <?php endif; ?>
+                            </label>
+                        </div>
+                    <?php else: ?>
+                        <label class="radio">
+                            <input id="<?php echo $filterItem->getLabel() ?>" type="radio" name="<?php echo $filter->getRequestVar() ?>" <?php echo $filterModel->isSelected($filterItem) ? 'checked="checked"' : ''  ?><?php if ($filterItem->getCount() == 0) { echo 'disabled'; } ?> />
+                            <span class="outer"><span class="inner"></span></span>
+                            <?php echo $filterItem->getLabel() ?>
+                            <?php if ($filterModel->isShowCounter($filter)): ?>
+                                <em class="count"><?php echo $filterItem->getCount()?></em>
+                            <?php endif; ?>
+                        </label>
+                    <?php endif; ?>
+                </a>
+            <?php endif; ?>
+        </li>
+	<?php endforeach ?>
+</ol>

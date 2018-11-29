@@ -1,0 +1,188 @@
+<?php
+$ys_helper = $this->helper('Ecomwares\Wokiee\Helper\Data');
+$popup = $ys_helper->getSystemValue('wokiee_settings/newsletter/popup');
+$popup_home = $ys_helper->getSystemValue('wokiee_settings/newsletter/popup_home');
+$popup_texts = $ys_helper->getSystemValue('wokiee_settings/newsletter/popup_texts');
+$popup_privacy = $ys_helper->getSystemValue('wokiee_settings/newsletter/popup_privacy');
+$popup_socials = $ys_helper->getSystemValue('wokiee_settings/newsletter/popup_socials');
+$popup_delay = $ys_helper->getSystemValue('wokiee_settings/newsletter/popup_delay');
+$popup_animation = $ys_helper->getSystemValue('wokiee_settings/newsletter/popup_animation');
+$config = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/link_socials');
+$home_page = $ys_helper->isHomePage();
+if($popup_home == 1) {
+    if($home_page) {
+        $show_pop = 1;
+    } else {
+        $show_pop = 0;
+    }
+} else {
+    $show_pop = 1;
+}
+?>
+<?php if ($popup && $show_pop == 1): ?>
+<div
+    class="modal newsletter-modal <?= $popup_animation; ?>"
+    id="newsletterModal"
+    tabindex="-1"
+    role="dialog"
+    aria-label="myModalLabel"
+    aria-hidden="true"
+    data-pause=<?php if($popup_delay) { echo $popup_delay; } else { echo '2000'; } ?>
+    >
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="icon icon-clear"></span></button>
+            </div>
+            <form class="form subscribe-form"
+                  novalidate
+                  action="<?php /* @escapeNotVerified */ echo $block->getFormActionUrl() ?>"
+                  method="post"
+                  data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+                  id="newsletter-validate-detail-pop">
+                <div class="modal-body no-background">
+                    <div class="tt-modal-newsletter">
+                        <?php if ($popup_texts): ?>
+                        <div class="tt-modal-newsletter-promo">
+                            <?= $popup_texts; ?>
+                        </div>
+                        <?php endif; ?>
+                        <?php if ($popup_privacy): ?>
+                            <?= $popup_privacy; ?>
+                        <?php endif; ?>
+                        <div class="subscribe-form form-default">
+                            <div class="row-subscibe">
+                                <div class="input-group">
+                                    <input name="email" type="email" class="form-control" id="newsletter_pop"
+                                           placeholder="<?= $block->escapeHtmlAttr(__('Enter your email address')) ?>"
+                                           data-validate="{required:true, 'validate-email':true}"/>
+                                    <button type="submit" class="btn"><?= $block->escapeHtml(__('Get!')) ?></button>
+                                </div>
+                            </div>
+                            <?php if ($popup_socials): ?>
+                            <div class="row-social-icon">
+                                <ul class="tt-social-icon">
+                                    <?php if($config['soc_facebook']): ?>
+                                        <li><a class="icon-g-64" target="_blank" href="<?= $config['soc_facebook']; ?>"></a></li>
+                                    <?php endif ?>
+                                    <?php if($config['soc_twitter']): ?>
+                                        <li><a class="icon-h-58" target="_blank" href="<?= $config['soc_twitter']; ?>"></a></li>
+                                    <?php endif ?>
+                                    <?php if($config['soc_google']): ?>
+                                        <li><a class="icon-g-66" target="_blank" href="<?= $config['soc_google']; ?>"></a></li>
+                                    <?php endif ?>
+                                    <?php if($config['soc_instagram']): ?>
+                                        <li><a class="icon-g-67" target="_blank" href="<?= $config['soc_instagram']; ?>"></a></li>
+                                    <?php endif ?>
+                                    <?php if($config['soc_pinterest']): ?>
+                                        <li><a class="icon-g-70" target="_blank" href="<?= $config['soc_pinterest']; ?>"></a></li>
+                                    <?php endif ?>
+                                </ul>
+                            </div>
+                            <?php endif; ?>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="checkBoxNews">
+                                <label for="checkBoxNews">
+                                    <span class="check"></span>
+                                    <span class="box"></span>
+                                    <?php echo __('Don\'t show this popup again') ?>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    require(['jquery','jquery/jquery.cookie'], function ($) {
+
+        jQuery(function(){
+            show_popup = $.cookie('show_popup');
+            if(show_popup == null || show_popup == 'enabled')
+            {
+                openPopup();
+            }
+            jQuery('#checkBoxNews').change(function() {
+                show_popup = $.cookie('show_popup');
+                if(jQuery(this).is(":checked")) {
+                    show_popup= $.cookie('show_popup','disabled');
+                } else {
+                    show_popup= $.cookie('show_popup','enabled');
+                }
+            });
+        });
+
+        function openPopup(){
+            var pause = $('#newsletterModal').attr('data-pause');
+            setTimeout(function() {
+
+                $.fn.modal_custom = function() {
+                    if(!this.length) return;
+
+                    var $modal = $(this),
+                        $close_modal = $(this).find('button.close'),
+                        $body = $('body'),
+                        $modal_bg = $('<div>').addClass('modal-backdrop fade');
+
+                    var scrollWidth = function() {
+                        var $div = $('<div>').css({
+                            overflowY: 'scroll',
+                            width: '50px',
+                            height: '50px',
+                            visibility: 'hidden'
+                        });
+
+                        $body.append($div);
+                        var scrollWidth = $div.get(0).offsetWidth - $div.get(0).clientWidth;
+                        $div.remove();
+
+                        return scrollWidth;
+                    };
+
+                    $body.addClass('modal-open modal-newsletter');
+                    $($body, $modal).css({paddingRight: scrollWidth()});
+
+                    $modal_bg.appendTo($body);
+                    setTimeout(function() {
+                        $modal_bg.addClass('show');
+                    }, 500);
+                    $modal.show();
+                    setTimeout(function() {
+                        $modal.addClass('show');
+                    }, 1000);
+
+
+                    function close_modal() {
+                        $modal.removeClass('show');
+                        setTimeout(function() {
+                            $modal_bg.removeClass('show');
+                        }, 500);
+                        setTimeout(function() {
+                            $modal.remove();
+                            $modal_bg.remove();
+                            $($body, $modal).css({padding: 'inherit'});
+                            $body.removeClass('modal-open modal-newsletter');
+                        }, 800);
+
+                    };
+
+                    $(this).on('click', function(e) {
+                        if(!$(e.target).parents('.modal').length) close_modal();
+                    });
+
+                    $($close_modal).on('click', function() {
+                        close_modal();
+                    });
+                };
+
+                $('#newsletterModal').modal_custom();
+
+            }, pause);
+        }
+
+    });
+</script>
+<?php endif; ?>

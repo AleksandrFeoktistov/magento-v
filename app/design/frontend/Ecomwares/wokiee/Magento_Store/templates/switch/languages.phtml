@@ -1,0 +1,29 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var \Magento\Store\Block\Switcher $block */
+?>
+<?php if (count($block->getStores())>1): ?>
+    <ul>
+        <?php foreach ($block->getStores() as $_lang): ?>
+            <?php if ($_lang->getId() != $block->getCurrentStoreId()): ?>
+                <li class="view-<?= $block->escapeHtml($_lang->getCode()) ?>">
+                    <a href="#" data-post='<?= /* @noEscape */ $block->getTargetStorePostData($_lang) ?>'>
+                        <?= $block->escapeHtml($_lang->getName()) ?>
+                    </a>
+                </li>
+            <?php else: ?>
+                <li class="view-<?= $block->escapeHtml($_lang->getCode()) ?> active">
+                    <span>
+                        <?= $block->escapeHtml($_lang->getName()) ?>
+                    </span>
+                </li>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </ul>
+<?php endif; ?>

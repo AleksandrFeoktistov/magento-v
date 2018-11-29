@@ -1,0 +1,1818 @@
+<?php
+$store=$this->_coreRegistry->registry('store_for_css');
+$temp = $this->getColorOption('general/theme',$store);
+?>
+<?php if($temp=$this->getColorOption('general/body_bg',$store)): ?>
+    body { background:<?php echo $temp ?> }
+    @media (min-width: 576px) {
+    body.tt-boxed { background:<?php echo $temp ?> }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('general/wrap_bg',$store)): ?>
+    @media (min-width: 576px) {
+    body.tt-boxed .page-wrapper {
+    background: <?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('general/text',$store)): ?>
+    body { color:<?php echo $temp ?> }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('general/theme_main',$store)): ?>
+    .tt-modal-addtocart.desctope .tt-modal-messages [class^="icon-"],
+    .tt-modal-addtocart.desctope .tt-modal-product .tt-title a:hover,
+    .tt-modal-addtocart.desctope .tt-cart-total .tt-total .tt-price,
+    .tt-modal-addtocart.mobile .tt-modal-messages [class^="icon-"],
+    .modal .modal-header .close:hover,
+    .tt-modal-newsletter .tt-modal-newsletter-promo .tt-title-large,
+    .tt-modal-newsletter .row-social-icon .tt-social-icon li a:hover,
+    .tt-modal-newsletter .checkbox-group label:hover,
+    .tt-layout-product-info-02 ul:not([class]) > li a:hover,
+    .tt-modal-subsribe-good i,
+    .modal-slide .modal-header button:hover,
+    .modal-popup .modal-header button:hover,
+    .mfp-close:hover,
+    .mfp-arrow:hover,
+    button.mfp-arrow:hover,
+    .tt-countdown_box .countdown-row .countdown-section,
+    .tt-base-color,
+    a,
+    .btn.btn-border,
+    .btn-link,
+    .btn-link:focus,
+    button.action.btn-link,
+    button.action.btn-link:focus,
+    .action.primary.btn-link,
+    .action.primary.btn-link:focus,
+    .btn-link-02,
+    .btn-link-02:focus,
+    .btn-underline:not([class$="color"]),
+    .tt-link,
+    h1 a:hover,
+    h2 a:hover,
+    h3 a:hover,
+    h4 a:hover,
+    h5 a:hover,
+    h6 a:hover,
+    .link,
+    .tt-list-dot > li a:hover,
+    .tt-blockquote .tt-icon,
+    .tt-blockquote.add-hover:hover .tt-title,
+    .tt-block-title .tt-title a,
+    .tt-block-title .tt-title a:hover,
+    .tt-block-title .tt-title-small a,
+    .tt-block-title .tt-title-small a:hover,
+    .tt-box-faq-listing .tt-box-faq .tt-title a:hover,
+    .tt-contact-info .tt-icon,
+    .checkbox-group:hover label,
+    .radio:hover,
+    .tt-box-thumb .tt-title a:hover,
+    .tt-login-form .tt-item .additional-links a,
+    .arrow-location-03 .slick-arrow:hover,
+    .tt-breadcrumb ul li a:hover,
+    .tt-services-block .tt-col-icon,
+    .tt-services-block:hover .tt-title,
+    .tt-layout-vertical .tt-title a:hover,
+    .tt-layout-vertical .tt-description .tt-add-info li a:hover,
+    .tt-content-info:hover .tt-title,
+    .tt-items-categories ul li a:hover,
+    .tt-items-categories ul li.active a,
+    .tt-items-categories.active .tt-title,
+    body:not(.checkout-index-index) .main-content .actions-toolbar div.secondary a.action,
+    body:not(.checkout-index-index) .main-content .actions-toolbar div.primary button.action,
+    body:not(.checkout-index-index) .main-content .actions-toolbar div.primary .action.primary,
+    fieldset.fieldset .field.captcha .captcha-image button.action,
+    div.fieldset .field.captcha .captcha-image button.action,
+    .field-tooltip .field-tooltip-action,
+    table.data.table tfoot tr.grand_total td .price,
+    table.data.table tfoot tr.grand.totals td .price,
+    header .tt-logo .tt-title,
+    header .tt-logo:hover .tt-title,
+    header .tt-dropdown-obj .tt-dropdown-toggle:hover,
+    header .tt-dropdown-obj.active .tt-dropdown-toggle,
+    header .tt-account ul li a:hover,
+    header .tt-account ul li a:hover [class^="icon-"],
+    header .tt-multi-obj ul li a:hover,
+    header .tt-multi-obj ul li a:hover [class^="icon-"],
+    header .tt-multi-obj ul li.active a,
+    header .tt-multi-obj ul li.active span,
+    header .tt-multi-obj ul li.active a [class^="icon-"],
+    header .tt-multi-obj ul li.active span [class^="icon-"],
+    header .tt-dropdown-obj:not(.tt-search) .tt-mobile-add .tt-close:hover,
+    header .tt-dropdown-obj:not(.tt-search) .tt-mobile-add .tt-close:hover:before,
+    header .tt-cart .tt-cart-layout .tt-cart-content .tt-cart-list .tt-item .tt-item-wrap .tt-title a:hover,
+    header .tt-cart .tt-cart-layout .tt-cart-content .tt-cart-list .tt-item .tt-item-descriptions .details-qty .update-cart-item:hover,
+    header .tt-cart .tt-cart-layout .tt-cart-content .tt-cart-list .tt-item-close .tt-btn-close:hover:before,
+    header .tt-cart .tt-cart-layout .tt-cart-content .tt-cart-list .tt-item-close .tt-btn-edit:hover:before,
+    header .tt-color-scheme-01 .tt-dropdown-obj .tt-dropdown-toggle:hover,
+    header .tt-color-scheme-02 .tt-box-info ul li [class^="icon-"],
+    header .tt-color-scheme-02 .tt-dropdown-obj .tt-dropdown-toggle:hover,
+    .cms-index-index header .tt-color-scheme-03 .tt-dropdown-obj .tt-dropdown-toggle:hover,
+    .tt-desctop-menu .header-menu-product a:hover .tt-title,
+    .tt-desctop-menu .tt-megamenu-submenu > li > a:hover,
+    .tt-desctop-menu .tt-megamenu-submenu > li.active > a,
+    .tt-desctop-menu .tt-megamenu-submenu > li ul li a:hover,
+    .tt-desctop-menu .tt-megamenu-submenu > li ul li.active > a,
+    body:not(.touch-device) .tt-menu-toggle:hover i,
+    footer .tt-logo .tt-title,
+    .sidebar .block:not(.filter).collapsible .block-title:hover,
+    .sidebar .block:not(.filter) .product-items:not(.product-items-names) .product-item-actions .actions-primary .action.primary.tocart,
+    .sidebar .block:not(.filter) .product-items.product-items-names li .product-item-name a:hover,
+    .sidebar .block:not(.filter) .actions-toolbar div.secondary a.action,
+    .sidebar .block-wishlist .actions-toolbar div.primary a.action,
+    .block.filter .filter-options.collapsible .filter-options-title:hover,
+    .block.filter .filter-options .items li a:hover,
+    body.account .main-content .block .block-title a,
+    body.account .main-content .block .block-content .box-actions a,
+    body.account .main-content .block-reviews-dashboard .items > li a:hover,
+    .products-grid.wishlist .product-items .product-item-name a:hover,
+    .products-grid.wishlist .product-items .box-tocart button.action,
+    body.catalog-product-compare-index table.data.table.table-comparison tbody td .product-item-name a:hover,
+    table.data.table.totals tbody tr.grand.totals td .price,
+    table.data.table.cart tbody td.item .product-item-name a:hover,
+    table.data.table.cart tbody .item-actions .gift-options-cart-item button.action.action-gift,
+    .multicheckout.address table.data.table .product-item-name a:hover,
+    .multicheckout.shipping .block-shipping .block-content .box button.action.action-gift,
+    .multicheckout.order-review .checkout-review .grand.totals .amount,
+    .authentication-wrapper .modal-header button:hover,
+    .tt-filters-options .tt-btn-toggle a,
+    .tt-filters-options .tt-btn-toggle a:before,
+    .tt-collapse .tt-collapse-title:hover,
+    .tt-filter-list li a:hover,
+    .tt-filter-list li.active,
+    .tt-filter-list li.active a:before,
+    .tt-list-row li a:hover,
+    .tt-list-row li.active a,
+    .tt-aside .tt-item:hover .tt-title,
+    .tt-filter-detach-option .filters-mobile .filters-row-select .tool-item.sorter .sorter-action,
+    .tt-product.tt-view .tt-description .tt-add-info li a:hover,
+    .tt-product-design02.tt-view .tt-description .tt-add-info li a:hover,
+    .tt-product.tt-view .tt-description .tt-title a:hover,
+    .tt-product-design02.tt-view .tt-description .tt-title a:hover,
+    .tt-product.tt-view .tt-description .tt-btn-addtocart,
+    .tt-product-design02.tt-view .tt-description .tt-btn-addtocart,
+    .tt-product.tt-view .tt-description .tt-btn-addtocart:before,
+    .tt-product-design02.tt-view .tt-description .tt-btn-addtocart:before,
+    .tt-product.tt-view .tt-description .tt-btn-quickview:hover,
+    .tt-product-design02.tt-view .tt-description .tt-btn-quickview:hover,
+    .tt-product.tt-view .tt-description .action.towishlist:hover,
+    .tt-product-design02.tt-view .tt-description .action.towishlist:hover,
+    .tt-product.tt-view .tt-description .action.tocompare:hover,
+    .tt-product-design02.tt-view .tt-description .action.tocompare:hover,
+    .product-item-name a:hover,
+    .tt-product-single-info .tt-add-info ul li a:hover,
+    .tt-product-single-info .tt-price,
+    .tt-product-single-info .tt-price .old-price,
+    .tt-product-single-info .tt-price .old-price .money,
+    .tt-product-single-info .tt-review a,
+    .tt-review-block .tt-row-custom-02 a,
+    .tt-review-block .tt-review-form .tt-message-info span,
+    .video-link-product [class^="icon-"],
+    .product-information-buttons a,
+    .product-info-main .price-box .price,
+    .product-info-main .price-box .old-price .price,
+    fieldset.fieldset.review-fieldset legend.legend strong,
+    .bundle-options-container .block-bundle-summary .bundle-info .price-box .price,
+    .fotorama-item.fotorama--fullscreen .fotorama__fullscreen-icon:hover,
+    .fotorama__fullscreen .fotorama__zoom-in:hover,
+    .fotorama__fullscreen .fotorama__zoom-out:hover,
+    .tt-promo-box:not(.hover-type-2):hover .btn-underline,
+    .tt-collection-item:hover .tt-description .tt-title,
+    .tt-hotspot-content .tt-btn-close:hover,
+    .tt-hotspot-content .tt-description .tt-title a:hover,
+    .tt-listing-post .tt-post .tt-post-content .tt-tag a,
+    .tt-listing-post .tt-post .tt-post-content .tt-title a:hover,
+    .tt-listing-post .tt-post .tt-post-content .tt-meta .tt-comments a:hover,
+    .tt-listing-post .tt-post .tt-post-content .tt-meta .tt-comments a:hover .tt-icon,
+    .tt-video-block .link-video:hover:before,
+    .tt-box-link,
+    .tt-post-single .tt-tag a,
+    .tt-post-single .post-meta a,
+    .tt-comments-layout .tt-item div[class^="tt-comments-level-"] .tt-content .tt-btn,
+    .tt-blog-thumb .tt-title-description .tt-tag,
+    .tt-blog-thumb .tt-title-description .tt-tag a,
+    .tt-blog-thumb .tt-title-description .tt-title a:hover,
+    .tt-blog-thumb .tt-title-description .tt-meta .tt-comments a:hover,
+    .tt-blog-thumb .tt-title-description .tt-meta .tt-comments a:hover .tt-icon,
+    .tt-form-search .tt-btn-icon:hover,
+    .tt-list-inline li a:hover,
+    .tt-aside-post .item .tt-tag,
+    .tt-aside-post .item .tt-tag a,
+    .tt-aside-post .item > a:not([class]):hover .tt-title,
+    .tt-pagination ul li a:hover,
+    .tt-pagination ul li.active a,
+    .tt-pagination .btn-pagination:hover,
+    .tt-layout-01-post .tt-post .tt-post-content .tt-tag a,
+    .tt-layout-01-post .tt-post .tt-post-content .tt-title a:hover,
+    .tt-layout-01-post .tt-post .tt-post-content .tt-meta .tt-comments a:hover,
+    .tt-layout-01-post .tt-post .tt-post-content .tt-meta .tt-comments a:hover .tt-icon,
+    .tt-layout-01-post .tt-post:hover .tt-post-img i,
+    .blog-categories-list li a:hover,
+    .widget.block-recent-posts .block-content .item a:hover,
+    .widget.block-archive .block-content .item a:hover,
+    .c-comment .p-actions a,
+    .hotspot-modal-tm-1 .snpt-modal.hotspot-modal .ico-close:hover,
+    .hotspot-modal .modal-dialog .next-chevron:hover:before,
+    .hotspot-modal .modal-dialog .prev-chevron:hover:before,
+    .tt-portfolio-content figure figcaption .tt-btn-zomm:hover,
+    .tt-portfolio-content figure figcaption .tt-title a:hover,
+    .tt-promo02 .tt-description a.tt-title:hover > *
+    { color:<?php echo $temp ?>; }
+
+    @media (min-width: 1025px) {
+    .tt-product:not(.tt-view) .tt-description .tt-add-info li a:hover,
+    .tt-product:not(.tt-view) .tt-description .tt-title a:hover,
+    .tt-product:not(.tt-view) .tt-description .tt-btn-addtocart,
+    .tt-product:not(.tt-view) .tt-description .tt-btn-addtocart:before,
+    .tt-product-design02:not(.tt-view) .tt-description .tt-add-info li a:hover,
+    .tt-product-design02:not(.tt-view) .tt-description .tt-title a:hover,
+    .tt-product-design02:not(.tt-view) .tt-btn-addtocart,
+    .tt-product-design02:not(.tt-view) .tt-btn-addtocart:before,
+    .tt-product-design02:not(.tt-view) .tt-btn-quickview:hover,
+    .tt-product-design02:not(.tt-view) .action.towishlist:hover,
+    .tt-product-design02:not(.tt-view) .action.tocompare:hover,
+    .tt-product-design02:not(.tt-view) .tt-btn-link:hover,
+    header .tt-search .tt-dropdown-menu .tt-btn-search:hover,
+    header .tt-search .tt-dropdown-menu .tt-btn-close:hover,
+    header .tt-search .search-results ul > li a:hover .tt-title,
+    header .tt-search .tt-view-all
+    { color:<?php echo $temp ?>; }
+    }
+    @media only screen and (min-width: 1025px) {
+    header .tt-color-scheme-01 .tt-desctop-menu:not(.tt-hover-02) [data-tm-dir='row'] .TonyM__panel > li:hover > a,
+    header .tt-color-scheme-02 .tt-desctop-menu:not(.tt-hover-02) [data-tm-dir='row'] .TonyM__panel > li:hover > a,
+    .cms-index-index header .tt-color-scheme-03 .tt-desctop-menu:not(.tt-hover-02) [data-tm-dir='row'] .TonyM__panel > li:hover > a,
+    .tt-desctop-menu:not(.tt-hover-02) [data-tm-dir='row'] .TonyM__panel > li:hover > a,
+    .tt-btn-col-close a:hover
+    { color:<?php echo $temp ?>; }
+    }
+
+    @media (max-width: 1024px) {
+    .tt-product:not(.tt-view) .tt-description .tt-add-info li a:hover,
+    .tt-product-design02:not(.tt-view) .tt-description .tt-add-info li a:hover,
+    .tt-product:not(.tt-view) .tt-description .tt-title a:hover,
+    .tt-product-design02:not(.tt-view) .tt-description .tt-title a:hover,
+    .tt-product:not(.tt-view) .tt-description .tt-btn-quickview:hover,
+    .tt-product-design02:not(.tt-view) .tt-description .tt-btn-quickview:hover,
+    .tt-product:not(.tt-view) .tt-description .action.towishlist:hover,
+    .tt-product-design02:not(.tt-view) .tt-description .action.towishlist:hover,
+    .tt-product:not(.tt-view) .tt-description .action.tocompare:hover,
+    .tt-product-design02:not(.tt-view) .tt-description .action.tocompare:hover,
+    header .tt-account .tt-dropdown-menu .tt-dropdown-inner ul li a:hover,
+    header .tt-account .tt-dropdown-menu .tt-dropdown-inner ul li a:hover [class^="icon-"],
+    header .tt-multi-obj .tt-dropdown-menu .tt-dropdown-inner ul li a:hover,
+    header .tt-multi-obj .tt-dropdown-menu .tt-dropdown-inner ul li a:hover [class^="icon-"],
+    header .tt-multi-obj .tt-dropdown-menu .tt-dropdown-inner ul li.active a,
+    header .tt-multi-obj .tt-dropdown-menu .tt-dropdown-inner ul li.active a [class^="icon-"],
+    header .tt-search .tt-dropdown-menu .tt-btn-close:hover,
+    header .tt-search .tt-dropdown-menu .tt-btn-search,
+    .tt-btn-col-close a:hover
+    { color:<?php echo $temp ?>; }
+    }
+
+    @media (min-width: 791px) {
+    .tt-contact-box a:hover
+    { color:<?php echo $temp ?>; }
+    }
+
+    @media (max-width: 790px) {
+    .tt-about-box .tt-blockquote-02 .tt-icon
+    { color:<?php echo $temp ?>; }
+    }
+    @media (min-width: 790px) {
+    footer .tt-color-scheme-01 .tt-collapse-title a:hover,
+    footer .tt-color-scheme-01 .tt-collapse-content a,
+    footer .tt-color-scheme-01 .tt-list li a:hover,
+    footer .tt-color-scheme-01 .tt-mobile-collapse .tt-collapse-content .tt-list li a:hover,
+    footer .tt-color-scheme-03 .tt-mobile-collapse .tt-collapse-content a,
+    footer .tt-color-scheme-03 .tt-list li a:hover,
+    footer .tt-color-scheme-03 .tt-mobile-collapse .tt-collapse-content .tt-list li a:hover,
+    footer .tt-color-scheme-03 .tt-list li.active a,
+    footer .tt-color-scheme-03 .tt-mobile-collapse .tt-collapse-content .tt-list li.active a,
+    .opc-sidebar .modal-header button:hover
+    { color:<?php echo $temp ?>; }
+    }
+    @media (max-width: 789px) {
+    .tt-back-to-top:hover,
+    footer .tt-mobile-collapse .tt-collapse-title:hover:not(:focus),
+    footer .tt-list li a:hover,
+    footer address a,
+    footer .tt-logo .tt-title,
+    .f-mobile-dark + .tt-back-to-top:hover
+    { color:<?php echo $temp ?>; }
+    }
+
+    .modal-slide .modal-footer button.action-secondary,
+    .modal-popup .modal-footer button.action-secondary,
+    .modal-slide .modal-footer button.action-primary,
+    .modal-popup .modal-footer button.action-primary,
+    .btn,
+    button.action,
+    .action.primary,
+    .btn.btn-dark:hover,
+    .tt-list-dot > li:before,
+    .tt-block-title .tt-title a:before,
+    .checkbox-group label .check,
+    .radio input:focus + .outer .inner,
+    .radio .inner,
+    .tt-empty-cart .btn_continue_shopping a,
+    .tt-slick-button .slick-arrow:hover,
+    .tt-slick-button-vertical .slick-arrow:hover,
+    .arrow-location-01 .slick-arrow:hover,
+    .arrow-location-02 .slick-arrow:hover,
+    .arrow-location-tab .slick-arrow:hover,
+    .arrow-location-right-top .slick-arrow:hover,
+    .arrow-location-center-02 .slick-arrow:hover,
+    .search-terms li a,
+    #loader .dot,
+    .tt-top-panel,
+    header .tt-cart .tt-dropdown-toggle .tt-badge-cart,
+    header .tt-cart .tt-dropdown-toggle .tt-badge-cart .loading-mask,
+    .sidebar .block-navigation .nav.items li:before,
+    .swatch-option.text.selected,
+    .swatch-option.text:hover,
+    body.account .main-content .block-reviews-dashboard .items > li:before,
+    body.catalog-product-compare-index a.action.print,
+    .multicheckout.success .orders-succeed .orders-list li:before,
+    .opc-progress-bar li._active:after,
+    .opc-progress-bar li._active:before,
+    .pages ul .item a,
+    .tt-product.tt-view .tt-description .tt-btn-addtocart.thumbprod-button-bg,
+    .tt-product-design02.tt-view .tt-description .tt-btn-addtocart.thumbprod-button-bg,
+    .product-item-photo .product-image-container:not(.tt-img-roll-over) .product-image-wrapper:after,
+    .product-item-photo .product-image-container:not(.tt-img-roll-over) .product-image-wrapper:before,
+    ul.tt-options-swatch li:hover a:not(.options-color),
+    ul.tt-options-swatch li.active a:not(.options-color),
+    .tt-product-single-img .tt-btn-zomm:hover,
+    .bundle-options-container .block-bundle-summary .bundle-summary .bundle.items li:before,
+    .fotorama__thumb--icon:hover,
+    .fotorama__arr .fotorama__arr__arr:hover,
+    .fotorama__active .fotorama__dot,
+    .tt-lookbook .tt-hotspot .tt-btn:after,
+    .widget-hotspot,
+    .hotspot-modal-tm-1 public-modal > .hotspot-modal .public-hotspot-info-holder .public-hotspot-info .public-hotspot-info__btn-buy.snpt-cta-btn,
+    .hotspot-modal-tm-1 .snpt-modal.hotspot-modal .hotspot
+    { background:<?php echo $temp ?>; }
+
+    @media (min-width: 1025px) {
+    .tt-product:not(.tt-view) .tt-image-box .tt-btn-quickview:hover,
+    .tt-product:not(.tt-view) .tt-image-box .action.towishlist:hover,
+    .tt-product:not(.tt-view) .tt-image-box .action.tocompare:hover,
+    .tt-product:not(.tt-view) .tt-description .tt-btn-addtocart.thumbprod-button-bg,
+    .tt-product-design02:not(.tt-view) .tt-options-swatch li:hover a:not(.options-color),
+    .tt-product-design02:not(.tt-view) .tt-options-swatch li.active a:not(.options-color)
+    { background:<?php echo $temp ?>; }
+    }
+
+    @media (max-width: 1024px) {
+    .tt-product:not(.tt-view) .tt-description .tt-btn-addtocart,
+    .tt-product-design02:not(.tt-view) .tt-description .tt-btn-addtocart
+    { background:<?php echo $temp ?>; }
+    }
+
+    @media only screen and (min-width: 1025px) {
+    header .tt-color-scheme-01 .tt-desctop-menu.tt-hover-02 [data-tm-dir='row'] .TonyM__panel > li:hover > a,
+    header .tt-color-scheme-02 .tt-desctop-menu.tt-hover-02 [data-tm-dir='row'] .TonyM__panel > li:hover > a,
+    .cms-index-index header .tt-color-scheme-03 .tt-desctop-menu.tt-hover-02 [data-tm-dir='row'] .TonyM__panel > li:hover > a,
+    .tt-desctop-menu.tt-hover-02 [data-tm-dir='row'] .TonyM__panel > li:hover > a
+    { background:<?php echo $temp ?>; }
+    }
+
+    @media (min-width: 790px) {
+    footer .tt-color-scheme-01 .tt-newsletter .btn,
+    footer .tt-color-scheme-02,
+    footer .tt-color-scheme-03 .tt-newsletter .btn,
+    footer .tt-color-scheme-04 .tt-newsletter .btn
+    { background:<?php echo $temp ?>; }
+    }
+
+    @media (max-width: 789px) {
+    footer .tt-newsletter .btn
+    { background:<?php echo $temp ?>; }
+    }
+
+    .btn.btn-border,
+    .btn-underline,
+    .tt-block-title .tt-title-small a,
+    .form-default .form-control:focus,
+    .tt-img-box:hover,
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="url"]:focus,
+    input[type="tel"]:focus,
+    input[type="search"]:focus,
+    input[type="number"]:focus,
+    input[type="datetime"]:focus,
+    input[type="email"]:focus,
+    select:focus,
+    textarea:focus,
+    body:not(.checkout-index-index) .main-content .actions-toolbar div.primary button.action,
+    body:not(.checkout-index-index) .main-content .actions-toolbar div.primary .action.primary,
+    .sidebar .block:not(.filter) .actions-toolbar div.secondary a.action,
+    .sidebar .block-wishlist .actions-toolbar div.primary a.action,
+    .swatch-option.image:after,
+    .swatch-option.color:after,
+    .opc-wrapper .opc .shipping-address-item.selected-item,
+    ul.tt-options-swatch li .options-color:after,
+    .fotorama__thumb-border
+    { border-color:<?php echo $temp ?>; }
+
+    @media (min-width: 790px) {
+    footer .tt-color-scheme-01 .tt-newsletter .form-control:focus,
+    footer .tt-color-scheme-03 .tt-newsletter .form-control:focus,
+    footer .tt-color-scheme-04 .tt-newsletter .form-control:focus
+    { border-color:<?php echo $temp ?>; }
+    }
+
+    @media (max-width: 789px) {
+    footer .tt-newsletter .form-control:focus
+    { border-color:<?php echo $temp ?>; }
+    }
+
+    .tt-loader svg path,
+    .tt-loader svg rect {
+    fill: <?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('general/links',$store)): ?>
+    a { color:<?php echo $temp ?>}
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('general/links_hover',$store)): ?>
+    a:hover{ color:<?php echo $temp ?>}
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('general/borders_color',$store)): ?>
+
+    .tt-title-subpages:not(.noborder),
+    .tt-title-border,
+    hr,
+    .tt-table-01,
+    .tt-table-01 tbody tr,
+    .tt-table-02,
+    .tt-table-02 tbody tr,
+    .tt-block-title .tt-title-small a,
+    .form-default .form-control,
+    .checkbox-group label .box,
+    .tt-services-aside,
+    .tt-services-aside .tt-services-block:not(:first-child),
+    .tt-img-box,
+    input[type="text"],
+    input[type="password"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="search"],
+    input[type="number"],
+    input[type="datetime"],
+    input[type="email"],
+    select,
+    textarea,
+    .tooltip.wrapper .tooltip.content,
+    table.data.table,
+    table.data.table thead tr,
+    table.data.table tbody tr,
+    table.data.table tfoot tr,
+    header .tt-dropdown-obj:not(.tt-search) .tt-mobile-add,
+    header .tt-cart .tt-cart-layout .tt-cart-content .tt-cart-total-row,
+    .tt-mobile-header .tt-top-line,
+    .panel-menu li.mm-close-parent .mm-close,
+    .panel-menu .mm-prev-level,
+    .sidebar .block:not(.filter) .block-title,
+    .block.filter .filter-options .filter-options-title,
+    .block.filter .filter-current .block-subtitle,
+    .form-create-account,
+    form.password.forget,
+    .login-container .block,
+    body.account .main-content .block .block-title,
+    body.sales-order-view .order-links,
+    body.sales-order-view .order-title,
+    body.account.wishlist-index-index .main-content .actions-toolbar div.secondary,
+    .tt-shopcart-wrapper,
+    table.data.table.cart tbody .item-actions .gift-options-cart-item .gift-content,
+    .cart-container #gift-options-cart .cart-gift-item .gift-item-block .title,
+    .multicheckout .block .block-title,
+    .multicheckout.address .actions-toolbar div.secondary,
+    .multicheckout.shipping .block-shipping .block-content .box .gift-messages-order,
+    .multicheckout.shipping .block-shipping .block-content .box .order-options .items li.item .block.message,
+    .multicheckout.order-review .checkout-review .grand.totals,
+    .authentication-wrapper .modal-content .block-title,
+    .opc-wrapper .opc .step-title,
+    .opc-wrapper .opc .shipping-address-item,
+    .opc-wrapper .opc .payment-option .payment-option-title,
+    .opc-wrapper .opc .table-checkout-shipping-method tbody tr:not(:last-child),
+    .opc-sidebar .shipping-information .shipping-information-title,
+    .tt-collapse .tt-collapse-title,
+    .tt-collapse-block .tt-item:not(:last-child),
+    ul.tt-options-swatch li .tt-border,
+    .product-info-main .product.data.items .item.line:not(:last-child),
+    .block.review-list .review-items li,
+    .bundle-options-container .product-options-wrapper .field.option,
+    .tt-post-single .post-nextprev-hld,
+    .tt-comments-layout .tt-item:not(:last-child),
+    .tt-block-aside .tt-aside-title,
+    .c-comment:not(:last-child)
+    { border-color:<?php echo $temp ?>; }
+
+    @media (max-width: 1024px) {
+    header .tt-multi-obj .tt-dropdown-menu .tt-dropdown-inner ul:not(:first-child),
+    .stuck.tt-stuck-nav .tt-search .tt-dropdown-menu .search-results,
+    .tt-btn-col-close
+    { border-color:<?php echo $temp ?>; }
+    }
+
+    @media (max-width: 789px) {
+    table.data.table tbody td,
+    table.data.table tfoot td,
+    footer .tt-mobile-collapse .tt-collapse-title,
+    table.data.table.cart tbody tr.item-actions .gift-options-cart-item .gift-content
+    { border-color:<?php echo $temp ?>; }
+    }
+
+    @media (min-width: 1025px) {
+    header .tt-search .tt-dropdown-menu .tt-search-input
+    { border-color:<?php echo $temp ?>; }
+    }
+
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('general/invert_color',$store)): ?>
+    .tt-modal-addtocart.desctope .tt-modal-messages,
+    .tt-modal-addtocart.desctope .tt-modal-product .tt-title,
+    .tt-modal-addtocart.desctope .tt-modal-product .tt-title a,
+    .tt-modal-addtocart.desctope .tt-modal-product .tt-qty,
+    .tt-modal-addtocart.desctope .tt-product-total,
+    .tt-modal-addtocart.desctope .tt-cart-total .tt-total,
+    .tt-modal-addtocart.mobile .tt-modal-messages,
+    .tt-layout-product-info .tt-title,
+    .tt-layout-product-info-02 .tt-title,
+    .tt-modal-subsribe-good,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .tt-list-dot > li a,
+    .tt-list-dot.list-dot-large > li,
+    .tt-blockquote .tt-title,
+    .tt-blockquote .tt-title-description span,
+    .tt-table-01 thead tr th,
+    .tt-table-02 tbody tr td:first-child,
+    .tt-table-03 tbody tr td:first-child,
+    .tt-block-title .tt-title,
+    .tt-block-title .tt-title-small,
+    .tt-block-title .tt-title-small .block-actions a:hover,
+    .tt-block-title .tt-description,
+    .tt-box-faq-listing .tt-box-faq .tt-title,
+    .tt-box-faq-listing .tt-box-faq .tt-title a,
+    .tt-contact-info .tt-title,
+    .form-default .form-group label:not(.error),
+    .checkbox-group label,
+    .tt-box-thumb .tt-title,
+    .tt-box-thumb .tt-title a,
+    .tt-page404,
+    .tt-page404 .tt-title,
+    .tt-empty-search .tt-title,
+    .tt-login-form .tt-item .additional-links a:hover,
+    .tt-services-block .tt-col-description .tt-title,
+    .tt-layout-vertical .tt-title,
+    .tt-layout-vertical .tt-title a,
+    .tt-tabs-default li > a:hover,
+    .tt-tabs-default li > a.active,
+    .tt-content-info .tt-title,
+    .tt-content-info .tt-subscription .tt-text-large,
+    .tt-base-dark-color,
+    body:not(.checkout-index-index) .main-content .actions-toolbar div.secondary a.action:hover,
+    fieldset.fieldset legend.legend,
+    div.fieldset legend.legend,
+    fieldset.fieldset label.label,
+    div.fieldset label.label,
+    fieldset.fieldset legend.label,
+    div.fieldset legend.label,
+    fieldset.fieldset .field.captcha .captcha-image button.action:hover,
+    div.fieldset .field.captcha .captcha-image button.action:hover,
+    table.data.table thead th,
+    table.data.table tbody td .cart-price .price,
+    table.data.table tfoot th,
+    table.data.table tfoot td .price,
+    header .tt-dropdown-obj .tt-dropdown-toggle,
+    header .tt-cart .tt-cart-layout .tt-cart-content .tt-cart-list .tt-item .tt-item-wrap .tt-title,
+    header .tt-cart .tt-cart-layout .tt-cart-content .tt-cart-list .tt-item .tt-item-wrap .tt-title a,
+    header .tt-cart .tt-cart-layout .tt-cart-content .tt-cart-list .tt-item .tt-item-descriptions .details-qty .update-cart-item,
+    header .tt-cart .tt-cart-layout .tt-cart-content .tt-cart-list .tt-item .tt-item-descriptions .tt-price,
+    header .tt-cart .tt-cart-layout .tt-cart-content .tt-cart-list .tt-item .tt-item-descriptions .price-container,
+    header .tt-cart .tt-cart-layout .tt-cart-content .tt-cart-list .tt-item-close .tt-btn-close:before,
+    header .tt-cart .tt-cart-layout .tt-cart-content .tt-cart-list .tt-item-close .tt-btn-edit:before,
+    header .tt-cart .tt-cart-layout .tt-cart-content .tt-cart-total-row .tt-cart-total-title,
+    header .tt-cart .tt-cart-layout .tt-cart-content .tt-cart-total-row .tt-cart-total-price,
+    header .tt-cart .tt-cart-layout .tt-cart-content .tt-cart-total-row .price-container,
+    .tt-menu-toggle i,
+    .tt-promo-02 .tt-description .tt-title-small:not([class$="color"]),
+    .tt-promo-02 .tt-description .tt-title-large:not([class$="color"]),
+    .tt-promo-02 .tt-description .tt-title-large:not([class$="color"]),
+    .sidebar .block:not(.filter) .block-title,
+    .sidebar .block:not(.filter).collapsible .block-title:after,
+    .sidebar .block:not(.filter).collapsible .block-title:hover:after,
+    .sidebar .block:not(.filter) .product-items:not(.product-items-names) .product-item-actions .actions-primary .action.primary.tocart:hover,
+    .sidebar .block:not(.filter) .actions-toolbar div.secondary a.action:hover,
+    .block.filter .filter-options .filter-options-title,
+    .block.filter .filter-options.collapsible .filter-options-title:after,
+    .block.filter .filter-options.collapsible .filter-options-title:hover:after,
+    .block.filter .filter-options .items li a .count,
+    .block.filter .filter-current .block-subtitle,
+    .login-container .block .block-title,
+    body.account .main-content .block .block-title strong,
+    body.account .main-content .block .block-title a:hover,
+    body.account .main-content .block .block-content .box .box-title,
+    body.account .main-content .block .block-content .box-actions a:hover,
+    body.account .main-content .block-reviews-dashboard .items > li a,
+    body.sales-order-view .page-title-wrapper .order-date .label,
+    body.sales-order-view .order-title strong,
+    .products-grid.wishlist .product-items .product-item-name a,
+    .products-grid.wishlist .product-items .box-tocart button.action:hover,
+    body.catalog-product-compare-index table.data.table.table-comparison tbody th,
+    body.catalog-product-compare-index table.data.table.table-comparison tbody td .product-item-name a,
+    .block.discount .title,
+    .block.shipping .title,
+    table.data.table.totals tbody th,
+    table.data.table.totals tbody td .price,
+    table.data.table.cart tbody td.item .product-item-name a,
+    table.data.table.cart tbody .item-actions .gift-options-cart-item button.action.action-gift:hover,
+    table.data.table.cart tbody .item-actions .gift-options-cart-item .gift-content .gift-options-title,
+    .cart-container #gift-options-cart .cart-gift-item .gift-item-block .title,
+    .multicheckout .block .block-title,
+    .multicheckout .block-content .box-title:not(.legend),
+    .multicheckout.address .title,
+    .multicheckout.address table.data.table .product-item-name a,
+    .multicheckout.shipping .block-shipping .block-content .box button.action.action-gift:hover,
+    .multicheckout.order-review .block-content .title,
+    .multicheckout.order-review .checkout-review .grand.totals .mark,
+    .authentication-wrapper .modal-content .block-title,
+    .opc-progress-bar li span,
+    .opc-progress-bar li:before,
+    .opc-estimated-wrapper .estimated-block,
+    .opc-wrapper .opc .step-title,
+    .opc-wrapper .opc .checkout-agreements .checkout-agreement button.action,
+    .opc-wrapper .opc .payment-option .payment-option-title,
+    .opc-sidebar .opc-block-summary > .title,
+    .opc-sidebar .opc-block-summary .items-in-cart > .title,
+    .opc-sidebar ol.minicart-items .product-item .details-qty .label,
+    .opc-sidebar ol.minicart-items .product-item .cart-price .price,
+    .opc-sidebar .shipping-information button.action,
+    .tt-filters-options .tt-btn-toggle a:hover,
+    .tt-filters-options .tt-btn-toggle a:hover:before,
+    .tt-filters-options .tt-sort select:hover,
+    .tt-filters-options .tt-sort label,
+    .tt-filters-options .tt-quantity > a,
+    .tt-filters-options .tt-quantity > a:active,
+    .tt-filters-options .tt-quantity > a:focus,
+    .tt-collapse .tt-collapse-title,
+    .tt-collapse .tt-collapse-title:after,
+    .tt-collapse .tt-collapse-title:hover:after,
+    .tt-filter-list li a:before,
+    .tt-filter-list li a:hover:before,
+    .tt-aside .tt-item .tt-content .tt-title,
+    .tt-filter-detach-option .filters-mobile .filters-row-select select:hover,
+    .tt-filter-detach-option .filters-mobile .filters-row-select .tool-item.sorter .sorter-action:hover,
+    .tt-grid-switch,
+    .tt-grid-switch:hover,
+    .tt-grid-switch.active,
+    .tt-product-single-info .tt-add-info ul li,
+    .tt-input-counter.style-01 input,
+    .tt-input-counter.style-01 span:hover,
+    .tt-collapse-block .tt-item .tt-collapse-title:hover,
+    .tt-collapse-block .tt-item.active .tt-collapse-title,
+    .tt-review-block .tt-title,
+    .tt-title-options,
+    .product-information-buttons a:hover,
+    .product-info-main .product-info-stock-sku .product.attribute,
+    .product-info-main .stock,
+    .product-info-main .product-options-wrapper .swatch-attribute .swatch-attribute-label,
+    .product-info-main .product-options-wrapper .swatch-attribute .swatch-attribute-selected-option,
+    .product-info-main .product.data.items .item.title.active a,
+    .product-info-main .product.data.items .item.title:hover a,
+    .product-info-main .product.data.items .table.data.table.additional-attributes tbody th,
+    .block.review-add .block-title,
+    .block.review-list .block-title,
+    .block.review-list .review-details p strong,
+    .block.review-list .review-title,
+    .bundle-options-container .product-options-wrapper p.required,
+    .bundle-options-container .product-options-wrapper .field.option .options-list,
+    .bundle-options-container .block-bundle-summary .title,
+    .bundle-options-container .block-bundle-summary .bundle-info .product.name,
+    .bundle-options-container .block-bundle-summary .bundle-summary .subtitle,
+    .tt-listing-post .tt-post .tt-post-content .tt-meta span,
+    .tt-listing-post .tt-post .tt-post-content .tt-meta .tt-comments a .tt-icon,
+    .tt-post-single .tt-tag a:hover,
+    .tt-post-single .tt-autor span,
+    .tt-post-single .post-meta a:hover,
+    .tt-blog-thumb .tt-title-description .tt-tag a:hover,
+    .tt-blog-thumb .tt-title-description .tt-title,
+    .tt-blog-thumb .tt-title-description .tt-title a,
+    .c-comment .p-name span,
+    .c-comment .p-actions a:hover,
+    .btn-link-02:hover,
+    .btn-link:hover, button.action.btn-link:hover, .action.primary.btn-link:hover
+    { color:<?php echo $temp ?>}
+
+    @media (min-width: 1025px) {
+    .tt-product-design02:not(.tt-view) .tt-description .tt-title,
+    .tt-product-design02:not(.tt-view) .tt-description .tt-title a,
+    .tt-btn-col-close a,
+    .tt-btn-col-close a:before,
+    .tt-btn-col-close a:hover:before
+    { color:<?php echo $temp ?>}
+    }
+    @media (max-width: 1024px) {
+    .tt-btn-col-close a:before,
+    .tt-btn-col-close a:hover:before
+    { color:<?php echo $temp ?>}
+    }
+
+    @media (max-width: 790px) {
+    .tt-about-box .tt-blockquote-02,
+    .opc-sidebar .modal-header button
+    { color:<?php echo $temp ?>}
+    }
+
+    @media (max-width: 789px) {
+    table.data.table tbody td:before,
+    table.data.table tfoot td:before,
+    .product-info-main .product.data.items .table.data.table.additional-attributes tbody td:before
+    { color:<?php echo $temp ?>}
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('buttons_colors/text',$store)): ?>
+    .btn,
+    button.action,
+    .action.primary
+    { color:<?php echo $temp ?>}
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('buttons_colors/text_hover',$store)): ?>
+    .btn:hover,
+    button.action:hover,
+    .action.primary:hover
+    { color:<?php echo $temp ?>}
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('buttons_colors/background',$store)): ?>
+    .btn,
+    button.action,
+    .action.primary
+    { background:<?php echo $temp ?>}
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('buttons_colors/background_hover',$store)): ?>
+    .btn:hover,
+    button.action:hover,
+    .action.primary:hover
+    { background:<?php echo $temp ?>}
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('buttons_colors/text_border',$store)): ?>
+    .btn.btn-border,
+    body:not(.checkout-index-index) .main-content .actions-toolbar div.primary button.action,
+    body:not(.checkout-index-index) .main-content .actions-toolbar div.primary .action.primary
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('buttons_colors/text_border_hover',$store)): ?>
+    .btn.btn-border:hover,
+    body:not(.checkout-index-index) .main-content .actions-toolbar div.primary button.action:hover,
+    body:not(.checkout-index-index) .main-content .actions-toolbar div.primary .action.primary:hover
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('buttons_colors/background_border',$store)): ?>
+    .btn.btn-border,
+    body:not(.checkout-index-index) .main-content .actions-toolbar div.primary button.action,
+    body:not(.checkout-index-index) .main-content .actions-toolbar div.primary .action.primary
+    { border-color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('buttons_colors/background_border_hover',$store)): ?>
+    .btn.btn-border:hover,
+    body:not(.checkout-index-index) .main-content .actions-toolbar div.primary button.action:hover,
+    body:not(.checkout-index-index) .main-content .actions-toolbar div.primary .action.primary:hover
+    { border-color:<?php echo $temp ?>; background:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('inputs/label_color',$store)): ?>
+    fieldset.fieldset label.label,
+    div.fieldset label.label,
+    fieldset.fieldset legend.label,
+    div.fieldset legend.label
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('inputs/input_text',$store)): ?>
+    input[type="text"],
+    input[type="password"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="search"],
+    input[type="number"],
+    input[type="datetime"],
+    input[type="email"],
+    select,
+    textarea
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('inputs/input_bg',$store)) { ?>
+    input[type="text"],
+    input[type="password"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="search"],
+    input[type="number"],
+    input[type="datetime"],
+    input[type="email"],
+    select,
+    textarea,
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="url"]:focus,
+    input[type="tel"]:focus,
+    input[type="search"]:focus,
+    input[type="number"]:focus,
+    input[type="datetime"]:focus,
+    input[type="email"]:focus,
+    select:focus,
+    textarea:focus
+    { background-color:<?php echo $temp ?>}
+<?php } else { ?>
+    input[type="text"],
+    input[type="password"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="search"],
+    input[type="number"],
+    input[type="datetime"],
+    input[type="email"],
+    select,
+    textarea,
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="url"]:focus,
+    input[type="tel"]:focus,
+    input[type="search"]:focus,
+    input[type="number"]:focus,
+    input[type="datetime"]:focus,
+    input[type="email"]:focus,
+    select:focus,
+    textarea:focus
+    { background:none; }
+<?php } ?>
+<?php if($temp=$this->getColorOption('inputs/input_border',$store)): ?>
+    input[type="text"],
+    input[type="password"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="search"],
+    input[type="number"],
+    input[type="datetime"],
+    input[type="email"],
+    select,
+    textarea
+    { border-color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('promo_colors/promo_bg',$store)): ?>
+    .tt-top-panel
+    { background:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('promo_colors/promo_text',$store)): ?>
+    .tt-top-panel .tt-row
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('promo_colors/promo_link',$store)): ?>
+    .tt-top-panel .tt-row a:not([class])
+    { color:<?php echo $temp ?>; }
+    .tt-top-panel .tt-row a:not([class]):before,
+    .tt-top-panel .tt-row a:not([class]):hover:before
+    { background:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('promo_colors/promo_close',$store)): ?>
+    .tt-top-panel .tt-row .tt-btn-close:before
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/top_bg',$store)): ?>
+    header .tt-header-top-row.tt-color-scheme-01,
+    header .tt-header-top-row.tt-color-scheme-02
+    { background:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/top_text',$store)): ?>
+    header .tt-header-top-row.tt-color-scheme-01,
+    header .tt-header-top-row.tt-color-scheme-02,
+    header .tt-color-scheme-01 .tt-box-info ul li a,
+    header .tt-color-scheme-02 .tt-box-info ul li a,
+    header .tt-color-scheme-01 .tt-box-info ul li a:hover,
+    header .tt-color-scheme-02 .tt-box-info ul li a:hover
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/top_icons',$store)): ?>
+    header .tt-color-scheme-01 .tt-box-info ul li [class^="icon-"],
+    header .tt-color-scheme-02 .tt-box-info ul li [class^="icon-"]
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/top_socials',$store)): ?>
+    header .tt-color-scheme-01 .tt-social-icon li a,
+    header .tt-color-scheme-02 .tt-social-icon li a
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/top_socials_hover',$store)): ?>
+    header .tt-color-scheme-01 .tt-social-icon li a:hover,
+    header .tt-color-scheme-02 .tt-social-icon li a:hover
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/icons_color',$store)): ?>
+    header .tt-dropdown-obj .tt-dropdown-toggle
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/icons_color_hover',$store)): ?>
+    header .tt-dropdown-obj .tt-dropdown-toggle:hover,
+    header .tt-dropdown-obj.active .tt-dropdown-toggle
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/icons_drop',$store)): ?>
+    header .tt-dropdown-obj .tt-dropdown-menu
+    { background:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/icons_drop_link',$store)): ?>
+    header .tt-account ul li a,
+    header .tt-multi-obj ul li a,
+    header .tt-multi-obj ul li span,
+    header .tt-account ul li a [class^="icon-"]
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/icons_drop_link_h',$store)): ?>
+    header .tt-account ul li a:hover,
+    header .tt-multi-obj ul li a:hover,
+    header .tt-multi-obj ul li.active a,
+    header .tt-multi-obj ul li.active span,
+    header .tt-account ul li a:hover [class^="icon-"]
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/cart_b_bg',$store)): ?>
+    header .tt-cart .tt-dropdown-toggle .tt-badge-cart
+    { background:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/cart_b_color',$store)): ?>
+    header .tt-cart .tt-dropdown-toggle .tt-badge-cart
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/search_text',$store)): ?>
+    header .tt-search .tt-dropdown-menu .tt-info-text
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/search_input',$store)): ?>
+    @media (min-width: 1025px) {
+    header .tt-search .tt-dropdown-menu .tt-search-input
+    { color:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/search_btn',$store)): ?>
+    @media (min-width: 1025px) {
+    header .tt-search .tt-dropdown-menu .tt-btn-search
+    { color:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/search_btn_hover',$store)): ?>
+    @media (min-width: 1025px) {
+    header .tt-search .tt-dropdown-menu .tt-btn-search:hover
+    { color:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/sticky_bg',$store)): ?>
+    @media (min-width: 1025px) {
+    .stuck.tt-stuck-nav { background:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/menu_icon',$store)): ?>
+    .tt-menu-toggle i { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/menu_icon_h',$store)): ?>
+    .tt-menu-toggle:hover i,
+    body:not(.touch-device) .tt-menu-toggle:hover i
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/m_shape_bg',$store)): ?>
+    @media (max-width: 1024px) {
+    header .tt-dropdown-obj:not(.tt-search) .tt-dropdown-menu
+    { background:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/m_shape_link',$store)): ?>
+    @media (max-width: 1024px) {
+    header .tt-multi-obj .tt-dropdown-menu .tt-dropdown-inner ul li a,
+    header .tt-account .tt-dropdown-menu .tt-dropdown-inner ul li a,
+    header .tt-account .tt-dropdown-menu .tt-dropdown-inner ul li a [class^="icon-"]
+    { color:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/m_shape_link_h',$store)): ?>
+    @media (max-width: 1024px) {
+    header .tt-multi-obj .tt-dropdown-menu .tt-dropdown-inner ul li a:hover,
+    header .tt-account .tt-dropdown-menu .tt-dropdown-inner ul li a:hover,
+    header .tt-account .tt-dropdown-menu .tt-dropdown-inner ul li a:hover [class^="icon-"]
+    { color:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/m_search_bg',$store)): ?>
+    @media (max-width: 1024px) {
+    header .tt-search .tt-dropdown-menu:before,
+    .stuck.tt-stuck-nav .tt-search.active .tt-dropdown-menu::before
+    { background:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('header_colors/m_search_bg',$store)): ?>
+    @media (max-width: 1024px) {
+    .stuck.tt-stuck-nav
+    { background:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('megamenu/links_1_level',$store)): ?>
+    @media (min-width: 1025px) {
+    [data-tm-dir='row'] .TonyM__panel > li > a,
+    .tt-desctop-menu:not(.tt-hover-02) [data-tm-dir='row'] .TonyM__panel > li > a,
+    .tt-header-holder .tt-desctop-menu.tt-menu-small [data-tm-dir='row'] .TonyM__panel > li > a,
+    header .tt-color-scheme-01 .tt-desctop-menu.tt-hover-02 [data-tm-dir='row'] .TonyM__panel > li > a,
+    header .tt-color-scheme-02 .tt-desctop-menu:not(.tt-hover-02) [data-tm-dir='row'] .TonyM__panel > li > a,
+    header .tt-color-scheme-02 .tt-desctop-menu.tt-hover-02 [data-tm-dir='row'] .TonyM__panel > li > a
+    { color:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('megamenu/links_1_level_hover',$store)): ?>
+    @media (min-width: 1025px) {
+    [data-tm-dir='row'] .TonyM__panel > li > a:hover,
+    .tt-desctop-menu:not(.tt-hover-02) [data-tm-dir='row'] .TonyM__panel > li:hover > a,
+    .tt-header-holder .tt-desctop-menu.tt-menu-small [data-tm-dir='row'] .TonyM__panel > li:hover > a,
+    header .tt-color-scheme-01 .tt-desctop-menu.tt-hover-02 [data-tm-dir='row'] .TonyM__panel > li:hover > a,
+    header .tt-color-scheme-02 .tt-desctop-menu:not(.tt-hover-02) [data-tm-dir='row'] .TonyM__panel > li:hover > a,
+    header .tt-color-scheme-02 .tt-desctop-menu.tt-hover-02 [data-tm-dir='row'] .TonyM__panel > li:hover > a
+    { color:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('megamenu/links_1_level_bg',$store)): ?>
+    @media (min-width: 1025px) {
+    header .tt-color-scheme-02 .tt-desctop-menu.tt-hover-02 [data-tm-dir='row'] .TonyM__panel > li:hover > a,
+    header .tt-color-scheme-01 .tt-desctop-menu.tt-hover-02 [data-tm-dir='row'] .TonyM__panel > li:hover > a
+    { background:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('megamenu/links_2_level',$store)): ?>
+    @media (min-width: 1025px) {
+    .TonyM__ttl > a, .TonyM__ttl > a:visited, .TonyM__ttl > a:active, .TonyM__ttl > a:link {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('megamenu/links_2_level_hover',$store)): ?>
+    @media (min-width: 1025px) {
+    .TonyM__ttl > a:hover {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('megamenu/links_3_level_bg',$store)): ?>
+    @media (min-width: 1025px) {
+    .TonyM__dd ul {
+    background:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('megamenu/links_3_level',$store)): ?>
+    @media (min-width: 1025px) {
+    .TonyM__list a, .TonyM__list a:visited, .TonyM__list a:active, .TonyM__list a:link {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('megamenu/links_3_level_hover',$store)): ?>
+    @media (min-width: 1025px) {
+    .TonyM__list a:hover {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('megamenu/links_3_level_arrow',$store)): ?>
+    @media (min-width: 1025px) {
+    .TonyM__dd .TonyM__arw {
+    border-left-color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('megamenu/label_color',$store)): ?>
+    .TonyM__label {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('megamenu/label_bg',$store)): ?>
+    .TonyM__label {
+    background-color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('megamenu/dropdown_bg',$store)): ?>
+    @media (min-width: 1025px) {
+    .TonyM__mm {
+    background:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('megamenu/links_simple_text',$store)): ?>
+    @media (min-width: 1025px) {
+    .TonyM__mm--simple .TonyM__list a,
+    .TonyM__mm--simple .TonyM__list a:visited,
+    .TonyM__mm--simple .TonyM__list a:active,
+    .TonyM__mm--simple .TonyM__list a:link {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('megamenu/links_simple_text_hover',$store)): ?>
+    @media (min-width: 1025px) {
+    .TonyM__mm--simple .TonyM__list a:hover {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('megamenu/links_simple_background',$store)): ?>
+    @media (min-width: 1025px) {
+    .TonyM__mm.TonyM__mm--simple {
+    background:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('mobile_menu/shape_bg',$store)): ?>
+    @media (max-width: 1024px) {
+    [data-tm-mob='true'].TonyM,
+    [data-tm-mob='true'] .TonyM__panel a {
+    background:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('mobile_menu/links_color',$store)): ?>
+    @media (max-width: 1024px) {
+    [data-tm-mob='true'] .TonyM__panel > li a {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('mobile_menu/links_color_active',$store)): ?>
+    @media (max-width: 1024px) {
+    [data-tm-mob='true'] .TonyM__panel > li.TonyM--btn-act > a,
+    [data-tm-mob='true'] .TonyM__panel > li a:hover,
+    [data-tm-mob='true'] .TonyM__panel .TonyM__close a:hover {
+    color:<?php echo $temp ?>;
+    }
+    [data-tm-mob='true'] .TonyM__panel > li a:hover .TonyM__arw:before {
+    border-right-color:<?php echo $temp ?>;
+    border-bottom-color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('mobile_menu/arrow_color',$store)): ?>
+    @media (max-width: 1024px) {
+    [data-tm-mob='true'] .TonyM__arw::before {
+    border-right-color:<?php echo $temp ?>;
+    border-bottom-color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('mobile_menu/border_close',$store)): ?>
+    @media (max-width: 1024px) {
+    [data-tm-mob='true'] .TonyM__panel .TonyM__close a {
+    border-color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('mobile_menu/close_color',$store)): ?>
+    @media (max-width: 1024px) {
+    [data-tm-mob='true'] .TonyM__panel .TonyM__close a {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('footer_colors/back_bg',$store)): ?>
+    @media (min-width: 790px) {
+    .tt-back-to-top {
+    background:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('footer_colors/back_bg_hover',$store)): ?>
+    @media (min-width: 790px) {
+    .tt-back-to-top:hover {
+    background:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('footer_colors/copy_bg',$store)): ?>
+    @media (min-width: 790px) {
+    footer .tt-footer-custom.tt-color-scheme-01,
+    footer .tt-footer-custom.tt-color-scheme-02,
+    footer .tt-footer-custom.tt-color-scheme-03,
+    footer .tt-footer-custom.tt-color-scheme-04 {
+    background:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('footer_colors/copy_text',$store)): ?>
+    @media (min-width: 790px) {
+    footer .tt-color-scheme-01 .tt-box-copyright,
+    footer .tt-color-scheme-02 .tt-box-copyright,
+    footer .tt-color-scheme-03 .tt-box-copyright,
+    footer .tt-color-scheme-04 .tt-box-copyright {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('footer_colors/cols_bg',$store)): ?>
+    @media (min-width: 790px) {
+    footer .tt-footer-col.tt-color-scheme-01,
+    footer .tt-footer-col.tt-color-scheme-02,
+    footer .tt-footer-col.tt-color-scheme-03,
+    footer .tt-footer-col.tt-color-scheme-04,
+    footer .tt-footer-center.tt-color-scheme-01,
+    footer .tt-footer-center.tt-color-scheme-02,
+    footer .tt-footer-center.tt-color-scheme-03,
+    footer .tt-footer-center.tt-color-scheme-04
+    {
+    background:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('footer_colors/cols_title',$store)): ?>
+    @media (min-width: 790px) {
+    footer .tt-color-scheme-01 .tt-mobile-collapse .tt-collapse-title,
+    footer .tt-color-scheme-02 .tt-mobile-collapse .tt-collapse-title,
+    footer .tt-color-scheme-03 .tt-mobile-collapse .tt-collapse-title,
+    footer .tt-color-scheme-04 .tt-mobile-collapse .tt-collapse-title {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('footer_colors/cols_link',$store)): ?>
+    @media (min-width: 790px) {
+    footer .tt-color-scheme-01 .tt-list li a,
+    footer .tt-color-scheme-01 .tt-mobile-collapse .tt-collapse-content .tt-list li a,
+    footer .tt-color-scheme-02 .tt-list li a,
+    footer .tt-color-scheme-02 .tt-mobile-collapse .tt-collapse-content .tt-list li a,
+    footer .tt-color-scheme-03 .tt-list li a,
+    footer .tt-color-scheme-03 .tt-mobile-collapse .tt-collapse-content .tt-list li a,
+    footer .tt-color-scheme-04 .tt-list li a,
+    footer .tt-color-scheme-04 .tt-mobile-collapse .tt-collapse-content .tt-list li a {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('footer_colors/cols_link_h',$store)): ?>
+    @media (min-width: 790px) {
+    footer .tt-color-scheme-01 .tt-list li a:hover,
+    footer .tt-color-scheme-01 .tt-mobile-collapse .tt-collapse-content .tt-list li a:hover,
+    footer .tt-color-scheme-02 .tt-list li a:hover,
+    footer .tt-color-scheme-02 .tt-mobile-collapse .tt-collapse-content .tt-list li a:hover,
+    footer .tt-color-scheme-03 .tt-list li a:hover,
+    footer .tt-color-scheme-03 .tt-mobile-collapse .tt-collapse-content .tt-list li a:hover,
+    footer .tt-color-scheme-04 .tt-list li a:hover,
+    footer .tt-color-scheme-04 .tt-mobile-collapse .tt-collapse-content .tt-list li a:hover {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('footer_colors/cols_text',$store)): ?>
+    @media (min-width: 790px) {
+    footer .tt-color-scheme-01 .tt-mobile-collapse .tt-collapse-content,
+    footer .tt-color-scheme-02 .tt-mobile-collapse .tt-collapse-content,
+    footer .tt-color-scheme-03 .tt-mobile-collapse .tt-collapse-content,
+    footer .tt-color-scheme-04 .tt-mobile-collapse .tt-collapse-content {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('footer_colors/cols_label',$store)): ?>
+    @media (min-width: 790px) {
+    footer .tt-color-scheme-01 address span,
+    footer .tt-color-scheme-02 address span,
+    footer .tt-color-scheme-03 address span,
+    footer .tt-color-scheme-04 address span {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('footer_colors/newsletter_bg',$store)): ?>
+    @media (min-width: 790px) {
+    footer .tt-footer-default.tt-color-scheme-01,
+    footer .tt-footer-default.tt-color-scheme-02,
+    footer .tt-footer-default.tt-color-scheme-03,
+    footer .tt-footer-default.tt-color-scheme-04 {
+    background:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('footer_colors/newsletter_label',$store)): ?>
+    @media (min-width: 790px) {
+    footer .tt-color-scheme-01 .tt-mobile-collapse .tt-collapse-title,
+    footer .tt-color-scheme-02 .tt-mobile-collapse .tt-collapse-title,
+    footer .tt-color-scheme-03 .tt-mobile-collapse .tt-collapse-title,
+    footer .tt-color-scheme-04 .tt-mobile-collapse .tt-collapse-title {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('footer_colors/socials_link',$store)): ?>
+    @media (min-width: 790px) {
+    footer .tt-color-scheme-01 .tt-social-icon li a,
+    footer .tt-color-scheme-02 .tt-social-icon li a,
+    footer .tt-color-scheme-03 .tt-social-icon li a,
+    footer .tt-color-scheme-04 .tt-social-icon li a {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('footer_colors/socials_link_h',$store)): ?>
+    @media (min-width: 790px) {
+    footer .tt-color-scheme-01 .tt-social-icon li a:hover,
+    footer .tt-color-scheme-02 .tt-social-icon li a:hover,
+    footer .tt-color-scheme-03 .tt-social-icon li a:hover,
+    footer .tt-color-scheme-04 .tt-social-icon li a:hover {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('footer_colors/accordion_bg',$store)): ?>
+    @media (max-width: 789px) {
+    footer,
+    footer .tt-footer-col,
+    footer .tt-footer-center
+    {
+    background:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('footer_colors/accordion_title',$store)): ?>
+    @media (max-width: 789px) {
+    footer .tt-mobile-collapse .tt-collapse-title,
+    footer .tt-mobile-collapse .tt-collapse-title:hover:not(:focus)
+    {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('footer_colors/accordion_border',$store)): ?>
+    @media (max-width: 789px) {
+    footer .tt-mobile-collapse .tt-collapse-title
+    {
+    border-color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('footer_colors/accordion_link',$store)): ?>
+    @media (max-width: 789px) {
+    footer .tt-list li a
+    {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('footer_colors/accordion_link_h',$store)): ?>
+    @media (max-width: 789px) {
+    footer .tt-list li a:hover
+    {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('footer_colors/soc_l',$store)): ?>
+    @media (max-width: 789px) {
+    footer .tt-social-icon li a
+    {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('footer_colors/soc_l_h',$store)): ?>
+    @media (max-width: 789px) {
+    footer .tt-social-icon li a:hover
+    {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('footer_colors/copy_m_bg',$store)): ?>
+    @media (max-width: 789px) {
+    footer .tt-footer-custom:last-child
+    {
+    background:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('footer_colors/copy_m_text',$store)): ?>
+    @media (max-width: 789px) {
+    footer .tt-footer-custom:last-child .tt-box-copyright
+    {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('footer_colors/back_m_bg',$store)): ?>
+    @media (max-width: 789px) {
+    .tt-back-to-top,
+    .tt-back-to-top:hover
+    {
+    background:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('footer_colors/back_m_text',$store)): ?>
+    @media (max-width: 789px) {
+    .tt-back-to-top,
+    .tt-back-to-top:hover
+    {
+    color:<?php echo $temp ?>;
+    }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('captions_colors/page_title',$store)): ?>
+    h1, h2, h3, h4, h5, h6,
+    .tt-block-title .tt-title,
+    .tt-block-title .tt-description,
+    .tt-block-title .tt-title-small
+    {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('captions_colors/side_title',$store)): ?>
+    .block.filter .filter-options .filter-options-title,
+    .sidebar .block:not(.filter) .block-title
+    {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('captions_colors/side_title_h',$store)): ?>
+    .block.filter .filter-options.collapsible .filter-options-title:hover,
+    .sidebar .block:not(.filter).collapsible .block-title:hover
+    {
+    color:<?php echo $temp ?>;
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('breadcrumbs_colors/shape_bg',$store)): ?>
+    .tt-breadcrumb
+    { background:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('breadcrumbs_colors/links',$store)): ?>
+    .tt-breadcrumb ul li a
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('breadcrumbs_colors/links_h',$store)): ?>
+    .tt-breadcrumb ul li a:hover
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('breadcrumbs_colors/current',$store)): ?>
+    .tt-breadcrumb ul li
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('breadcrumbs_colors/separator',$store)): ?>
+    .tt-breadcrumb ul li:not(:first-child):before
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/shape_bg',$store)): ?>
+    @media (min-width: 1025px) {
+    .tt-product:not(.tt-view) .tt-description
+    { background:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/name',$store)): ?>
+    @media (min-width: 1025px) {
+    .tt-product:not(.tt-view) .tt-description .tt-title a
+    { color:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/name_h',$store)): ?>
+    @media (min-width: 1025px) {
+    .tt-product:not(.tt-view) .tt-description .tt-title a:hover
+    { color:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/brand',$store)): ?>
+    @media (min-width: 1025px) {
+    .tt-product:not(.tt-view) .tt-description .tt-add-info li
+    { color:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/rating',$store)): ?>
+    .rating-summary .rating-result:before
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/rating_a',$store)): ?>
+    .rating-summary .rating-result > span:before
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/add_btn_txt',$store)): ?>
+    @media (min-width: 1025px) {
+    .tt-product:not(.tt-view) .tt-description .tt-btn-addtocart.thumbprod-button-bg,
+    .tt-product:not(.tt-view) .tt-description .tt-btn-addtocart.thumbprod-button-bg:before
+    { color:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/add_btn_txt_h',$store)): ?>
+    @media (min-width: 1025px) {
+    .tt-product:not(.tt-view) .tt-description .tt-btn-addtocart.thumbprod-button-bg:hover,
+    .tt-product:not(.tt-view) .tt-description .tt-btn-addtocart.thumbprod-button-bg:hover:before
+    { color:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/add_btn_bg',$store)): ?>
+    @media (min-width: 1025px) {
+    .tt-product:not(.tt-view) .tt-description .tt-btn-addtocart.thumbprod-button-bg
+    { background:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/add_btn_bg_h',$store)): ?>
+    @media (min-width: 1025px) {
+    .tt-product:not(.tt-view) .tt-description .tt-btn-addtocart.thumbprod-button-bg:hover
+    { background:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/regular_price',$store)): ?>
+    .price-box .price
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/special_price',$store)): ?>
+    .price-box .special-price .price
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/old_price',$store)): ?>
+    .price-box .old-price .price
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/count_bg',$store)): ?>
+    .tt-countdown_box .countdown-row .countdown-section
+    { background:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/count_color',$store)): ?>
+    .tt-countdown_box .countdown-row .countdown-section
+    { color:<?php echo $temp ?>; }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/sm_btns_txt',$store)): ?>
+    @media (min-width: 1025px) {
+    .tt-product:not(.tt-view) .tt-image-box .tt-btn-quickview,
+    .tt-product:not(.tt-view) .tt-image-box .action.towishlist,
+    .tt-product:not(.tt-view) .tt-image-box .action.tocompare
+    { color:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/sm_btns_txt_h',$store)): ?>
+    @media (min-width: 1025px) {
+    .tt-product:not(.tt-view) .tt-image-box .tt-btn-quickview:hover,
+    .tt-product:not(.tt-view) .tt-image-box .action.towishlist:hover,
+    .tt-product:not(.tt-view) .tt-image-box .action.tocompare:hover
+    { color:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/sm_btns_bg',$store)): ?>
+    @media (min-width: 1025px) {
+    .tt-product:not(.tt-view) .tt-image-box .tt-btn-quickview,
+    .tt-product:not(.tt-view) .tt-image-box .action.towishlist,
+    .tt-product:not(.tt-view) .tt-image-box .action.tocompare
+    { background:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/sm_btns_bg_h',$store)): ?>
+    @media (min-width: 1025px) {
+    .tt-product:not(.tt-view) .tt-image-box .tt-btn-quickview:hover,
+    .tt-product:not(.tt-view) .tt-image-box .action.towishlist:hover,
+    .tt-product:not(.tt-view) .tt-image-box .action.tocompare:hover
+    { background:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/label_new',$store)): ?>
+    .tt-label-new,
+    .sidebar .block:not(.filter) .product-items:not(.product-items-names) .tt-label-location .tt-label-new,
+    .tt-product.tt-view .tt-image-box .tt-label-location .tt-label-new,
+    .tt-product-design02.tt-view .tt-image-box .tt-label-location .tt-label-new
+    { color:<?php echo $temp ?>; }
+    @media (min-width: 1025px) {
+    .tt-product:not(.tt-view) .tt-image-box .tt-label-location .tt-label-new,
+    .tt-product-design02:not(.tt-view) .tt-image-box .tt-label-location .tt-label-new
+    { color:<?php echo $temp ?>; }
+    }
+    @media (max-width: 1024px) {
+    .tt-product:not(.tt-view) .tt-image-box .tt-label-location .tt-label-new,
+    .tt-product-design02:not(.tt-view) .tt-image-box .tt-label-location .tt-label-new
+    { color:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/label_new_bg',$store)): ?>
+    .tt-label-new,
+    .sidebar .block:not(.filter) .product-items:not(.product-items-names) .tt-label-location .tt-label-new,
+    .tt-product.tt-view .tt-image-box .tt-label-location .tt-label-new,
+    .tt-product-design02.tt-view .tt-image-box .tt-label-location .tt-label-new
+    { background:<?php echo $temp ?>; }
+    @media (min-width: 1025px) {
+    .tt-product:not(.tt-view) .tt-image-box .tt-label-location .tt-label-new,
+    .tt-product-design02:not(.tt-view) .tt-image-box .tt-label-location .tt-label-new
+    { background:<?php echo $temp ?>; }
+    }
+    @media (max-width: 1024px) {
+    .tt-product:not(.tt-view) .tt-image-box .tt-label-location .tt-label-new,
+    .tt-product-design02:not(.tt-view) .tt-image-box .tt-label-location .tt-label-new
+    { background:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/label_sale',$store)): ?>
+    .tt-label-sale,
+    .sidebar .block:not(.filter) .product-items:not(.product-items-names) .tt-label-location .tt-label-sale,
+    .tt-product.tt-view .tt-image-box .tt-label-location .tt-label-sale,
+    .tt-product-design02.tt-view .tt-image-box .tt-label-location .tt-label-sale
+    { color:<?php echo $temp ?>; }
+    @media (min-width: 1025px) {
+    .tt-product:not(.tt-view) .tt-image-box .tt-label-location .tt-label-sale,
+    .tt-product-design02:not(.tt-view) .tt-image-box .tt-label-location .tt-label-sale
+    { color:<?php echo $temp ?>; }
+    }
+    @media (max-width: 1024px) {
+    .tt-product:not(.tt-view) .tt-image-box .tt-label-location .tt-label-sale,
+    .tt-product-design02:not(.tt-view) .tt-image-box .tt-label-location .tt-label-sale
+    { color:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/label_sale_bg',$store)): ?>
+    .tt-label-sale,
+    .sidebar .block:not(.filter) .product-items:not(.product-items-names) .tt-label-location .tt-label-sale,
+    .tt-product.tt-view .tt-image-box .tt-label-location .tt-label-sale,
+    .tt-product-design02.tt-view .tt-image-box .tt-label-location .tt-label-sale
+    { background:<?php echo $temp ?>; }
+    @media (min-width: 1025px) {
+    .tt-product:not(.tt-view) .tt-image-box .tt-label-location .tt-label-sale,
+    .tt-product-design02:not(.tt-view) .tt-image-box .tt-label-location .tt-label-sale
+    { background:<?php echo $temp ?>; }
+    }
+    @media (max-width: 1024px) {
+    .tt-product:not(.tt-view) .tt-image-box .tt-label-location .tt-label-sale,
+    .tt-product-design02:not(.tt-view) .tt-image-box .tt-label-location .tt-label-sale
+    { background:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/label_featured',$store)): ?>
+    .tt-label-sale,
+    .sidebar .block:not(.filter) .product-items:not(.product-items-names) .tt-label-location .tt-label-featured,
+    .tt-product.tt-view .tt-image-box .tt-label-location .tt-label-featured,
+    .tt-product-design02.tt-view .tt-image-box .tt-label-location .tt-label-featured
+    { color:<?php echo $temp ?>; }
+    @media (min-width: 1025px) {
+    .tt-product:not(.tt-view) .tt-image-box .tt-label-location .tt-label-featured,
+    .tt-product-design02:not(.tt-view) .tt-image-box .tt-label-location .tt-label-featured
+    { color:<?php echo $temp ?>; }
+    }
+    @media (max-width: 1024px) {
+    .tt-product:not(.tt-view) .tt-image-box .tt-label-location .tt-label-featured,
+    .tt-product-design02:not(.tt-view) .tt-image-box .tt-label-location .tt-label-featured
+    { color:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/label_featured_bg',$store)): ?>
+    .tt-label-featured,
+    .sidebar .block:not(.filter) .product-items:not(.product-items-names) .tt-label-location .tt-label-featured,
+    .tt-product.tt-view .tt-image-box .tt-label-location .tt-label-featured,
+    .tt-product-design02.tt-view .tt-image-box .tt-label-location .tt-label-featured
+    { background:<?php echo $temp ?>; }
+    @media (min-width: 1025px) {
+    .tt-product:not(.tt-view) .tt-image-box .tt-label-location .tt-label-featured,
+    .tt-product-design02:not(.tt-view) .tt-image-box .tt-label-location .tt-label-featured
+    { background:<?php echo $temp ?>; }
+    }
+    @media (max-width: 1024px) {
+    .tt-product:not(.tt-view) .tt-image-box .tt-label-location .tt-label-featured,
+    .tt-product-design02:not(.tt-view) .tt-image-box .tt-label-location .tt-label-featured
+    { background:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/label_best',$store)): ?>
+    .tt-label-best,
+    .sidebar .block:not(.filter) .product-items:not(.product-items-names) .tt-label-location .tt-label-best,
+    .tt-product.tt-view .tt-image-box .tt-label-location .tt-label-best,
+    .tt-product-design02.tt-view .tt-image-box .tt-label-location .tt-label-best
+    { color:<?php echo $temp ?>; }
+    @media (min-width: 1025px) {
+    .tt-product:not(.tt-view) .tt-image-box .tt-label-location .tt-label-best,
+    .tt-product-design02:not(.tt-view) .tt-image-box .tt-label-location .tt-label-best
+    { color:<?php echo $temp ?>; }
+    }
+    @media (max-width: 1024px) {
+    .tt-product:not(.tt-view) .tt-image-box .tt-label-location .tt-label-best,
+    .tt-product-design02:not(.tt-view) .tt-image-box .tt-label-location .tt-label-best
+    { color:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/label_best_bg',$store)): ?>
+    .tt-label-best,
+    .sidebar .block:not(.filter) .product-items:not(.product-items-names) .tt-label-location .tt-label-best,
+    .tt-product.tt-view .tt-image-box .tt-label-location .tt-label-best,
+    .tt-product-design02.tt-view .tt-image-box .tt-label-location .tt-label-best
+    { background:<?php echo $temp ?>; }
+    @media (min-width: 1025px) {
+    .tt-product:not(.tt-view) .tt-image-box .tt-label-location .tt-label-best,
+    .tt-product-design02:not(.tt-view) .tt-image-box .tt-label-location .tt-label-best
+    { background:<?php echo $temp ?>; }
+    }
+    @media (max-width: 1024px) {
+    .tt-product:not(.tt-view) .tt-image-box .tt-label-location .tt-label-best,
+    .tt-product-design02:not(.tt-view) .tt-image-box .tt-label-location .tt-label-best
+    { background:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/mob_name',$store)): ?>
+    @media (max-width: 1024px) {
+    .tt-product:not(.tt-view) .tt-description .tt-title a,
+    .tt-product-design02:not(.tt-view) .tt-description .tt-title a
+    { color:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/mob_name_h',$store)): ?>
+    @media (max-width: 1024px) {
+    .tt-product:not(.tt-view) .tt-description .tt-title a:hover,
+    .tt-product-design02:not(.tt-view) .tt-description .tt-title a:hover
+    { color:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/mob_brand',$store)): ?>
+    @media (max-width: 1024px) {
+    .tt-product:not(.tt-view) .tt-description .tt-add-info li,
+    .tt-product-design02:not(.tt-view) .tt-description .tt-add-info li
+    { color:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/mob_add_btn_txt',$store)): ?>
+    @media (max-width: 1024px) {
+    .tt-product:not(.tt-view) .tt-description .tt-btn-addtocart,
+    .tt-product-design02:not(.tt-view) .tt-description .tt-btn-addtocart,
+    .tt-product:not(.tt-view) .tt-description .tt-btn-addtocart:before,
+    .tt-product-design02:not(.tt-view) .tt-description .tt-btn-addtocart:before
+    { color:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/mob_add_btn_txt_h',$store)): ?>
+    @media (max-width: 1024px) {
+    .tt-product:not(.tt-view) .tt-description .tt-btn-addtocart,
+    .tt-product-design02:not(.tt-view) .tt-description .tt-btn-addtocart,
+    .tt-product:not(.tt-view) .tt-description .tt-btn-addtocart:before,
+    .tt-product-design02:not(.tt-view) .tt-description .tt-btn-addtocart:before
+    { color:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/mob_add_btn_bg',$store)): ?>
+    @media (max-width: 1024px) {
+    .tt-product:not(.tt-view) .tt-description .tt-btn-addtocart,
+    .tt-product-design02:not(.tt-view) .tt-description .tt-btn-addtocart
+    { background:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/mob_add_btn_bg_h',$store)): ?>
+    @media (max-width: 1024px) {
+    .tt-product:not(.tt-view) .tt-description .tt-btn-addtocart:hover,
+    .tt-product-design02:not(.tt-view) .tt-description .tt-btn-addtocart:hover
+    { background:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/mob_sm_btns_txt',$store)): ?>
+    @media (max-width: 1024px) {
+    .tt-product:not(.tt-view) .tt-description .tt-btn-quickview,
+    .tt-product-design02:not(.tt-view) .tt-description .tt-btn-quickview,
+    .tt-product:not(.tt-view) .tt-description .action.towishlist,
+    .tt-product-design02:not(.tt-view) .tt-description .action.towishlist,
+    .tt-product:not(.tt-view) .tt-description .action.tocompare,
+    .tt-product-design02:not(.tt-view) .tt-description .action.tocompare
+    { color:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('products_listing/mob_sm_btns_txt_h',$store)): ?>
+    @media (max-width: 1024px) {
+    .tt-product:not(.tt-view) .tt-description .tt-btn-quickview:hover,
+    .tt-product-design02:not(.tt-view) .tt-description .tt-btn-quickview:hover,
+    .tt-product:not(.tt-view) .tt-description .action.towishlist:hover,
+    .tt-product-design02:not(.tt-view) .tt-description .action.towishlist:hover,
+    .tt-product:not(.tt-view) .tt-description .action.tocompare:hover,
+    .tt-product-design02:not(.tt-view) .tt-description .action.tocompare:hover
+    { color:<?php echo $temp ?>; }
+    }
+<?php endif; ?>
+<?php if($this->getColorOption('buttons_colors/border_radius',$store) != null): ?>
+    <?php $temp=$this->getColorOption('buttons_colors/border_radius',$store); ?>
+    .btn, button.action, .action.primary
+    {
+    -webkit-border-radius: <?php echo $temp ?>px;
+    -moz-border-radius: <?php echo $temp ?>px;
+    -ms-border-radius: <?php echo $temp ?>px;
+    border-radius: <?php echo $temp ?>px;
+    }
+    @media (min-width: 1025px) {
+    .tt-product:not(.tt-view) .tt-description .tt-btn-addtocart.thumbprod-button-bg,
+    .tt-product:not(.tt-view) .tt-description .tt-btn-addtocart {
+    -webkit-border-radius: <?php echo $temp ?>px;
+    -moz-border-radius: <?php echo $temp ?>px;
+    -ms-border-radius: <?php echo $temp ?>px;
+    border-radius: <?php echo $temp ?>px;
+    }
+    }
+    @media (min-width: 790px) {
+    .tt-back-to-top {
+    -webkit-border-radius: <?php echo $temp ?>px;
+    -moz-border-radius: <?php echo $temp ?>px;
+    -ms-border-radius: <?php echo $temp ?>px;
+    border-radius: <?php echo $temp ?>px;
+    }
+    }
+
+<?php endif; ?>
+<?php if($temp=$this->getColorOption('custom_css/css_lines',$store)): ?>
+    <?php echo $temp ?>
+<?php endif; ?>

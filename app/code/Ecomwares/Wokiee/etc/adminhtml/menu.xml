@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Ecomwares_Wokiee::modules" module="Ecomwares_Wokiee" title="Wokiee" sortOrder="0"
+             resource="Ecomwares_Wokiee::modules"/>
+        <add id="Ecomwares_Wokiee::module_settings" module="Ecomwares_Wokiee" title="Wokiee 1.0.2"
+             sortOrder="10" resource="Ecomwares_Wokiee::wokiee" parent="Ecomwares_Wokiee::modules"/>
+        <add id="Ecomwares_Wokiee::settings" module="Ecomwares_Wokiee" title="Settings"
+             sortOrder="10" resource="Ecomwares_Wokiee::settings" parent="Ecomwares_Wokiee::module_settings"
+             action="adminhtml/system_config/edit/section/wokiee_settings"/>
+        <add id="Ecomwares_Wokiee::colors" module="Ecomwares_Wokiee" title="Colors"
+             sortOrder="20" resource="Ecomwares_Wokiee::colors" parent="Ecomwares_Wokiee::module_settings"
+             action="adminhtml/system_config/edit/section/wokiee_colors"/>
+        <!--
+        <add id="Ecomwares_Wokiee::lic" module="Ecomwares_Wokiee" title="License"
+             sortOrder="25" resource="Ecomwares_Wokiee::lic" parent="Ecomwares_Wokiee::module_settings"
+             action="adminhtml/system_config/edit/section/wokiee_lic"/>
+             -->
+        <add id="Ecomwares_Wokiee::module_installation" module="Ecomwares_Wokiee" title="Install"
+             sortOrder="20" resource="Ecomwares_Wokiee::module_installation" parent="Ecomwares_Wokiee::modules"/>
+        <add id="Ecomwares_Wokiee::install" module="Ecomwares_Wokiee" title="Install Theme"
+             sortOrder="10" resource="Ecomwares_Wokiee::install" parent="Ecomwares_Wokiee::module_installation"
+             action="adminhtml/system_config/edit/section/wokiee_install"/>
+        <add id="Ecomwares_Wokiee::reset" module="Ecomwares_Wokiee" title="Install/Reset blocks/pages"
+             sortOrder="20" resource="Ecomwares_Wokiee::reset" parent="Ecomwares_Wokiee::module_installation"
+             action="adminhtml/system_config/edit/section/wokiee_install"/>
+    </menu>
+</config>

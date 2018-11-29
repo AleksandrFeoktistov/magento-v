@@ -1,0 +1,35 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * @var \Magento\Theme\Block\Html\Header\Logo $block
+ */
+$logo_size = '';
+$l_w = '';
+$l_h = '';
+$logo_width = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/header_settings/logo_width');
+$logo_height = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/header_settings/logo_height');
+if(!empty($logo_width) || !empty($logo_height)) {
+    if(!empty($logo_width)) {
+        $l_w = ' max-width:'.$logo_width.'px;';
+    }
+    if(!empty($logo_height)) {
+        $l_h = ' max-height:'.$logo_height.'px;';
+    }
+    $logo_size = ' style="'.$l_w.$l_h.'"';
+}
+?>
+<?php $storeName = $block->getThemeName() ? $block->getThemeName() : $block->getLogoAlt();?>
+<a class="tt-logo tt-logo-alignment" href="<?= $block->getUrl('') ?>" title="<?= /* @escapeNotVerified */ $storeName ?>">
+    <img src="<?= /* @escapeNotVerified */ $block->getLogoSrc() ?>"
+         alt="<?= /* @escapeNotVerified */ $block->getLogoAlt() ?>"
+         class="tt-retina"
+         <?= $logo_size; ?>
+    />
+</a>
+

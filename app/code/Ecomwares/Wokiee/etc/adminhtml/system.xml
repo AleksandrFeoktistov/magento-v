@@ -1,0 +1,1520 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="ecomwares_wokiee" translate="label" sortOrder="10">
+            <label>Wokiee 1.0.2</label>
+        </tab>
+        <section id="wokiee_settings" translate="label" type="text" sortOrder="10" showInDefault="1"
+                 showInWebsite="1" showInStore="1">
+            <label>Theme Settings</label>
+            <tab>ecomwares_wokiee</tab>
+            <resource>Ecomwares_Wokiee::config_wokiee</resource>
+            <group id="general" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Options</label>
+                <field id="show_load" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show site load animation</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="show_back_to_top" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Back To Top Button</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="boxed_mode" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Boxed Mode</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="rtl_mode" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>RTL Mode</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="promo_line" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Promo line</label>
+                <field id="promo_enable" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>This block is shown only on the home page</comment>
+                </field>
+                <field id="promo_txt" translate="label" type="textarea" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text</label>
+                </field>
+                <field id="promo_mode" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display mode of promo line</label>
+                    <source_model>Ecomwares\Wokiee\Model\Config\Source\PromoLine</source_model>
+                    <comment>Once - if closed will never showed again. Limited - will showed again after X days</comment>
+                </field>
+                <field id="promo_days" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Expires days</label>
+                    <depends>
+                        <field id="promo_mode">limited</field>
+                    </depends>
+                    <comment>Enter period of days. After the expiry of this period, the promo line will be displayed again</comment>
+                </field>
+            </group>
+            <group id="header_settings" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Header</label>
+                <field id="header" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Header variant</label>
+                    <source_model>Ecomwares\Wokiee\Model\Config\Source\Header</source_model>
+                </field>
+                <field id="menu_right" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Align Megamenu to Right Side</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="header">1</field>
+                    </depends>
+                </field>
+                <field id="menu_color" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>MegaMenu Row Color Scheme</label>
+                    <source_model>Ecomwares\Wokiee\Model\Config\Source\MenuColor</source_model>
+                    <depends>
+                        <field id="header">2</field>
+                    </depends>
+                </field>
+                <field id="menu_type" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>MegaMenu Hover Type</label>
+                    <source_model>Ecomwares\Wokiee\Model\Config\Source\MenuType</source_model>
+                    <depends>
+                        <field id="header">2</field>
+                        <field id="menu_color" separator=",">tt-color-scheme-01,tt-color-scheme-02</field>
+                    </depends>
+                </field>
+                <field id="header_color" translate="label" type="select" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Header Color Scheme</label>
+                    <source_model>Ecomwares\Wokiee\Model\Config\Source\Headercolor</source_model>
+                </field>
+                <field id="heading_logo" translate="label" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Logo Size</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="logo_width" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Logo Width</label>
+                </field>
+                <field id="logo_height" translate="label" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Logo Height</label>
+                </field>
+                <field id="heading_sticky_menu" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sticky Menu Settings</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="sticky_menu" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Sticky Menu</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="st_m_search" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Search</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="st_m_cart" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Shopping Cart</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="st_m_account" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Account Link</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="st_m_settings" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Languages and Currencies</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="heading_topline" translate="label" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Top Line Settings</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="topline" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Top Line</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="topline_mobile" translate="label" type="select" sortOrder="85" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Top Line on Mobile</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="topline_width" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Top Line Width</label>
+                    <source_model>Ecomwares\Wokiee\Model\Config\Source\Topline</source_model>
+                </field>
+                <field id="topline_color" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Top Line Color</label>
+                    <source_model>Ecomwares\Wokiee\Model\Config\Source\Toplinecolor</source_model>
+                </field>
+            </group>
+            <group id="footer_settings" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Footer</label>
+                <field id="footer" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Footer variant</label>
+                    <source_model>Ecomwares\Wokiee\Model\Config\Source\Footer</source_model>
+                </field>
+                <field id="logo_footer" translate="label" type="image" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Footer Logo</label>
+                    <comment>Upload logo image (JPG, PNG or GIF image)</comment>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media" scope_info="1">wokiee/f_logo</base_url>
+                    <upload_dir config="system/filesystem/media" scope_info="1">wokiee/f_logo</upload_dir>
+                </field>
+                <field id="footer_top" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Footer Top Spacer</label>
+                    <source_model>Ecomwares\Wokiee\Model\Config\Source\FooterTop</source_model>
+                </field>
+                <field id="footer_color" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Footer Color Scheme</label>
+                    <source_model>Ecomwares\Wokiee\Model\Config\Source\FooterColor</source_model>
+                </field>
+                <field id="footer_copyright" translate="label" type="textarea" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Footer copyright</label>
+                    <comment>Put here your custom copyright content. HTML tags a allowed.</comment>
+                </field>
+                <field id="heading_news" translate="label" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Newsletter settings</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="news_title" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Newsletter Title</label>
+                </field>
+                <field id="news_txt" translate="label" type="textarea" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Newsletter Text</label>
+                </field>
+                <field id="news_btn" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Newsletter Button Text</label>
+                </field>
+            </group>
+            <group id="link_socials" translate="label" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Socials Links</label>
+                <field id="soc_facebook" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Facebook</label>
+                    <comment>Type link here</comment>
+                </field>
+                <field id="soc_twitter" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Twitter</label>
+                    <comment>Type link here</comment>
+                </field>
+                <field id="soc_google" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Plus</label>
+                    <comment>Type link here</comment>
+                </field>
+                <field id="soc_instagram" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Instagram</label>
+                    <comment>Type link here</comment>
+                </field>
+                <field id="soc_pinterest" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Pinterest</label>
+                    <comment>Type link here</comment>
+                </field>
+            </group>
+            <group id="sidebar" translate="label" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Sidebar</label>
+                <field id="collapsible" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Collapsible Sidebar Blocks</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Sidebar blocks: Compare, Wishlist, Reorder, Account navigation</comment>
+                </field>
+                <field id="opened" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Blocks Opened by Default</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="collapsible">1</field>
+                    </depends>
+                </field>
+                <field id="layered_collapsible" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Collapsible Layered Navigation Filters</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Layered Navigation Filter Titles</comment>
+                </field>
+                <field id="layered_opened" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Filters Opened by Default</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="layered_collapsible">1</field>
+                    </depends>
+                </field>
+
+                <field id="heading_side" translate="label" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sidebar Product Blocks</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="side_new_prod" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>New Products Block</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="side_new_prod_title" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Block Title</label>
+                    <depends>
+                        <field id="side_new_prod">1</field>
+                    </depends>
+                </field>
+                <field id="side_new_prod_type" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select block type</label>
+                    <depends>
+                        <field id="side_new_prod">1</field>
+                    </depends>
+                    <source_model>Ecomwares\Wokiee\Model\Config\Source\CategoriesType</source_model>
+                </field>
+                <field id="side_new_prod_id" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Category ID</label>
+                    <depends>
+                        <field id="side_new_prod">1</field>
+                        <field id="side_new_prod_type">select</field>
+                    </depends>
+                    <comment>Put here Category ID to show new products from this category</comment>
+                </field>
+                <field id="side_new_prod_limit" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Products Limit</label>
+                    <depends>
+                        <field id="side_new_prod">1</field>
+                    </depends>
+                    <comment>Enter number of products to show</comment>
+                </field>
+                <field id="side_new_prod_shuf" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Shuffle Products</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="side_new_prod">1</field>
+                    </depends>
+                </field>
+
+                <field id="side_sp_prod" translate="label" type="select" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Specials Products Block</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="side_sp_prod_title" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Block Title</label>
+                    <depends>
+                        <field id="side_sp_prod">1</field>
+                    </depends>
+                </field>
+                <field id="side_sp_prod_type" translate="label" type="select" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select block type</label>
+                    <depends>
+                        <field id="side_sp_prod">1</field>
+                    </depends>
+                    <source_model>Ecomwares\Wokiee\Model\Config\Source\CategoriesType</source_model>
+                </field>
+                <field id="side_sp_prod_id" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Category ID</label>
+                    <depends>
+                        <field id="side_sp_prod">1</field>
+                        <field id="side_sp_prod_type">select</field>
+                    </depends>
+                    <comment>Put here Category ID to show new products from this category</comment>
+                </field>
+                <field id="side_sp_prod_limit" translate="label" type="text" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Products Limit</label>
+                    <depends>
+                        <field id="side_sp_prod">1</field>
+                    </depends>
+                    <comment>Enter number of products to show</comment>
+                </field>
+                <field id="side_sp_prod_shuf" translate="label" type="select" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Shuffle Products</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="side_sp_prod">1</field>
+                    </depends>
+                </field>
+
+                <field id="side_bs_prod" translate="label" type="select" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Bestseller Products Block</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="side_bs_prod_title" translate="label" type="text" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Block Title</label>
+                    <depends>
+                        <field id="side_bs_prod">1</field>
+                    </depends>
+                </field>
+                <field id="side_bs_prod_limit" translate="label" type="text" sortOrder="190" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Products Limit</label>
+                    <depends>
+                        <field id="side_bs_prod">1</field>
+                    </depends>
+                    <comment>Enter number of products to show</comment>
+                </field>
+                <field id="side_bs_prod_shuf" translate="label" type="select" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Shuffle Products</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="side_bs_prod">1</field>
+                    </depends>
+                </field>
+
+                <field id="side_ft_prod" translate="label" type="select" sortOrder="210" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Featured Products Block</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="side_ft_prod_title" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Block Title</label>
+                    <depends>
+                        <field id="side_ft_prod">1</field>
+                    </depends>
+                </field>
+                <field id="side_ft_prod_type" translate="label" type="select" sortOrder="230" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select block type</label>
+                    <depends>
+                        <field id="side_ft_prod">1</field>
+                    </depends>
+                    <source_model>Ecomwares\Wokiee\Model\Config\Source\CategoriesType</source_model>
+                </field>
+                <field id="side_ft_prod_id" translate="label" type="text" sortOrder="240" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Category ID</label>
+                    <depends>
+                        <field id="side_ft_prod">1</field>
+                        <field id="side_ft_prod_type">select</field>
+                    </depends>
+                    <comment>Put here Category ID to show new products from this category</comment>
+                </field>
+                <field id="side_ft_prod_limit" translate="label" type="text" sortOrder="250" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Products Limit</label>
+                    <depends>
+                        <field id="side_ft_prod">1</field>
+                    </depends>
+                    <comment>Enter number of products to show</comment>
+                </field>
+                <field id="side_ft_prod_shuf" translate="label" type="select" sortOrder="260" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Shuffle Products</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="side_ft_prod">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="product_labels" translate="label" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Product Labels</label>
+                <field id="label_new" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Label New</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="label_new_txt" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Label New text</label>
+                    <depends>
+                        <field id="label_new">1</field>
+                    </depends>
+                </field>
+                <field id="label_sale" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Label Sale</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="label_sale_txt" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Label Sale text</label>
+                    <depends>
+                        <field id="label_sale">1</field>
+                    </depends>
+                </field>
+                <field id="label_sale_discount" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Label Sale Discount</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="label_sale">1</field>
+                    </depends>
+                </field>
+                <field id="label_featured" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Label Featured</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="label_featured_txt" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Label Featured text</label>
+                    <depends>
+                        <field id="label_featured">1</field>
+                    </depends>
+                </field>
+                <field id="label_best" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Label Bestseller</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="label_best_txt" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Label Bestseller text</label>
+                    <depends>
+                        <field id="label_best">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="product_listing" translate="label" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Product Listing</label>
+                <field id="list_listing_mode" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Listing Mode</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="list_count" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Products Count in Title</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="list_hover" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Hover Image</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="list_label" translate="label" type="select" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Labels</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="list_countdown" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Special price countdown</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="list_quick" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show QuickView Button</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="list_compare" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Compare Button</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="list_wishlist" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Wishlist Button</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="list_brands" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Brands</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="list_rating" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Rating</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="product_view" translate="label" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Product View Page</label>
+                <field id="view_labels" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Product Labels</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="view_countdown" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Special price countdown</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="view_socials" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Socials Block</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="tabs_position" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Tabs Position</label>
+                    <source_model>Ecomwares\Wokiee\Model\Config\Source\TabsPosition</source_model>
+                </field>
+            </group>
+            <group id="newsletter" translate="label" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Newsletter popup</label>
+                <field id="popup" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Newsletter Popup</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="popup_home" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Only on Homepage</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="popup_texts" translate="label" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Popup promo text</label>
+                    <comment>Put here your html</comment>
+                </field>
+                <field id="popup_privacy" translate="label" type="textarea" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Popup privacy text</label>
+                    <comment>Put here your html</comment>
+                </field>
+                <field id="popup_socials" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Social Icons</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="popup_delay" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Delay</label>
+                    <source_model>Ecomwares\Wokiee\Model\Config\Source\Popup</source_model>
+                </field>
+                <field id="popup_animation" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Popup Animation</label>
+                    <source_model>Ecomwares\Wokiee\Model\Config\Source\PopupAnimation</source_model>
+                </field>
+            </group>
+            <group id="contacts" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Contact Us</label>
+                <field id="contact_static" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Contact Info static block</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="static_id" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Static Block ID</label>
+                    <depends>
+                        <field id="contact_static">1</field>
+                    </depends>
+                    <comment>Default static block ID: contacts_page_info</comment>
+                </field>
+                <field id="heading_gm" translate="label" sortOrder="25" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Google Map settings</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="google_map" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Google Map</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="gm_api" translate="label" type="text" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>API Key</label>
+                    <depends>
+                        <field id="google_map">1</field>
+                    </depends>
+                </field>
+                <field id="gm_coordinates" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Coordinates</label>
+                    <depends>
+                        <field id="google_map">1</field>
+                    </depends>
+                    <comment>Set map center coordinates. You can copy them from the google map link. Fox example: 40.6700, -73.9400</comment>
+                </field>
+                <field id="gm_zoom" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Zoom</label>
+                    <depends>
+                        <field id="google_map">1</field>
+                    </depends>
+                    <comment>Specify zoom level.</comment>
+                </field>
+                <field id="gm_scrollwheel" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Scrollwheel</label>
+                    <depends>
+                        <field id="google_map">1</field>
+                    </depends>
+                    <source_model>Ecomwares\Wokiee\Model\Config\Source\FalseTrue</source_model>
+                    <comment>If false, disables scrollwheel zooming on the map</comment>
+                </field>
+                <field id="gm_draggable" translate="label" type="select" sortOrder="62" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Draggable</label>
+                    <depends>
+                        <field id="google_map">1</field>
+                    </depends>
+                    <source_model>Ecomwares\Wokiee\Model\Config\Source\FalseTrue</source_model>
+                    <comment>If false, prevents the map from being dragged</comment>
+                </field>
+                <field id="gm_ui" translate="label" type="select" sortOrder="65" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Disable UI</label>
+                    <depends>
+                        <field id="google_map">1</field>
+                    </depends>
+                    <source_model>Ecomwares\Wokiee\Model\Config\Source\FalseTrue</source_model>
+                    <comment>Disable Google Map user interface elements</comment>
+                </field>
+                <field id="gm_styles" translate="label" type="textarea" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Styles</label>
+                    <depends>
+                        <field id="google_map">1</field>
+                    </depends>
+                    <comment>Google map styles. Can be taken from snazzymaps.com</comment>
+                </field>
+                <field id="gm_marker_title" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Marker title</label>
+                    <depends>
+                        <field id="google_map">1</field>
+                    </depends>
+                    <comment>Set title for marker </comment>
+                </field>
+                <field id="gm_marker_coordinates" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Marker coordinates</label>
+                    <depends>
+                        <field id="google_map">1</field>
+                    </depends>
+                    <comment>Coordinates. Set coordinates of marker. You can copy them from the google map link. Fox example: 40.6700, -73.9400</comment>
+                </field>
+                <field id="gm_marker_img" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Marker image</label>
+                    <depends>
+                        <field id="google_map">1</field>
+                    </depends>
+                    <comment>Marker image filename (e.g. marker.png) It should be placed in pub/media/wokiee/marker/ directory. </comment>
+                </field>
+            </group>
+        </section>
+
+        <section id="wokiee_colors" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <label>Theme Colors</label>
+            <tab>ecomwares_wokiee</tab>
+            <resource>Ecomwares_Wokiee::config_wokiee</resource>
+            <group id="general" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General (CSS update files)</label>
+                <field id="colors_enable" translate="label" type="select" sortOrder="0" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Show custom colors</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="button_update_css" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Cssgenerate\Cssupdate</frontend_model>
+                    <comment>click this after 'Save Config' if you changed colors. Be sure that exists folder pub/media/wokiee/ with 777 pemissions</comment>
+                </field>
+                <field id="body_bg" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Body background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="wrap_bg" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Wrapper background(Boxed Mode)</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="text" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Site text color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="theme_main" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Theme main color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Links color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_hover" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Links hover color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="borders_color" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Borders color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="invert_color" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Invert Dark colors</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+            </group>
+            <group id="buttons_colors" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Buttons</label>
+                <field id="heading_buttons1" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Default Button</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="text" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Text</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="text_hover" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Text:hover</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="background" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="background_hover" translate="label" type="text" sortOrder="40" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Background:hover</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+
+                <field id="heading_buttons2" translate="label" sortOrder="50" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Border Button</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="text_border" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Text</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="text_border_hover" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Text:hover</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="background_border" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Border Color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="background_border_hover" translate="label" type="text" sortOrder="90" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Background and Border:hover</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="heading_buttons3" translate="label" sortOrder="95" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Buttons Border Radius</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="border_radius" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Buttons Border Radius</label>
+                </field>
+            </group>
+            <group id="inputs" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Inputs colors</label>
+                <field id="label_color" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Label color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="input_text" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Input text</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="input_bg" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Input background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="input_border" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Input border</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+            </group>
+            <group id="promo_colors" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Promo line</label>
+                <field id="promo_bg" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Promo line background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="promo_text" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Promo line text</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="promo_link" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Promo line link color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="promo_close" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Promo line close button</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+            </group>
+            <group id="header_colors" translate="label" sortOrder="40" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Header</label>
+                <field id="heading_top" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Top Line</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="top_bg" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Top line background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="top_text" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Top line text</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="top_icons" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Top line icons</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="top_socials" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Top line socials</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="top_socials_hover" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Top line socials hover</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="heading_desktop" translate="label" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Desktop Header</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="icons_color" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dropdown icons color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="icons_color_hover" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dropdown icons hover color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="icons_drop" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dropdown shape background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="icons_drop_link" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dropdown shape link</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="icons_drop_link_h" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dropdown shape link hover</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="cart_b_bg" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Shopping cart badge background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="cart_b_color" translate="label" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Shopping cart badge text</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="search_text" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Search dropdown text</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="search_input" translate="label" type="text" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Search dropdown input text</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="search_btn" translate="label" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Search button color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="search_btn_hover" translate="label" type="text" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Search button hover color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="sticky_bg" translate="label" type="text" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sticky header background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="heading_mobile" translate="label" sortOrder="190" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Mobile Header</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="menu_icon" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Menu icon color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="menu_icon_h" translate="label" type="text" sortOrder="210" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Menu icon hover color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="m_shape_bg" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Mobile settings shape background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="m_shape_link" translate="label" type="text" sortOrder="230" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Mobile settings shape link</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="m_shape_link_h" translate="label" type="text" sortOrder="240" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Mobile settings shape link hover</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="m_search_bg" translate="label" type="text" sortOrder="250" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Mobile search shape background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="m_sticky" translate="label" type="text" sortOrder="260" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Mobile sticky background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+            </group>
+            <group id="megamenu" translate="label" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Megamenu</label>
+                <field id="links_1_level" translate="label" type="text" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Links 1 level</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_1_level_hover" translate="label" type="text" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Links 1 level hover</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_1_level_bg" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Links 1 Background Hover</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                    <comment>For "Header2" Hover Type 2</comment>
+                </field>
+                <field id="links_2_level" translate="label" type="text" sortOrder="40" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Links 2 level</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_2_level_hover" translate="label" type="text" sortOrder="50" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Links 2 level hover</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_3_level_bg" translate="label" type="text" sortOrder="60" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Links 3 level background shape</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_3_level" translate="label" type="text" sortOrder="70" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Links 3 level</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_3_level_hover" translate="label" type="text" sortOrder="80" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Links 3 level hover</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_3_level_arrow" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Links 3 arrow</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="label_color" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Label text</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="label_bg" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Label background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="dropdown_bg" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Dropdown shape background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="heading_megamenu" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Simple Menu</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="links_simple_text" translate="label" type="text" sortOrder="140" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Text</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_simple_text_hover" translate="label" type="text" sortOrder="150" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Text hover</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_simple_background" translate="label" type="text" sortOrder="160" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Background Simple Shape</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+            </group>
+            <group id="mobile_menu" translate="label" sortOrder="60" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Mobile menu</label>
+                <field id="shape_bg" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Background shape</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_color" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Links color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_color_active" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Links color active</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="arrow_color" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Arrow color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="border_close" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Border close shape</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="close_color" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Close link color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+            </group>
+            <group id="footer_colors" translate="label" sortOrder="70" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Footer</label>
+                <field id="heading_desktop" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Desktop</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="back_bg" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Back to top background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="back_bg_hover" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Back to top hover background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="copy_bg" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Copyright row background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="copy_text" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Copyright row text</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="cols_bg" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Columns row background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="cols_title" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Columns title</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="cols_link" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Columns links</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="cols_link_h" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Columns links hover</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="cols_text" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Columns text</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="cols_label" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Contacts block labels</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="newsletter_bg" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Newsletter row background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="newsletter_label" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Newsletter label</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="socials_link" translate="label" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Socials link</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="socials_link_h" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Socials link hover</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="heading_mobile" translate="label" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Mobile</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="accordion_bg" translate="label" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Accordion block background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="accordion_title" translate="label" type="text" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Accordion block title</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="accordion_border" translate="label" type="text" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Accordion block border</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="accordion_icon" translate="label" type="text" sortOrder="190" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Accordion block icon</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="accordion_link" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Accordion block icon</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="accordion_link_h" translate="label" type="text" sortOrder="210" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Accordion block icon</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="soc_l" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Socials link</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="soc_l_h" translate="label" type="text" sortOrder="230" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Socials link hover</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="copy_m_bg" translate="label" type="text" sortOrder="240" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Copyright row background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="copy_m_text" translate="label" type="text" sortOrder="250" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Copyright text</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="back_m_bg" translate="label" type="text" sortOrder="260" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Back to top background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="back_m_text" translate="label" type="text" sortOrder="270" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Back to top text</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+            </group>
+            <group id="captions_colors" translate="label" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Page Titles and Captions</label>
+                <field id="page_title" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Page title color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="side_title" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sidebar title color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="side_title_h" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sidebar title hover color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+            </group>
+            <group id="breadcrumbs_colors" translate="label" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Breadcrumbs</label>
+                <field id="shape_bg" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Breadcrumbs background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Links color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="links_h" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Links hover color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="current" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Current page</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="separator" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Separator color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+            </group>
+            <group id="products_listing" translate="label" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Products Listing</label>
+                <field id="desktop_head" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Desktop</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="shape_bg" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product shape bg</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="name" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product name</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="name_h" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product name hover</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="brand" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product brand</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="rating" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Rating star default</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="rating_a" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Rating star active</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="add_btn_txt" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Add to cart text color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="add_btn_txt_h" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Add to cart text hover color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="add_btn_bg" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Add to cart background color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="add_btn_bg_h" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Add to cart background hover color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="regular_price" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Regular Price</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="special_price" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Special Price</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="old_price" translate="label" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Old Price</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="count_bg" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Countdown background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="count_color" translate="label" type="text" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Countdown text</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="sm_btns_txt" translate="label" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Wishlist/Compare/QuickView buttons text</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="sm_btns_txt_h" translate="label" type="text" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Wishlist/Compare/QuickView buttons text hover</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="sm_btns_bg" translate="label" type="text" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Wishlist/Compare/QuickView buttons background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="sm_btns_bg_h" translate="label" type="text" sortOrder="190" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Wishlist/Compare/QuickView buttons background hover</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="label_new" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Label NEW text</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="label_new_bg" translate="label" type="text" sortOrder="210" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Label NEW background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="label_sale" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Label SALE text</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="label_sale_bg" translate="label" type="text" sortOrder="230" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Label SALE background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="label_featured" translate="label" type="text" sortOrder="240" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Label FEATURED text</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="label_featured_bg" translate="label" type="text" sortOrder="250" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Label FEATURED background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="label_best" translate="label" type="text" sortOrder="260" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Label BESTSELLER text</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="label_best_bg" translate="label" type="text" sortOrder="270" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Label BESTSELLER background</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="mobile_head" translate="label" sortOrder="280" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Mobile</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="mob_name" translate="label" type="text" sortOrder="290" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product name</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="mob_name_h" translate="label" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product name hover</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="mob_brand" translate="label" type="text" sortOrder="310" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product brand</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="mob_add_btn_txt" translate="label" type="text" sortOrder="320" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Add to cart text color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="mob_add_btn_txt_h" translate="label" type="text" sortOrder="330" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Add to cart text hover color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="mob_add_btn_bg" translate="label" type="text" sortOrder="340" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Add to cart background color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="mob_add_btn_bg_h" translate="label" type="text" sortOrder="350" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Add to cart background hover color</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="mob_sm_btns_txt" translate="label" type="text" sortOrder="360" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Wishlist/Compare/QuickView buttons text</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+                <field id="mob_sm_btns_txt_h" translate="label" type="text" sortOrder="370" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Wishlist/Compare/QuickView buttons text hover</label>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Color</frontend_model>
+                </field>
+            </group>
+            <group id="custom_css" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Custom CSS</label>
+                <field id="css_lines" translate="label" type="textarea" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom styles</label>
+                    <comment>Put here your custom CSS</comment>
+                </field>
+            </group>
+        </section>
+
+        <section id="wokiee_install" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <label>Theme Install</label>
+            <tab>ecomwares_wokiee</tab>
+            <resource>Ecomwares_Wokiee::config_wokiee</resource>
+            <group id="install_theme" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Install Theme</label>
+                <field id="button_install_theme" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Install\Theme</frontend_model>
+                    <comment>Automatically loads theme static blocks/pages and default layout</comment>
+                </field>
+            </group>
+            <group id="button_install_blocks" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Install/Reset Cms Blocks</label>
+                <field id="button_load_new_blocks" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Staticblocks\Loadnew</frontend_model>
+                </field>
+                <field id="button_rewrite_blocks" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Staticblocks\Rewrite</frontend_model>
+                </field>
+            </group>
+            <group id="button_install_pages" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Install/Reset Cms Pages</label>
+                <field id="button_load_new_pages" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Staticpages\Loadnew</frontend_model>
+                </field>
+                <field id="button_rewrite_pages" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Staticpages\Rewrite</frontend_model>
+                </field>
+            </group>
+
+            <group id="button_layouts" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Layouts</label>
+                <field id="button_load_layout_test1" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 1</button_label>
+                    <attribute type="skin_xml">layout1</attribute>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test2" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 2</button_label>
+                    <attribute type="skin_xml">layout2</attribute>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test3" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 3</button_label>
+                    <attribute type="skin_xml">layout3</attribute>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test4" translate="label" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 4</button_label>
+                    <attribute type="skin_xml">layout4</attribute>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test5" translate="label" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 5</button_label>
+                    <attribute type="skin_xml">layout5</attribute>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test6" translate="label" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 6</button_label>
+                    <attribute type="skin_xml">layout6</attribute>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test7" translate="label" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 7</button_label>
+                    <attribute type="skin_xml">layout7</attribute>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test8" translate="label" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 8</button_label>
+                    <attribute type="skin_xml">layout8</attribute>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test9" translate="label" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 9</button_label>
+                    <attribute type="skin_xml">layout9</attribute>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test10" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 10</button_label>
+                    <attribute type="skin_xml">layout10</attribute>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test11" translate="label" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 11</button_label>
+                    <attribute type="skin_xml">layout11</attribute>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test12" translate="label" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 12</button_label>
+                    <attribute type="skin_xml">layout12</attribute>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test13" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 13</button_label>
+                    <attribute type="skin_xml">layout13</attribute>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test14" translate="label" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 14</button_label>
+                    <attribute type="skin_xml">layout14</attribute>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test15" translate="label" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 15</button_label>
+                    <attribute type="skin_xml">layout15</attribute>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test16" translate="label" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 16</button_label>
+                    <attribute type="skin_xml">layout16</attribute>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test17" translate="label" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 17</button_label>
+                    <attribute type="skin_xml">layout17</attribute>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_layout_test18" translate="label" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Layout 18</button_label>
+                    <attribute type="skin_xml">layout18</attribute>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+            </group>
+
+            <group id="button_demos" translate="label" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Skins</label>
+                <field id="button_load_skin_test1" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Skin 1</button_label>
+                    <attribute type="skin_xml">skin1</attribute>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_skin_test2" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Skin 2</button_label>
+                    <attribute type="skin_xml">skin2</attribute>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_skin_test3" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Skin 3</button_label>
+                    <attribute type="skin_xml">skin3</attribute>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_skin_test4" translate="label" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Skin 4</button_label>
+                    <attribute type="skin_xml">skin4</attribute>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_skin_test5" translate="label" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Skin 5</button_label>
+                    <attribute type="skin_xml">skin5</attribute>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+                <field id="button_load_skin_test6" translate="label" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Skin 6</button_label>
+                    <attribute type="skin_xml">skin6</attribute>
+                    <frontend_model>Ecomwares\Wokiee\Block\System\Config\Button\Skins\Load</frontend_model>
+                </field>
+            </group>
+
+        </section>
+
+        <!--
+        <section id="wokiee_lic" translate="label" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Theme License</label>
+            <tab>ecomwares_wokiee</tab>
+            <resource>Ecomwares_Wokiee::config_wokiee</resource>
+            <group id="license" translate="label" sortOrder="100" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Activate your license</label>
+                <field id="lic_code" translate="label" type="password" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Purchase Code</label>
+                </field>
+                <field id="status" translate="label" type="hidden" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Status</label>
+                </field>
+            </group>
+        </section>
+        -->
+    </system>
+</config>

@@ -1,0 +1,32 @@
+<!--@subject An API request to BlueSnap has resulted in an error @-->
+<!--@vars
+{"store url=\"\"":"Store Url"}
+@-->
+<!--@styles
+@-->
+{{template config_path="design/email/header_template"}}
+<table>
+    <tr class="email-intro">
+        <td>
+            <p>An error has occurred while attempted to make an API request to the BlueSnap payment API</p>
+
+            <h2>Request Details:</h2>
+
+            <ul style="list-style-type: none">
+                <li><strong>URL</strong><pre>{{var request_url}}</pre></li>
+                <li><strong>Method</strong><pre>{{var request_method}}</pre></li>
+                <li><strong>Headers</strong><pre>{{var request_headers}}</pre></li>
+                <li><strong>XML</strong><pre>{{var request_xml}}</pre></li>
+            </ul>
+
+            <h2>Response Details:</h2>
+
+            <ul style="list-style-type: none">
+                <li><strong>Headers</strong><pre>{{var response_headers}}</pre></li>
+                <li><strong>XML</strong><pre>{{var response_xml}}</pre></li>
+            </ul>
+
+        </td>
+    </tr>
+</table>
+{{template config_path="design/email/footer_template"}}

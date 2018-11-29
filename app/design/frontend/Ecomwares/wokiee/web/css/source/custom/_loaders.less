@@ -1,0 +1,23 @@
+._block-content-loading {
+  position: relative;
+}
+.loading-mask {
+  background: rgba(255,255,255,0.8);
+  position: absolute;
+  z-index: 8;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  .loader {
+    img {
+      position: static !important;
+    }
+  }
+}

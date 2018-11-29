@@ -1,0 +1,19 @@
+<?php
+$_menu = $block->getHtml('', '', 0);
+$ys_helper = $this->helper('Ecomwares\Wkmegamenu\Helper\Data');
+$animation = $ys_helper->getSystemValue('ys_megamenu/menu_general/animation_type');
+?>
+<nav class="TonyM TonyM--header"
+     data-tm-dir="row"
+     data-tm-mob="true"
+     data-tm-cont=".tt-header-holder"
+     data-tm-anm="<?php echo $animation; ?>">
+    <ul class="TonyM__panel">
+        <li class="TonyM__close">
+            <a href="#"><?= /* @escapeNotVerified */ __('Close') ?></a>
+        </li>
+        <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('wk_megamenu_left')->toHtml();?>
+        <?php echo $_menu;  ?>
+        <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('wk_megamenu_right')->toHtml();?>
+    </ul>
+</nav>

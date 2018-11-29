@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="payment_method_assign_data_bluesnap_hostedfields">
+        <observer name="bluesnap_gateway_data_assign" instance="Bluesnap\Payment\Observer\DataAssignObserver" />
+    </event>
+    <event name="checkout_multishipping_refund_all">
+        <observer name="bluesnap_checkout_multishipping_refund_all" instance="Bluesnap\Payment\Observer\MultishippingRefundAll" />
+    </event>
+    <event name="controller_action_predispatch_checkout">
+        <observer name="bluesnap_controller_action_predispatch_checkout" instance="Bluesnap\Payment\Observer\FraudSessionIdSetter" />
+    </event>
+</config>

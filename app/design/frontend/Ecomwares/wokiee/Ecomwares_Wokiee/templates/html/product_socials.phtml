@@ -1,0 +1,27 @@
+<?php
+$config = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/link_socials');
+$view_socials = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/product_view/view_socials');
+?>
+<?php if($view_socials): ?>
+<div class="container-indent wrapper-social-icon">
+    <div class="container">
+        <ul class="tt-social-icon justify-content-center">
+            <?php if($config['soc_facebook']): ?>
+                <li><a class="icon-g-64" target="_blank" href="<?= $config['soc_facebook']; ?>"></a></li>
+            <?php endif ?>
+            <?php if($config['soc_twitter']): ?>
+                <li><a class="icon-h-58" target="_blank" href="<?= $config['soc_twitter']; ?>"></a></li>
+            <?php endif ?>
+            <?php if($config['soc_google']): ?>
+                <li><a class="icon-g-66" target="_blank" href="<?= $config['soc_google']; ?>"></a></li>
+            <?php endif ?>
+            <?php if($config['soc_instagram']): ?>
+                <li><a class="icon-g-67" target="_blank" href="<?= $config['soc_instagram']; ?>"></a></li>
+            <?php endif ?>
+            <?php if($config['soc_pinterest']): ?>
+                <li><a class="icon-g-70" target="_blank" href="<?= $config['soc_pinterest']; ?>"></a></li>
+            <?php endif ?>
+        </ul>
+    </div>
+</div>
+<?php endif ?>

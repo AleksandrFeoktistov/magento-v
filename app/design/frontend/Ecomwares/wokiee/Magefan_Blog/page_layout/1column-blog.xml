@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
+    <update handle="1column"/>
+
+    <referenceContainer name="main.content.container" htmlClass="container container-fluid-custom-mobile-padding">
+        <container name="main.blog.center" htmlTag="div" htmlClass="row justify-content-center">
+            <container name="main.blog.grid" htmlTag="div" htmlClass="col-xs-12 col-md-10 col-lg-8 col-md-auto" />
+        </container>
+    </referenceContainer>
+
+    <move element="columns.top" destination="main.blog.grid" before="-" />
+    <move element="main" destination="main.blog.grid"/>
+
+</layout>

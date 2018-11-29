@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="checkout_cart_item_renderers"/>
+
+    <referenceContainer name="checkout.cart.container" htmlClass="cart-container row">
+        <referenceContainer name="cart.summary" label="Cart Summary Container" htmlTag="div" htmlClass="cart-summary col-sm-12 col-xl-4">
+            <container name="checkout.cart.totals.wrapper" htmlTag="div" htmlClass="tt-shopcart-wrapper" />
+        </referenceContainer>
+    </referenceContainer>
+
+    <move element="cart.summary" destination="checkout.cart.container" after="-"/>
+    <move element="checkout.cart.form" destination="checkout.cart.container" before="-"/>
+    <move element="checkout.cart.totals.wrapper" destination="cart.summary" before="-"/>
+
+    <move element="checkout.cart.shipping" destination="checkout.cart.totals.wrapper" before="-"/>
+    <move element="checkout.cart.coupon" destination="checkout.cart.totals.wrapper" after="checkout.cart.shipping"/>
+    <move element="checkout.cart.totals.container" destination="checkout.cart.totals.wrapper" after="checkout.cart.coupon"/>
+    <move element="checkout.cart.methods.bottom" destination="checkout.cart.totals.wrapper" after="checkout.cart.totals.container"/>
+
+    <referenceContainer name="checkout.cart.summary.title" remove="1"/>
+
+</page>

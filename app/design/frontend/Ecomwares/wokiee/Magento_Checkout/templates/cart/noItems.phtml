@@ -1,0 +1,19 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+// @codingStandardsIgnoreFile
+/**  @var $block \Magento\Checkout\Block\Cart */
+?>
+<div class="tt-empty-cart">
+    <?= $block->getChildHtml('checkout_cart_empty_widget') ?>
+    <span class="tt-icon icon-f-39"></span>
+    <p><?= /* @escapeNotVerified */ __('You have no items in your shopping cart.') ?></p>
+    <div class="btn_continue_shopping">
+        <?php /* @escapeNotVerified */ echo __('<a href="%1">Continue shopping</a>',
+            $block->escapeUrl($block->getContinueShoppingUrl())) ?>
+    </div>
+    <?= $block->getChildHtml('shopping.cart.table.after') ?>
+</div>
+

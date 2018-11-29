@@ -1,0 +1,113 @@
+<div data-bind="attr: {class: 'payment-method payment-method-' + getCode()}, css: {'_active': isActive()}">
+    <div class="payment-method-title field choice">
+        <input type="radio"
+               name="payment[method]"
+               class="radio"
+               data-bind="attr: {'id': getCode()}, value: getCode(), checked: isChecked, click: selectPaymentMethod, visible: isRadioButtonVisible()"/>
+        <label class="label" data-bind="attr: {'for': getCode()}">
+            <span data-bind="text: getTitle()"></span>
+        </label>
+    </div>
+    <div class="payment-method-content">
+        <!-- ko foreach: getRegion('messages') -->
+        <!-- ko template: getTemplate() --><!-- /ko -->
+        <!--/ko-->
+        <div class="payment-method-billing-address">
+            <!-- ko foreach: $parent.getRegion(getBillingAddressFormName()) -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        </div>
+        <form class="form" data-bind="attr: {'id': getCode() + '-form'}, visible: creditCardFormVisible()">
+            <fieldset data-bind="attr: {class: 'fieldset payment items ccard ' + getCode(), id: 'payment_form_' + getCode()}">
+                <legend class="legend">
+                    <span><!-- ko i18n: 'Credit Card Information'--><!-- /ko --></span>
+                </legend>
+                <br>
+                <div class="validation-advice validation-failed" data-bind="visible: !underSSL()">
+                    <!-- ko i18n: 'This payment method requires your website to have a valid SSL certificate'--><!-- /ko -->
+                </div>
+
+                <div class="field number required" data-bind="visible: underSSL()">
+                    <label data-bind="attr: {for: getCode() + '_cc_number'}" class="label">
+                        <span><!-- ko i18n: 'Credit Card Number'--><!-- /ko --></span>
+                    </label>
+                    <div class="control bluesnap-hosted-control card-number">
+						<div class="ccn" data-bluesnap="ccn"></div>
+						<div class="cctype">
+                            <img id="cctype-icon" data-bind="attr: {src: card().src, alt: card().alt}"/>
+                        </div>
+                    </div>
+					<div style="display: none" id="ccn-validation-empty" class="bluesnap-hosted-validation-msg invalid"><!-- ko i18n: 'Credit Card Number is a required field'--><!-- /ko --></div>
+					<div style="display: none" id="ccn-validation-invalid" class="bluesnap-hosted-validation-msg invalid"><!-- ko i18n: 'Invalid Credit Card Number'--><!-- /ko --></div>
+                </div>
+                <div class="field number required" data-bind="visible: underSSL()">
+                    <label data-bind="attr: {for: getCode() + '_expiration'}" class="label">
+                        <span><!-- ko i18n: 'Expiration Date'--><!-- /ko --></span>
+                    </label>
+                    <div class="control bluesnap-hosted-control exp">
+                        <div data-bluesnap="exp"></div>
+                    </div>
+					<div style="display: none" id="exp-validation-empty" class="bluesnap-hosted-validation-msg invalid"><!-- ko i18n: 'Expiry Date is a required field'--><!-- /ko --></div>
+					<div style="display: none" id="exp-validation-invalid" class="bluesnap-hosted-validation-msg invalid"><!-- ko i18n: 'Invalid Expiry Date'--><!-- /ko --></div>
+                </div>
+                <div class="field number required" data-bind="visible: underSSL()">
+                    <label data-bind="attr: {for: getCode() + '_cvv'}" class="label">
+                        <span><!-- ko i18n: 'CVV'--><!-- /ko --></span>
+                    </label>
+	                    <div class="control bluesnap-hosted-control cvv _with-tooltip">
+	                        <div data-bluesnap="cvv"></div>
+							<div class="field-tooltip toggle">
+		                        <span class="field-tooltip-action action-cvv"
+		                              tabindex="0"
+		                              data-toggle="dropdown"
+		                              data-bind="attr: {title: $t('What is this?')}, mageInit: {'dropdown':{'activeClass': '_active'}}">
+		                            <span><!-- ko i18n: 'What is this?'--><!-- /ko --></span>
+		                        </span>
+		                        <div class="field-tooltip-content"
+		                             data-target="dropdown"
+		                             data-bind="html: getCvvImageHtml()">
+								</div>
+	                    	</div>
+	                    </div>
+					<div style="display: none" id="cvv-validation-empty" class="bluesnap-hosted-validation-msg invalid"><!-- ko i18n: 'CVV is a required field'--><!-- /ko --></div>
+					<div style="display: none" id="cvv-validation-invalid" class="bluesnap-hosted-validation-msg invalid"><!-- ko i18n: 'Invalid CVV'--><!-- /ko --></div>
+                </div>
+                <div class="field number required" data-bind="visible: underSSL() && isCustomerLoggedIn && isVaultEnabled">
+                    <input type="checkbox"
+                           data-bind="attr: {
+                                    'id': getCode() + '_save_card',
+                                    'name': getCode() + '_save_card',
+                                    'value': 1
+                                    }, checked: saveCard" />
+
+                    <label data-bind="attr: {'for': getCode() + '_save_card' }" >
+                        <!-- ko i18n: 'Save your card for later use?'--><!-- /ko -->
+                    </label>
+                </div>
+			</fieldset>
+        </form>
+
+        <div data-bind="visible: showRetryInit()">
+            <a href="#" data-bind="click: function() {window.location.reload();}">Reload payment fields</a>
+        </div>
+        <div class="checkout-agreements-block">
+            <!-- ko foreach: $parent.getRegion('before-place-order') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        </div>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button class="action primary checkout"
+                        type="submit"
+                        data-bind="
+                        click: placeOrderClick,
+                        visible: underSSL(),
+                        attr: {title: $t('Place Order'), disabled: !canPlaceOrder()},
+                        css: {disabled: !isPlaceOrderActionAllowed()}
+                ">
+                    <span data-bind="i18n: 'Place Order'"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <bluesnap_hostedfields>
+                <sandbox_api_password backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
+                <production_api_password backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
+                <model>BluesnapHostedFieldsFacade</model>
+                <title>Credit/Debit Cards</title>
+                <mode>sandbox</mode>
+                <payment_action>authorize_capture</payment_action>
+                <active>0</active>
+                <is_gateway>1</is_gateway>
+                <can_use_checkout>1</can_use_checkout>
+                <can_authorize>1</can_authorize>
+                <can_capture>1</can_capture>
+                <can_capture_partial>0</can_capture_partial>
+                <can_authorize_vault>1</can_authorize_vault>
+                <can_capture_vault>1</can_capture_vault>
+                <can_use_internal>1</can_use_internal>
+                <can_refund_partial_per_invoice>1</can_refund_partial_per_invoice>
+                <can_refund>1</can_refund>
+                <can_void>1</can_void>
+                <can_cancel>1</can_cancel>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <privateInfoKeys>avs_response_code_zip,avs_response_code_address,avs_response_code_name,last_transaction_id</privateInfoKeys>
+                <paymentInfoKeys>cc_type,cc_expiry,cc_last_4_digits,cvv_response_code,avs_response_code_zip,avs_response_code_address,avs_response_code_name,last_transaction_id</paymentInfoKeys>
+                <sandbox_ipn_whitelist>209.128.93.232,62.216.234.196,38.99.111.50,38.99.111.150</sandbox_ipn_whitelist>
+                <production_ipn_whitelist>62.216.234.216,209.128.93.254,209.128.93.98,38.99.111.60,38.99.111.160</production_ipn_whitelist>
+            </bluesnap_hostedfields>
+            <bluesnap_vault>
+                <model>BluesnapVaultFacade</model>
+                <title>Stored Cards (Bluesnap)</title>
+                <active>1</active>
+            </bluesnap_vault>
+        </payment>
+    </default>
+</config>

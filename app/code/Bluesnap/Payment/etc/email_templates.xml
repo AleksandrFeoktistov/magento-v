@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="bluesnap_failed_multiaddress_template" label="Failed Multi Address Notification" file="failed_multi_address.html" type="html" module="Bluesnap_Payment" area="frontend"/>
+    <template id="bluesnap_debug_error_email_template" label="Error Email Debug Notification" file="debug_error_email.html" type="html" module="Bluesnap_Payment" area="frontend"/>
+</config>

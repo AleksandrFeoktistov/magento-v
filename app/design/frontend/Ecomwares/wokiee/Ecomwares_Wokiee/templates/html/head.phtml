@@ -1,0 +1,15 @@
+<?php
+    /* Head File */
+    $tm_helper = $this->helper('Ecomwares\Wokiee\Helper\Data');
+    $css_enable = $tm_helper->getSystemValue('wokiee_colors/general/colors_enable');
+    $rtl_mode = $tm_helper->getSystemValue('wokiee_settings/general/rtl_mode');
+?>
+<?php if($css_enable): ?>
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo $tm_helper->getCssFile()?>">
+<?php endif ?>
+
+<?php if($rtl_mode): ?>
+    <!--<link rel="stylesheet" type="text/css" media="all" href="<?php echo $block->getViewFileUrl('css'); ?>/style-rtl.css">-->
+    <link rel="stylesheet" type="text/css" media="all" href="<?php echo $tm_helper->getMediaUrl(); ?>rtl.css">
+<?php endif ?>
+

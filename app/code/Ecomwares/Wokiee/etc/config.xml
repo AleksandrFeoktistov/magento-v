@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <wokiee_settings>
+            <general>
+                <show_load>1</show_load>
+                <show_back_to_top>1</show_back_to_top>
+                <boxed_mode>0</boxed_mode>
+                <rtl_mode>0</rtl_mode>
+            </general>
+            <promo_line>
+                <promo_enable>1</promo_enable>
+                <promo_txt><![CDATA[20% STUDENT DISCOUNT PLUS FREE NEXT DAY DELIVEY, EXCLUDES SALE. <a href="#">DETAILS</a>]]></promo_txt>
+                <promo_mode>once</promo_mode>
+                <promo_days>5</promo_days>
+            </promo_line>
+            <header_settings>
+                <header>1</header>
+                <menu_right>0</menu_right>
+                <menu_color>default</menu_color>
+                <menu_type>tt-hover-01</menu_type>
+                <header_color>none</header_color>
+                <sticky_menu>1</sticky_menu>
+                <st_m_search>1</st_m_search>
+                <st_m_cart>1</st_m_cart>
+                <st_m_account>1</st_m_account>
+                <st_m_settings>1</st_m_settings>
+                <topline>1</topline>
+                <topline_mobile>0</topline_mobile>
+                <topline_width>container</topline_width>
+                <topline_color>tt-color-scheme-01</topline_color>
+            </header_settings>
+            <footer_settings>
+                <footer>2</footer>
+                <footer_top>none</footer_top>
+                <footer_color>light</footer_color>
+                <footer_copyright><![CDATA[&copy; Wokiee 2018. All Rights Reserved]]></footer_copyright>
+                <news_title><![CDATA[BE IN TOUCH WITH US:]]></news_title>
+                <news_txt><![CDATA[Sign up for our e-mail and be the first who know our special offers! Furthermore, we will give a 15% discount on the next order after you sign up.]]></news_txt>
+                <news_btn><![CDATA[JOIN US]]></news_btn>
+            </footer_settings>
+            <link_socials>
+                <soc_facebook><![CDATA[http://www.facebook.com/]]></soc_facebook>
+                <soc_twitter><![CDATA[http://www.twitter.com/]]></soc_twitter>
+                <soc_google><![CDATA[http://www.google.com/]]></soc_google>
+                <soc_instagram><![CDATA[https://instagram.com/]]></soc_instagram>
+                <soc_pinterest><![CDATA[https://www.pinterest.de/]]></soc_pinterest>
+            </link_socials>
+            <sidebar>
+                <collapsible>1</collapsible>
+                <opened>1</opened>
+                <layered_collapsible>1</layered_collapsible>
+                <layered_opened>0</layered_opened>
+            </sidebar>
+            <product_labels>
+                <label_new>1</label_new>
+                <label_new_txt><![CDATA[New]]></label_new_txt>
+                <label_sale>1</label_sale>
+                <label_sale_txt><![CDATA[Sale]]></label_sale_txt>
+                <label_sale_discount>1</label_sale_discount>
+                <label_featured>1</label_featured>
+                <label_featured_txt><![CDATA[Featured]]></label_featured_txt>
+                <label_best>1</label_best>
+                <label_best_txt><![CDATA[Bestseller]]></label_best_txt>
+            </product_labels>
+            <product_listing>
+                <list_listing_mode>1</list_listing_mode>
+                <list_count>1</list_count>
+                <list_hover>1</list_hover>
+                <list_label>1</list_label>
+                <list_countdown>1</list_countdown>
+                <list_quick>1</list_quick>
+                <list_compare>1</list_compare>
+                <list_wishlist>1</list_wishlist>
+                <list_brands>1</list_brands>
+                <list_rating>1</list_rating>
+            </product_listing>
+            <product_view>
+                <view_labels>1</view_labels>
+                <view_countdown>1</view_countdown>
+                <view_socials>1</view_socials>
+            </product_view>
+            <newsletter>
+                <popup>1</popup>
+                <popup_home>1</popup_home>
+                <popup_texts><![CDATA[<div class="tt-title-small">BE THE FIRST<br> TO KNOW</div>
+<div class="tt-title-large">15% OFF</div>
+<p>YOUR NEXT PURCHASE WHEN YOU SIGN UP</p>]]></popup_texts>
+                <popup_privacy><![CDATA[<p>By Signing Up, You Accept the Terms<br>&amp; Privacy Policy</p>]]></popup_privacy>
+                <popup_socials>1</popup_socials>
+                <popup_delay>3000</popup_delay>
+                <popup_animation>style2</popup_animation>
+            </newsletter>
+            <contacts>
+                <contact_static>1</contact_static>
+                <static_id><![CDATA[contact_us_info]]></static_id>
+                <google_map>1</google_map>
+                <gm_coordinates><![CDATA[40.6700, -73.9400]]></gm_coordinates>
+                <gm_zoom><![CDATA[12]]></gm_zoom>
+                <gm_scrollwheel>1</gm_scrollwheel>
+                <gm_draggable>1</gm_draggable>
+                <gm_ui>1</gm_ui>
+                <gm_styles><![CDATA[[{
+                "featureType":"water",
+                "elementType":"geometry.fill","stylers":[{"color":"#abd0fa"}]},
+                {"featureType":"transit","stylers":[{"color":"#808080"},{"visibility":"off"}]},
+                {"featureType":"road.highway","elementType":"geometry.stroke",
+                "stylers":[{"visibility":"on"},{"color":"#e1d9c6"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#eee9da"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"000"},{"weight":1.8}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"color":"#d7d7d7"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ebebeb"}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"color":"#eee9da"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#fffbf8"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#fffbf8"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#fbf7ee"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#d6d6d6"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"color":"#3c3424"}]},{"featureType":"poi","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#d6d6d6"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#aee9c6"}]}]]]></gm_styles>
+                <gm_marker_title><![CDATA[Snazzy!]]></gm_marker_title>
+                <gm_marker_coordinates><![CDATA[40.6700, -73.9400]]></gm_marker_coordinates>
+                <gm_marker_img><![CDATA[beachflag.png]]></gm_marker_img>
+            </contacts>
+        </wokiee_settings>
+    </default>
+</config>

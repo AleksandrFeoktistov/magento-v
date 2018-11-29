@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sections>
+        <web>
+            <default>
+                <cms_home_page>wokiee_skin1</cms_home_page>
+            </default>
+        </web>
+        <wokiee_settings>
+            <header_settings>
+                <header>1</header>
+                <menu_color>tt-color-scheme-01</menu_color>
+                <menu_type>tt-hover-02</menu_type>
+                <menu_right>0</menu_right>
+                <header_color>none</header_color>
+                <topline>0</topline>
+                <topline_width>container</topline_width>
+            </header_settings>
+            <footer_settings>
+                <footer>2</footer>
+                <footer_top>nomargin</footer_top>
+                <footer_color>light</footer_color>
+                <news_title>BE IN TOUCH WITH US:</news_title>
+                <news_btn>JOIN US</news_btn>
+            </footer_settings>
+        </wokiee_settings>
+        <wokiee_colors>
+            <general>
+                <colors_enable>1</colors_enable>
+                <theme_main>#B704EB</theme_main>
+            </general>
+            <buttons_colors>
+                <text>#FFFFFF</text>
+                <text_hover>#FFFFFF</text_hover>
+                <background>#B704EB</background>
+                <background_hover>#9E11C7</background_hover>
+            </buttons_colors>
+            <megamenu>
+                <links_2_level_hover>#B704EB</links_2_level_hover>
+                <links_3_level_hover>#B704EB</links_3_level_hover>
+                <label_bg>#B704EB</label_bg>
+            </megamenu>
+            <mobile_menu>
+                <links_color_active>#B704EB</links_color_active>
+                <arrow_color>#B704EB</arrow_color>
+            </mobile_menu>
+            <products_listing>
+                <add_btn_bg>#B704EB</add_btn_bg>
+                <add_btn_bg_h>#9E11C7</add_btn_bg_h>
+            </products_listing>
+            <custom_css>
+                <css_lines><![CDATA[
+.tt-back-to-top{
+	background-color: rgba(156,40,177,0.75);
+}
+.btn:hover{
+	background: rgba(156,40,177,0.75);
+}
+.tt-promo-box.hover-type-2:hover .tt-description-wrapper .tt-background{
+	background: rgba(156,40,177,0.9);
+}
+                ]]></css_lines>
+            </custom_css>
+        </wokiee_colors>
+    </sections>
+</config>

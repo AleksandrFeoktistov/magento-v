@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="review_product_form_component"/>
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Cookie\Block\RequireCookie" name="require-cookie" template="Magento_Cookie::require_cookie.phtml">
+                <arguments>
+                    <argument name="triggers" xsi:type="array">
+                        <item name="submitReviewButton" xsi:type="string">.review .action.submit</item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceBlock name="product.info.details">
+            <block class="Magento\Review\Block\Product\Review" name="reviews.tab" as="reviews" template="Magento_Review::review.phtml" group="detailed_info">
+                <block class="Magento\Review\Block\Form" name="product.review.form" as="review_form">
+                    <container name="product.review.form.fields.before" as="form_fields_before" label="Review Form Fields Before"/>
+                </block>
+            </block>
+        </referenceBlock>
+        <referenceBlock name="product.info.details.bot">
+            <block class="Magento\Review\Block\Product\Review" name="reviews-tab-bot" as="reviews-bot" template="Magento_Review::review2.phtml" group="detailed_info_bot">
+                <block class="Magento\Review\Block\Form" name="product.review.form.bot" as="review_form_bot">
+                    <arguments>
+                        <argument name="jsLayout" xsi:type="array">
+                            <item name="components" xsi:type="array">
+                                <item name="review-form" xsi:type="array">
+                                    <item name="component" xsi:type="string">Magento_Review/js/view/review</item>
+                                </item>
+                            </item>
+                        </argument>
+                    </arguments>
+                    <container name="product.review.form.fields.before.bot" as="form_fields_before_bot" label="Review Form Fields Before"/>
+                </block>
+            </block>
+        </referenceBlock>
+        <move element="reviews-tab-bot" destination="product.info.details.bot" after="-"/>
+    </body>
+</page>

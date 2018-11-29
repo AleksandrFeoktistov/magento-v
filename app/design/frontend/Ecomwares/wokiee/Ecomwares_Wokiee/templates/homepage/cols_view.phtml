@@ -1,0 +1,87 @@
+<?php
+/* comment */
+use Magento\Framework\App\Action\Action;
+$_productCollection = $block->getLoadedProductCollection();
+$_helper = $this->helper('Magento\Catalog\Helper\Output');
+$_imagehelper = $this->helper('Magento\Catalog\Helper\Image');
+$image = 'home_small';
+$image_hover = 'home_small_hover';
+$templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
+$tm_helper = $this->helper('Ecomwares\Wokiee\Helper\Data');
+
+$list_conf = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/product_listing');
+$isQuick = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('weltpixel_quickview/general/enable_product_listing');
+?>
+
+<?php if (!$_productCollection->count()): ?>
+
+    <div class="container-indent">
+        <div class="container container-fluid-custom-mobile-padding">
+            <div class="message info empty"><div><?php echo __('We can\'t find products matching the selection.') ?></div></div>
+        </div>
+    </div>
+
+<?php else: ?>
+
+    <div class="tt-layout-vertical-listing">
+        <?php $i=0; ?>
+        <?php foreach ($_productCollection as $_product): ?>
+            <?php $i++; if ($i > $block->getLimit()) break; ?>
+            <div class="tt-item">
+                <div class="tt-layout-vertical">
+                    <div class="tt-img">
+                        <a href="<?= /* @escapeNotVerified */ $_product->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1">
+                            <?php
+                            $productImage = $_imagehelper->init($_product, $image);
+                            $productImageUrl = $productImage->getUrl();
+                            $productHoverImage = $_imagehelper->init($_product, $image_hover);
+                            $productHoverImageUrl = $productHoverImage->getUrl();
+                            $img_ratio = round(($_imagehelper->getHeight() / $_imagehelper->getWidth())*100);
+                            ?>
+                            <span class="tt-img product-image-container" style="width:<?= /* @escapeNotVerified */ $_imagehelper->getWidth() ?>px;">
+                                <span class="product-image-wrapper" style="padding-bottom: <?= /* @escapeNotVerified */ $img_ratio; ?>%;">
+                                    <img class="product-image-photo" src="<?php echo $productImageUrl; ?>" alt="<?php echo $productImage->getLabel(); ?>"/>
+                                </span>
+                            </span>
+                            <?php if ($list_conf['list_hover']): ?>
+                                <?php if($productImageUrl != str_replace("/img_hover/","/small_image/",$productHoverImageUrl)): ?>
+                                    <span class="tt-img-roll-over product-image-container" style="width:<?= /* @escapeNotVerified */ $_imagehelper->getWidth() ?>px;">
+                                        <span class="product-image-wrapper" style="padding-bottom: <?= /* @escapeNotVerified */ $img_ratio; ?>%;">
+                                            <img class="product-image-photo-hover" src="<?php echo $productHoverImageUrl; ?>" alt="<?php echo $productHoverImage->getLabel(); ?>"/>
+                                        </span>
+                                    </span>
+                                <?php endif; ?>
+                            <?php endif; ?>
+                        </a>
+                    </div>
+                    <div class="tt-description">
+                        <?php if ($list_conf['list_rating']): ?>
+                            <?= $block->getReviewsSummaryHtml($_product, $templateType) ?>
+                        <?php endif; ?>
+                        <?php if ($_product->getAttributeText('manufacturer') && $list_conf['list_brands']): ?>
+                            <ul class="tt-add-info">
+                                <li><?php echo $_product->getAttributeText('manufacturer') ?></li>
+                            </ul>
+                        <?php endif; ?>
+                        <h6 class="tt-title"><a href="<?= /* @escapeNotVerified */ $_product->getProductUrl() ?>"><?= /* @escapeNotVerified */ $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h6>
+                        <?= /* @escapeNotVerified */ $block->getProductPrice($_product) ?>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
+
+    <?php if (!$block->isRedirectToCartEnabled()) : ?>
+        <script type="text/x-magento-init">
+        {
+            "[data-role=tocart-form], .form.map.checkout": {
+                "catalogAddToCart": {
+                    "product_sku": "<?= /* @NoEscape */ $_product->getSku() ?>"
+                }
+            }
+        }
+        </script>
+    <?php endif; ?>
+
+<?php endif;?>

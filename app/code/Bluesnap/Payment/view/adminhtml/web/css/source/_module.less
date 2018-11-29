@@ -1,0 +1,61 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+	
+	#payment_form_bluesnap_hostedfields iframe { 
+		height: 22px!important;
+	}
+	
+	/* Magento uses First-child, added our own top margin */
+	#payment_form_bluesnap_hostedfields .admin__field.first {
+		margin-top: 1.5rem;
+	}
+	
+	.admin__control-text.bluesnap-ccn.bluesnap-ccn {
+		position: relative;
+		.cctype {
+			position: absolute;
+			height: 28px;
+			overflow: hidden;
+			top: 2px;
+			right: 2px;
+		}
+		.cctype img {
+			height: 100%;	
+		}
+	}
+	
+	.bluesnap-cvv-field {
+		.admin__field-control._with-tooltip {
+			.admin__control-text  {
+				display: inline-block;
+			}
+			.admin__field-tooltip-content {
+				padding: 0.75rem;
+				width: 40rem;				
+			}
+		}
+	}
+
+}
+
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+	.admin__field-control._with-tooltip.bluesnap-cvv-control .admin__field-tooltip-content {
+		right: auto;
+		left: -2rem;
+		&:before,
+		&:after {
+			right: auto;
+			left: 3.5rem;
+		}
+	}
+	
+}

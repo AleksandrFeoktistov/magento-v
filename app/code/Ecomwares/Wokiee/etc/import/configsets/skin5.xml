@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sections>
+        <web>
+            <default>
+                <cms_home_page>wokiee_skin5</cms_home_page>
+            </default>
+        </web>
+        <wokiee_settings>
+            <header_settings>
+                <header>4</header>
+                <menu_color>tt-color-scheme-01</menu_color>
+                <menu_type>tt-hover-02</menu_type>
+                <menu_right>0</menu_right>
+                <header_color>tt-color-scheme-03</header_color>
+                <topline>0</topline>
+                <topline_width>container</topline_width>
+            </header_settings>
+            <footer_settings>
+                <footer>3</footer>
+                <footer_top>tt-offset-20</footer_top>
+                <footer_color>light</footer_color>
+                <news_title>NEWSLETTER SIGNUP</news_title>
+                <news_btn>JOIN US</news_btn>
+            </footer_settings>
+        </wokiee_settings>
+        <wokiee_colors>
+            <general>
+                <colors_enable>1</colors_enable>
+                <theme_main>#B08D75</theme_main>
+            </general>
+            <buttons_colors>
+                <text>#FFFFFF</text>
+                <text_hover>#FFFFFF</text_hover>
+                <background>#B08D75</background>
+                <background_hover>#98745B</background_hover>
+            </buttons_colors>
+            <megamenu>
+                <links_2_level_hover>#B08D75</links_2_level_hover>
+                <links_3_level_hover>#B08D75</links_3_level_hover>
+                <label_bg>#B08D75</label_bg>
+            </megamenu>
+            <mobile_menu>
+                <links_color_active>#B08D75</links_color_active>
+                <arrow_color>#B08D75</arrow_color>
+            </mobile_menu>
+            <footer_colors>
+                <back_bg>#B08D75</back_bg>
+            </footer_colors>
+            <products_listing>
+                <add_btn_bg>#B08D75</add_btn_bg>
+                <add_btn_bg_h>#98745B</add_btn_bg_h>
+            </products_listing>
+        </wokiee_colors>
+    </sections>
+</config>

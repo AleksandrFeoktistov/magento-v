@@ -1,0 +1,98 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<div class="tt-item item product product-item" data-role="product-item">
+    <div class="tt-item-wrap">
+        <!-- ko if: product_has_url -->
+        <div class="tt-item-img">
+            <a data-bind="attr: {href: product_url, title: product_name}" tabindex="-1" class="product-item-photo">
+                <!-- ko foreach: $parent.getRegion('itemImage') -->
+                    <!-- ko template: {name: getTemplate(), data: item.product_image} --><!-- /ko -->
+                <!-- /ko -->
+            </a>
+        </div>
+        <!-- /ko -->
+        <!-- ko ifnot: product_has_url -->
+        <div class="tt-item-img">
+            <span class="product-item-photo">
+                <!-- ko foreach: $parent.getRegion('itemImage') -->
+                    <!-- ko template: {name: getTemplate(), data: item.product_image} --><!-- /ko -->
+                <!-- /ko -->
+            </span>
+        </div>
+        <!-- /ko -->
+
+        <div class="tt-item-descriptions">
+            <h2 class="tt-title">
+                <!-- ko if: product_has_url -->
+                <a data-bind="attr: {href: product_url}, text: product_name"></a>
+                <!-- /ko -->
+                <!-- ko ifnot: product_has_url -->
+                    <!-- ko text: product_name --><!-- /ko -->
+                <!-- /ko -->
+            </h2>
+
+            <!-- ko if: options.length -->
+            <ul class="tt-add-info">
+                <!-- ko foreach: { data: options, as: 'option' } -->
+                <li>
+                    <!-- ko text: option.label --><!-- /ko -->:
+                    <!-- ko if: Array.isArray(option.value) -->
+                    <span data-bind="html: option.value.join('<br>')"></span>
+                    <!-- /ko -->
+                    <!-- ko ifnot: Array.isArray(option.value) -->
+                    <span data-bind="html: option.value"></span>
+                    <!-- /ko -->
+                </li>
+                <!-- /ko -->
+            </ul>
+            <!-- /ko -->
+
+            <div class="product-item-pricing">
+                <!-- ko if: canApplyMsrp -->
+
+                <div class="details-map">
+                    <span class="label" data-bind="i18n: 'Price'"></span>
+                    <span class="value" data-bind="i18n: 'See price before order confirmation.'"></span>
+                </div>
+                <!-- /ko -->
+                <!-- ko ifnot: canApplyMsrp -->
+                <!-- ko foreach: $parent.getRegion('priceSidebar') -->
+                    <!-- ko template: {name: getTemplate(), data: item.product_price, as: 'price'} --><!-- /ko -->
+                <!-- /ko -->
+                <!-- /ko -->
+
+                <div class="details-qty qty form-default">
+                    <label class="label" data-bind="i18n: 'Qty', attr: {
+                           for: 'cart-item-'+item_id+'-qty'}"></label>
+                    <input data-bind="attr: {
+                           id: 'cart-item-'+item_id+'-qty',
+                           'data-cart-item': item_id,
+                           'data-item-qty': qty,
+                           'data-cart-item-id': product_sku
+                           }, value: qty"
+                           type="text"
+                           size="4"
+                           class="item-qty cart-item-qty form-control">
+                    <button data-bind="attr: {
+                           id: 'update-cart-item-'+item_id,
+                           'data-cart-item': item_id,
+                           title: $t('Update')
+                           }"
+                            class="update-cart-item"
+                            style="display: none"><i class="icon-n-01"></i></button>
+                </div>
+            </div>
+
+        </div>
+        <div class="tt-item-close product actions">
+            <a href="#" data-bind="attr: {'data-cart-item': item_id, title: $t('Remove item')}" class="action delete tt-btn-close"></a>
+            <!-- ko if: is_visible_in_site_visibility -->
+            <a data-bind="attr: {href: configure_url, title: $t('Edit item')}" class="action edit tt-btn-edit"></a>
+            <!-- /ko -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sections>
+        <web>
+            <default>
+                <cms_home_page>wokiee_skin2</cms_home_page>
+            </default>
+        </web>
+        <wokiee_settings>
+            <promo_line>
+                <promo_enable>1</promo_enable>
+                <promo_txt><![CDATA[SAVE UP TO $30 on select phones. <a href="#">Shop Now</a>]]></promo_txt>
+            </promo_line>
+            <header_settings>
+                <header>1</header>
+                <menu_color>tt-color-scheme-01</menu_color>
+                <menu_type>tt-hover-02</menu_type>
+                <menu_right>0</menu_right>
+                <header_color>none</header_color>
+                <topline>0</topline>
+                <topline_width>container</topline_width>
+            </header_settings>
+            <footer_settings>
+                <footer>1</footer>
+                <footer_top>tt-offset-20</footer_top>
+                <footer_color>light</footer_color>
+                <news_title>NEWSLETTER SIGNUP</news_title>
+                <news_btn>GET!</news_btn>
+            </footer_settings>
+        </wokiee_settings>
+        <wokiee_colors>
+            <general>
+                <colors_enable>1</colors_enable>
+                <theme_main>#49D690</theme_main>
+            </general>
+            <buttons_colors>
+                <text>#FFFFFF</text>
+                <text_hover>#FFFFFF</text_hover>
+                <background>#49D690</background>
+                <background_hover>#33B775</background_hover>
+            </buttons_colors>
+            <promo_colors>
+                <promo_bg>#191919</promo_bg>
+                <promo_text>#FFFFFF</promo_text>
+                <promo_link>#38D690</promo_link>
+                <promo_close>#6E6E6E</promo_close>
+            </promo_colors>
+            <megamenu>
+                <links_2_level_hover>#49D690</links_2_level_hover>
+                <links_3_level_hover>#49D690</links_3_level_hover>
+                <label_bg>#49D690</label_bg>
+            </megamenu>
+            <mobile_menu>
+                <links_color_active>#49D690</links_color_active>
+                <arrow_color>#49D690</arrow_color>
+            </mobile_menu>
+            <products_listing>
+                <add_btn_bg>#49D690</add_btn_bg>
+                <add_btn_bg_h>#33B775</add_btn_bg_h>
+            </products_listing>
+            <custom_css>
+                <css_lines><![CDATA[
+.tt-top-panel .tt-row {
+    font-size: 15px;
+    font-weight: 500;
+}
+.tt-top-panel .tt-row .tt-btn-close:before {
+    content: "\ea0f";
+}
+.tt-promo-box.hover-type-3:hover .tt-description-wrapper .tt-title-large:not(.tt-base-color),
+.tt-promo-box.hover-type-3:hover .tt-description-wrapper .tt-title-large:not(.tt-base-color) span {
+    color: #08da97;
+}
+.btn:hover {
+    background: rgba(8,218,151,0.75);
+}
+                ]]></css_lines>
+            </custom_css>
+        </wokiee_colors>
+    </sections>
+</config>

@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="root">
+            <block class="Ecomwares\Wokiee\Block\Template" name="theme_loader" template="html/loader.phtml" before="page_wrapper"/>
+        </referenceContainer>
+
+        <referenceContainer name="head.additional">
+            <block class="Ecomwares\Wokiee\Block\Template" name="wokiee_head" template="html/head.phtml" before="-"/>
+        </referenceContainer>
+
+        <referenceContainer name="before.body.end">
+            <block class="Magento\Newsletter\Block\Subscribe" name="popup.newsletter" template="popup.phtml"/>
+            <block class="Magento\Cms\Block\Block" name="wk_popup_cookie">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">wk_popup_cookie</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="page.wrapper">
+            <block class="Ecomwares\Wokiee\Block\Template" name="wokiee_header" template="html/header.phtml" before="main.content" cacheable="false">
+                <block class="Magento\Framework\View\Element\Template" name="top.search" as="topSearch" template="Magento_Search::form.mini.phtml" />
+
+                <block class="Ecomwares\Wokiee\Block\Template" name="promo_line" template="html/header/promo_line.phtml"/>
+
+                <block class="Ecomwares\Wokiee\Block\Template" name="top_line" template="html/header/top_line.phtml">
+                    <block class="Magento\Cms\Block\Block" name="ys_header_info">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">ys_header_info</argument>
+                        </arguments>
+                    </block>
+                    <block class="Ecomwares\Wokiee\Block\Template" name="header_socials" template="html/header/socials.phtml"/>
+                </block>
+
+                <block class="Ecomwares\Wokiee\Block\Template" name="mobile_header" template="html/header/mobile_header.phtml">
+                    <block class="Magento\Theme\Block\Html\Header\Logo" name="logo_mobile">
+                        <arguments>
+                            <argument name="logo_file" xsi:type="string">images/logo.png</argument>
+                            <argument name="logo_img_width" xsi:type="number">175</argument>
+                            <argument name="logo_img_height" xsi:type="number">44</argument>
+                        </arguments>
+                    </block>
+                </block>
+
+                <block class="Ecomwares\Wokiee\Block\Template" name="stuck_nav" template="html/header/stuck_nav.phtml"/>
+                <block class="Ecomwares\Wokiee\Block\Template" name="store_settings" template="html/header/store_settings.phtml"/>
+                <block class="Ecomwares\Wokiee\Block\Template" name="top_links" template="html/header/top_links.phtml"/>
+            </block>
+
+			<block class="Ecomwares\Wokiee\Block\Template" name="footer_block" template="html/footer.phtml" after="main.content">
+                <block class="Ecomwares\Wokiee\Block\Template" name="bottom_line" template="html/footer/bottom_line.phtml">
+                    <block class="Magento\Theme\Block\Html\Footer" name="copyright" template="Magento_Theme::html/copyright.phtml"/>
+                    <block class="Magento\Cms\Block\Block" name="ys_footer_payment_icons">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">ys_footer_payment_icons</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Cms\Block\Block" name="ys_footer_payment_icons_d">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">ys_footer_payment_icons_d</argument>
+                        </arguments>
+                    </block>
+                </block>
+                <block class="Magento\Theme\Block\Html\Footer" name="single_copyright" template="Magento_Theme::html/copyright.phtml"/>
+                <block class="Ecomwares\Wokiee\Block\Template" name="footer_socials" template="html/footer/footer_socials.phtml"/>
+                <block class="Magento\Store\Block\Switcher" name="footer.store_switcher" template="switch/stores.phtml"/>
+                <block class="Magento\Newsletter\Block\Subscribe" name="footer.newsletter" template="subscribe_footer.phtml"/>
+
+                <block class="Magento\Cms\Block\Block" name="ys_footer_categories">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">ys_footer_categories</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="ys_footer_links">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">ys_footer_links</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="ys_footer_contacts">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">ys_footer_contacts</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="ys_footer_about">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">ys_footer_about</argument>
+                    </arguments>
+                </block>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="main.columns.left.col">
+            <block class="Ecomwares\Wokiee\Block\Template" name="btn_close" template="html/btn_close.phtml" before="-" />
+        </referenceContainer>
+        <referenceContainer name="sidebar.additional">
+            <block class="Ecomwares\Wokiee\Block\Products\Categories" name="side_new" template="products/side_new.phtml"/>
+            <block class="Ecomwares\Wokiee\Block\Products\Categories" name="side_specials" template="products/side_specials.phtml"/>
+            <block class="Ecomwares\Wokiee\Block\Products\Categories" name="side_bestseller" template="products/side_bestseller.phtml"/>
+            <block class="Ecomwares\Wokiee\Block\Products\Categories" name="side_featured" template="products/side_featured.phtml"/>
+        </referenceContainer>
+
+        <move element="store.menu" destination="wokiee_header"/>
+        <move element="top.search" destination="wokiee_header"/>
+        <move element="minicart" destination="wokiee_header"/>
+        <move element="store_language" destination="store_settings"/>
+        <move element="currency" destination="store_settings"/>
+        <move element="logo" destination="wokiee_header"/>
+        <move element="skip_to_content" destination="wokiee_header"/>
+        <move element="header" destination="wokiee_header"/>
+        <move element="copyright" destination="bottom_line"/>
+        <move element="single_copyright" destination="footer_block"/>
+
+        <move element="page.top" destination="page.wrapper" after="wokiee_header"/>
+
+        <referenceContainer name="header.container" remove="1"/>
+        <referenceContainer name="header.panel" remove="1"/>
+        <referenceContainer name="header-wrapper" remove="1"/>
+        <referenceContainer name="footer-container" remove="1"/>
+        <referenceContainer name="navigation.sections" remove="1"/>
+
+    </body>
+</page>

@@ -1,0 +1,23 @@
+<!--@subject A multiaddress order has failed @-->
+<!--@vars
+{"store url=\"\"":"Store Url"}
+@-->
+<!--@styles
+@-->
+{{template config_path="design/email/header_template"}}
+<table>
+    <tr class="email-intro">
+        <td>
+            <p>A customer has just attempted to place a multiple address order which has failed to process completely.</p>
+
+            <p>The customer has been informed, please review orders in Magento admin area and the payment gateway.</p>
+
+            <p>Debug Information:</p>
+
+            <pre>
+            {{var debug_info}}
+            </pre>
+        </td>
+    </tr>
+</table>
+{{template config_path="design/email/footer_template"}}

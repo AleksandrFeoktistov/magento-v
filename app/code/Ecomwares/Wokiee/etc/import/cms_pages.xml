@@ -1,0 +1,1400 @@
+<?xml version="1.0"?>
+<default>
+    <pages>
+
+        <page>
+            <title>Wokiee Home Page - Default</title>
+            <identifier>wokiee_home_page_default</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="wk_slider_home1"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners_layout1"}}
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Ecomwares_Wokiee::homepage/simple_view.phtml" limit="8" category_id="41" block_title="Trending" block_subtitle="Top view in this week"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners2_layout1"}}
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Ecomwares_Wokiee::homepage/simple_view.phtml" limit="8" category_id="41" block_title="Best Seller" block_subtitle="Top sale in this week"}}
+{{block class="Magefan\Blog\Block\Widget\Recent"  number_of_posts="3" title="Latest from blog" subtitle="The freshest and most exciting news" name="blog.home.recent" template="widget/recent.phtml"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_instagram_fluid"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners3_layout1"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Wokiee Home Page - 2</title>
+            <identifier>wokiee_home_page_2</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners_layout2"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Wokiee Home Page - 3</title>
+            <identifier>wokiee_home_page_3</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners_layout3"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Wokiee Home Page - 4</title>
+            <identifier>wokiee_home_page_4</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners_layout4"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners2_layout4"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_categories_tab"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_products_tab"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners3_layout4"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_products_col"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners4_layout4"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_instagram_fluid"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Wokiee Home Page - 5</title>
+            <identifier>wokiee_home_page_5</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="wk_slider_home5"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners_layout5"}}
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Ecomwares_Wokiee::homepage/carousel.phtml" limit="8" cols="4" category_id="71" block_title="Trending" block_subtitle="Top view in this week"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners2_layout5"}}
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Ecomwares_Wokiee::homepage/carousel.phtml" limit="8" cols="3" category_id="71" block_title="Specials" block_subtitle="In this week"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners3_layout5"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_products_col"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_instagram_fluid"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners4_layout5"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Wokiee Home Page - 6</title>
+            <identifier>wokiee_home_page_6</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="wk_slider_home6"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners_layout6"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_products_simple_tab"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners2_layout6"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners3_layout6"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_instagram_fluid"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Wokiee Home Page - 7</title>
+            <identifier>wokiee_home_page_7</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="wk_slider_home7"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners_layout7"}}
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Ecomwares_Wokiee::homepage/carousel.phtml" limit="8" cols="4" category_id="71" block_title="Trending" block_subtitle="Top view in this week"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners2_layout7"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_products_col"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_instagram_fluid"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Wokiee Home Page - 8</title>
+            <identifier>wokiee_home_page_8</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="wk_slider_home8"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners_layout8"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_products_simple_tab"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_instagram_col"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Wokiee Home Page - 9</title>
+            <identifier>wokiee_home_page_9</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners_layout9"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners2_layout9"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_products_simple_tab"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners3_layout9"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners4_layout9"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Wokiee Home Page - 10</title>
+            <identifier>wokiee_home_page_10</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="wk_slider_home10"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners_layout10"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Wokiee Home Page - 11</title>
+            <identifier>wokiee_home_page_11</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners_layout11"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Wokiee Home Page - 12</title>
+            <identifier>wokiee_home_page_12</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="wk_slider_home12"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners_layout12"}}
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Ecomwares_Wokiee::homepage/masonry_view.phtml" limit="10" category_id="71" block_title="Trending" block_subtitle="Top view in this week"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners2_layout12"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Wokiee Home Page - 13</title>
+            <identifier>wokiee_home_page_13</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners_layout13"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Wokiee Home Page - 14</title>
+            <identifier>wokiee_home_page_14</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="wk_slider_home14"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_categories_carousel"}}
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Ecomwares_Wokiee::homepage/simple_view.phtml" limit="8" category_id="41" block_title="Trending" block_subtitle="Top view in this week"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners2_layout14"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_instagram_fluid"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Wokiee Home Page - 15</title>
+            <identifier>wokiee_home_page_15</identifier>
+            <content><![CDATA[
+<div class="container-indent nomargin">
+ <div class="container-fluid">
+  <div class="row">
+   <div class="tt-promo-fullwidth-02">
+    <img src="{{media url=wysiwyg/wokiee/promo/index15-promo-img-01.jpg}}" alt="">
+    <div class="tt-description">
+     <div class="tt-description-wrapper">
+      <div class="tt-title-large"><span class="tt-base-color">Home Instgram Shop</span></div>
+      <p>Make your Instagram shop</p>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="container-fluid-custom container-fluid-custom-mobile-padding">
+  <script src='https://snapppt.com/widgets/widget_loader/1d977f9d-6b61-44c3-a9ef-5a1132498dca/grid.js' class='snapppt-widget'></script>
+ </div>
+</div>
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Wokiee Home Page - 16</title>
+            <identifier>wokiee_home_page_16</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="wk_slider_home16"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners_layout16"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_products_simple_tab"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners2_layout16"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_instagram_fluid"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Wokiee Home Page - 17</title>
+            <identifier>wokiee_home_page_17</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="wk_slider_home17"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Wokiee Home Page - 18</title>
+            <identifier>wokiee_home_page_18</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners_layout18"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_categories_wide_tab"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners2_layout18"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_products_wide_tab"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_instagram_fluid"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Wokiee 404 Not Found</title>
+            <identifier>wokiee_404</identifier>
+            <content><![CDATA[
+<div class="tt-offset-0 container-indent">
+ <div class="tt-page404">
+  <h1 class="tt-title">THAT PAGE CAN’T BE FOUND.</h1>
+  <p>It looks like nothing was found at this location.</p>
+  <a href="{{store url=""}}" class="btn">GO TO HOME</a>
+ </div>
+</div>
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <layout_update_xml>
+                <![CDATA[
+<referenceContainer name="page.main.title" remove="1"/>
+<referenceContainer name="page.messages" remove="1"/>
+            ]]>
+            </layout_update_xml>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>About Us Wokiee</title>
+            <identifier>wk-about-page</identifier>
+            <content><![CDATA[
+<div class="nomargin container-indent">
+ <div class="tt-about-box" style="background-image: url({{media url=wysiwyg/wokiee/custom/about-img-01.jpg}});">
+  <img class="img-mobile" src="{{media url=wysiwyg/wokiee/custom/about-img-01.jpg}}" alt="">
+  <div class="container">
+   <div class="row">
+    <div class="col-md-7">
+     <h1 class="tt-title">YOUR STORE IS A GLOBAL FASHION DESTINATION FOR 20-SOMETHINGS.</h1>
+     <p>
+      Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse. Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor.
+     </p>
+     <blockquote class="tt-blockquote-02">
+      <i class="tt-icon icon-g-56"></i>
+      <div class="tt-title">We sell cutting-edge fashion and offer a wide variety of fashion-related content.</div>
+      <div class="tt-title-description">— DANIEL BROWN</div>
+     </blockquote>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-indent">
+ <div class="container">
+  <div class="tt-about-col-list">
+   <div class="row">
+    <div class="col-md-6">
+     <h5 class="tt-title">OUR STORES</h5>
+     <div class="width-90">
+      Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse. Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor.
+     </div>
+
+    </div>
+    <div class="col-md-6">
+     <h5 class="tt-title">CONTACTS</h5>
+     <div class="tt-box-info">
+      <p>
+       <span class="tt-base-dark-color">Address:</span> 2548 Broaddus Maple Court Avenue, Madisonville KY 4783,<br>
+       United States of America
+      </p>
+      <p>
+       <span class="tt-base-dark-color">Phone:</span> +777 2345 7885:  +777 2345 7886
+      </p>
+      <p>
+       <span class="tt-base-dark-color">Hours:</span> 7 Days a week from 10 am to 6 pm
+      </p>
+      <p>
+       <span class="tt-base-dark-color">E-mail:</span> <a class="link" href="mailto:info@mydomain.com">info@mydomain.com</a>
+      </p>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>About Us Wokiee(2)</title>
+            <identifier>wk-about-page2</identifier>
+            <content><![CDATA[
+<div class="container-indent">
+ <div class="container container-fluid-custom-mobile-padding">
+  <div class="row">
+   <div class="col-xs-12 col-md-11 col-lg-9">
+    <div class="tt-about-box-02">
+     <h1 class="tt-title">
+      Wokiee is a global fashion destination for 20-somethings.
+      We sell cutting-edge fashion and offer a wide variety
+      of fashion-related content.
+     </h1>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-indent">
+ <div class="container-fluid-custom">
+  <div class="tt-col-img">
+   <div class="row">
+    <div class="col-sm-12 col-md-6">
+     <img src="{{media url=wysiwyg/wokiee/custom/about2-img-01.jpg}}" alt="">
+    </div>
+    <div class="col-sm-6 col-md-3">
+     <img src="{{media url=wysiwyg/wokiee/custom/about2-img-02.jpg}}" alt="">
+    </div>
+    <div class="col-sm-6 col-md-3">
+     <img src="{{media url=wysiwyg/wokiee/custom/about2-img-03.jpg}}" alt="">
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-indent">
+ <div class="container container-fluid-custom-mobile-padding ">
+  <div class="tt-about02-col-list">
+   <div class="row">
+    <div class="col-md-6">
+     <h5 class="tt-title">OUR STORES</h5>
+     <div class="width-90">
+      Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse. Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor.
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h5 class="tt-title">CONTACTS</h5>
+     <div class="tt-box-info">
+      <p>
+       <span class="tt-base-dark-color">Address:</span> 2548 Broaddus Maple Court Avenue, Madisonville KY 4783,<br>
+       United States of America
+      </p>
+      <p>
+       <span class="tt-base-dark-color">Phone:</span> +777 2345 7885:  +777 2345 7886
+      </p>
+      <p>
+       <span class="tt-base-dark-color">Hours:</span> 7 Days a week from 10 am to 6 pm
+      </p>
+      <p>
+       <span class="tt-base-dark-color">E-mail:</span> <a class="link" href="mailto:info@mydomain.com">info@mydomain.com</a>
+      </p>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Services Wokiee</title>
+            <identifier>wk-services</identifier>
+            <content><![CDATA[
+<div class="container-indent">
+ <div class="container container-fluid-custom-mobile-padding">
+  <h1 class="tt-title-subpages noborder">WHAT WE DO</h1>
+  <div class="tt-box-thumb-listing">
+   <div class="row">
+    <div class="col-sm-6 col-md-6 col-lg-4">
+     <div class="tt-box-thumb">
+      <a href="#" class="tt-img"><img src="{{media url=wysiwyg/wokiee/custom/services-img-01.jpg}}" alt=""></a>
+      <h6 class="tt-title"><a href="#">FUTURE LEADERS</a></h6>
+      <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+     </div>
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-4">
+     <div class="tt-box-thumb">
+      <a href="#" class="tt-img"><img src="{{media url=wysiwyg/wokiee/custom/services-img-02.jpg}}" alt=""></a>
+      <h6 class="tt-title"><a href="#">POWERFUL SOLUTIONS</a></h6>
+      <p>Dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+     </div>
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-4">
+     <div class="tt-box-thumb">
+      <a href="#" class="tt-img"><img src="{{media url=wysiwyg/wokiee/custom/services-img-03.jpg}}" alt=""></a>
+      <h6 class="tt-title"><a href="#">PROGRESSIVE TOOLS</a></h6>
+      <p>Ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+     </div>
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-4">
+     <div class="tt-box-thumb">
+      <a href="#" class="tt-img"><img src="{{media url=wysiwyg/wokiee/custom/services-img-04.jpg}}" alt=""></a>
+      <h6 class="tt-title"><a href="#">CREATIVE PROJECTS</a></h6>
+      <p>Sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+     </div>
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-4">
+     <div class="tt-box-thumb">
+      <a href="#" class="tt-img"><img src="{{media url=wysiwyg/wokiee/custom/services-img-05.jpg}}" alt=""></a>
+      <h6 class="tt-title"><a href="#">INNOVATION EXPERTS</a></h6>
+      <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+     </div>
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-4">
+     <div class="tt-box-thumb">
+      <a href="#" class="tt-img"><img src="{{media url=wysiwyg/wokiee/custom/services-img-06.jpg}}" alt=""></a>
+      <h6 class="tt-title"><a href="#">LEADING STRATEGIES</a></h6>
+      <p>Dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>FAQ Wokiee</title>
+            <identifier>wk-faq</identifier>
+            <content><![CDATA[
+<div class="container-indent">
+ <div class="container container-fluid-custom-mobile-padding">
+  <h1 class="tt-title-subpages">ANSWERS TO YOUR QUESTIONS</h1>
+  <h2 class="tt-base-color small">Shopping Information</h2>
+  <div class="tt-box-faq-listing">
+   <div class="row">
+    <div class="col-sm-12 col-md-6">
+     <div class="tt-box-faq">
+      <h6 class="tt-title"><a href="#">WHAT SHIPPING METHODS ARE AVAILABLE?</a></h6>
+      Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.
+      <p>
+       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.
+      </p>
+     </div>
+     <div class="tt-box-faq">
+      <h6 class="tt-title"><a href="#">HOW LONG WILL IT TAKE TO GET MY PACKAGE?</a></h6>
+      Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+     </div>
+    </div>
+    <div class="col-sm-12 col-md-6">
+     <div class="tt-box-faq">
+      <h6 class="tt-title"><a href="#">DO YOU SHIP INTERNATIONALLY?</a></h6>
+      Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+     </div>
+     <div class="tt-box-faq">
+      <h6 class="tt-title"><a href="#">WHAT SHIPPING METHODS ARE AVAILABLE?</a></h6>
+      Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+     </div>
+    </div>
+   </div>
+  </div>
+  <hr class="hr-01">
+  <h2 class="tt-base-color small">Payment Information</h2>
+  <div class="tt-box-faq-listing">
+   <div class="row">
+    <div class="col-sm-12 col-md-6">
+     <div class="tt-box-faq">
+      <h6 class="tt-title"><a href="#">WHAT PAYMENT METHODS ARE ACCEPTED?</a></h6>
+      Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.
+     </div>
+    </div>
+    <div class="col-sm-12 col-md-6">
+     <div class="tt-box-faq">
+      <h6 class="tt-title"><a href="#">IS BUYING ON-LINE SAFE?</a></h6>
+      Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+     </div>
+    </div>
+   </div>
+  </div>
+  <hr class="hr-01">
+  <h2 class="tt-base-color small">Orders and Returns</h2>
+  <div class="tt-box-faq-listing">
+   <div class="row">
+    <div class="col-sm-12 col-md-6">
+     <div class="tt-box-faq">
+      <h6 class="tt-title"><a href="#">HOW DO I PLACE AN ORDER?</a></h6>
+      Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+     </div>
+     <div class="tt-box-faq">
+      <h6 class="tt-title"><a href="#">DO I NEED AN ACCOUNT TO PLACE AN ORDER?</a></h6>
+      Conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+     </div>
+     <div class="tt-box-faq">
+      <h6 class="tt-title"><a href="#">WHO SHOULD I TO CONTACT IF I HAVE ANY QUERIES?</a></h6>
+      Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+     </div>
+    </div>
+    <div class="col-sm-12 col-md-6">
+     <div class="tt-box-faq">
+      <h6 class="tt-title"><a href="#">HOW CAN I CANCEL OR CHANGE MY ORDER?</a></h6>
+      Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+     </div>
+     <div class="tt-box-faq">
+      <h6 class="tt-title"><a href="#">HOW DO I TRACK MY ORDER?</a></h6>
+      Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. Conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Portfolio Grid Two Columns</title>
+            <identifier>wk-portfolio-1</identifier>
+            <content><![CDATA[
+<div class="container-indent">
+ <div class="container">
+  <h1 class="tt-title-subpages noborder">PORTFOLIO</h1>
+  <div class="tt-portfolio-masonry">
+   <div class="tt-filter-nav">
+    <div class="button active" data-filter="*">ALL</div>
+    <div class="button" data-filter=".sort-value-01">WOMEN</div>
+    <div class="button" data-filter=".sort-value-02">MEN </div>
+   </div>
+   <div class="tt-portfolio-content layout-default tt-grid-col-2  tt-add-item">
+    <div class="element-item sort-value-01">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-01.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-01.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-02">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-02.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-02.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-02">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-03.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-03.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-01">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-04.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-04.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-02">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-05.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-05.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-02">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-07.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-07.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-01">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-08.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-08.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-01">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-06.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-06.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Portfolio Grid Three Columns</title>
+            <identifier>wk-portfolio-2</identifier>
+            <content><![CDATA[
+<div class="container-indent">
+ <div class="container">
+  <h1 class="tt-title-subpages noborder">PORTFOLIO</h1>
+  <div class="tt-portfolio-masonry">
+   <div class="tt-filter-nav">
+    <div class="button active" data-filter="*">ALL</div>
+    <div class="button" data-filter=".sort-value-01">WOMEN</div>
+    <div class="button" data-filter=".sort-value-02">MEN </div>
+   </div>
+   <div class="tt-portfolio-content layout-default tt-grid-col-3 tt-add-item">
+    <div class="element-item sort-value-01">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-01.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-01.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-02">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-02.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-02.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-02">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-03.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-03.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-01">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-04.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-04.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-02">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-05.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-05.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-02">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-07.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-07.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-01">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-08.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-08.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-01">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-06.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-06.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Portfolio Grid Four Columns</title>
+            <identifier>wk-portfolio-3</identifier>
+            <content><![CDATA[
+<div class="container-indent">
+ <div class="container">
+  <h1 class="tt-title-subpages noborder">PORTFOLIO</h1>
+  <div class="tt-portfolio-masonry">
+   <div class="tt-filter-nav">
+    <div class="button active" data-filter="*">ALL</div>
+    <div class="button" data-filter=".sort-value-01">WOMEN</div>
+    <div class="button" data-filter=".sort-value-02">MEN </div>
+   </div>
+   <div class="tt-portfolio-content layout-default tt-grid-col-4  tt-add-item">
+    <div class="element-item sort-value-01">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-01.jpg}}"  alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-01.jpg}}" title="" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-02">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-02.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-02.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-02">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-03.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-03.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-01">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-04.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-04.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-02">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-05.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-05.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-02">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-07.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-07.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-01">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-08.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-08.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-01">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-06.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-06.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Portfolio Wide Two Columns</title>
+            <identifier>wk-portfolio-4</identifier>
+            <content><![CDATA[
+<div class="container-indent">
+ <div class="container-fluid-custom">
+  <h1 class="tt-title-subpages noborder">PORTFOLIO</h1>
+  <div class="tt-portfolio-masonry">
+   <div class="tt-filter-nav">
+    <div class="button active" data-filter="*">ALL</div>
+    <div class="button" data-filter=".sort-value-01">WOMEN</div>
+    <div class="button" data-filter=".sort-value-02">MEN </div>
+   </div>
+   <div class="tt-portfolio-content layout-default tt-grid-col-2  tt-add-item">
+    <div class="element-item sort-value-01">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-01.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-01.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-02">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-02.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-02.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-02">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-03.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-03.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-01">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-04.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-04.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-02">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-05.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-05.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-02">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-07.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-07.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-01">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-08.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-08.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-01">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-06.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-06.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Portfolio Wide Three Columns</title>
+            <identifier>wk-portfolio-5</identifier>
+            <content><![CDATA[
+<div class="container-indent">
+ <div class="container-fluid-custom">
+  <h1 class="tt-title-subpages noborder">PORTFOLIO</h1>
+  <div class="tt-portfolio-masonry">
+   <div class="tt-filter-nav">
+    <div class="button active" data-filter="*">ALL</div>
+    <div class="button" data-filter=".sort-value-01">WOMEN</div>
+    <div class="button" data-filter=".sort-value-02">MEN </div>
+   </div>
+   <div class="tt-portfolio-content layout-default tt-grid-col-3  tt-add-item">
+    <div class="element-item sort-value-01">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-01.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-01.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-02">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-02.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-02.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-02">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-03.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-03.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-01">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-04.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-04.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-02">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-05.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-05.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-02">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-07.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-07.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-01">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-08.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-08.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-01">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-06.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-06.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Portfolio Wide Four Columns</title>
+            <identifier>wk-portfolio-6</identifier>
+            <content><![CDATA[
+<div class="container-indent">
+ <div class="container-fluid-custom container-fluid-custom-mobile-padding">
+  <h1 class="tt-title-subpages noborder">PORTFOLIO</h1>
+  <div class="tt-portfolio-masonry">
+   <div class="tt-filter-nav">
+    <div class="button active" data-filter="*">ALL</div>
+    <div class="button" data-filter=".sort-value-01">WOMEN</div>
+    <div class="button" data-filter=".sort-value-02">MEN </div>
+   </div>
+   <div class="tt-portfolio-content layout-default tt-grid-col-4  tt-add-item">
+    <div class="element-item sort-value-01">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-01.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-01.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-02">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-02.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-02.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-02">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-03.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-03.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-01">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-04.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-04.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-02">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-05.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-05.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-02">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-07.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-07.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-01">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-08.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-08.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+    <div class="element-item sort-value-01">
+     <figure>
+      <img src="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-06.jpg}}" alt="">
+      <figcaption>
+       <h6 class="tt-title"><a href="#">TITLE</a></h6>
+       <p>
+        Lorem ipsum dolor sit amet cons.
+       </p>
+       <a href="{{media url=wysiwyg/wokiee/portfolio/portfolio-col-grid-four-img-06.jpg}}" class="tt-btn-zomm"></a>
+      </figcaption>
+     </figure>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Wokiee Skin 1</title>
+            <identifier>wokiee_skin1</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="wk_slider_skin1"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners_skin1"}}
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Ecomwares_Wokiee::homepage/carousel.phtml" limit="8" wide="1" cols="6" category_id="71" block_title="Trending" block_subtitle="Top view in this week"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners2_skin1"}}
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Ecomwares_Wokiee::homepage/carousel.phtml" limit="8" wide="1" cols="6" category_id="71" block_title="Our Collections" block_subtitle="Winter 2019"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners3_skin1"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners4_skin1"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_instagram_sk1"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Wokiee Skin 2</title>
+            <identifier>wokiee_skin2</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners_skin2"}}
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Ecomwares_Wokiee::homepage/carousel.phtml" limit="8" cols="4" category_id="71" block_title="Trending" block_subtitle="Top view in this week"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners2_skin2"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Wokiee Skin 3</title>
+            <identifier>wokiee_skin3</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="wk_slider_skin3"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners_skin3"}}
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Ecomwares_Wokiee::homepage/carousel.phtml" limit="8" wide="1" cols="6" category_id="71" block_title="Trending" block_subtitle="Top view in this week"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners2_skin3"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners3_skin3"}}
+{{block class="Magefan\Blog\Block\Widget\Recent"  number_of_posts="3" title="Latest from blog" subtitle="The freshest and most exciting news" name="blog.home.recent" template="widget/recent.phtml"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_instagram_sk3"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Wokiee Skin 4</title>
+            <identifier>wokiee_skin4</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners_skin4"}}
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Ecomwares_Wokiee::homepage/carousel.phtml" limit="8" cols="4" category_id="71" block_title="Trending" block_subtitle="Top view in this week"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners2_skin4"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_instagram_sk4"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Wokiee Skin 5</title>
+            <identifier>wokiee_skin5</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="wk_video_skin5"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners_skin5"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_products_tab_skin5"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners2_skin5"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+        <page>
+            <title>Wokiee Skin 6</title>
+            <identifier>wokiee_skin6</identifier>
+            <content><![CDATA[
+{{block class="Magento\Cms\Block\Block" block_id="wk_slider_skin6"}}
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Ecomwares_Wokiee::homepage/carousel.phtml" limit="6" cols="4" category_id="71" block_title="Best Sellers" block_subtitle="Top view in this week"}}
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Ecomwares_Wokiee::homepage/carousel.phtml" limit="6" cols="4" category_id="71" block_title="Trending" block_subtitle="in this week"}}
+{{block class="Magento\Catalog\Block\Product\ListProduct" template="Ecomwares_Wokiee::homepage/carousel.phtml" limit="6" cols="4" category_id="71" block_title="New Releases" block_subtitle="in this week"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_banners_skin6"}}
+{{block class="Magento\Cms\Block\Block" block_id="wk_products_col_skin6"}}
+            ]]></content>
+            <page_layout>1column-wide</page_layout>
+            <sort_order>1</sort_order>
+            <is_active>1</is_active>
+        </page>
+
+    </pages>
+</default>

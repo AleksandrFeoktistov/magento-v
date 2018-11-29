@@ -1,0 +1,83 @@
+<?php
+$methodCode = $block->escapeHtml($block->getMethodCode());
+?>
+
+<fieldset class="fieldset items <?php /* @noEscape */ echo $methodCode ?>" id="payment_form_<?php /* @noEscape */ echo $methodCode ?>" style="display: none" data-bind="scope: 'bluesnap_hostedfields'">
+
+    <input type="hidden" name="payment[token]" data-bind="value: token()">
+    <input type="hidden" name="payment[cc_expiry]" data-bind="value: ccExpiry()">
+    <input type="hidden" name="payment[cc_type]" data-bind="value: ccType()">
+    <input type="hidden" name="payment[cc_last_4_digits]" data-bind="value: ccLast4Digits()">
+
+
+    <div class="validation-advice validation-failed" data-bind="visible: !underSSL()">
+        <!-- ko i18n: 'This payment method requires your website to have a valid SSL certificate'--><!-- /ko -->
+    </div>
+
+    <div class="field number required" data-bind="visible: underSSL()">
+        <label data-bind="attr: {for: getCode() + '_cc_number'}" class="label">
+            <span><!-- ko i18n: 'Credit Card Number'--><!-- /ko --></span>
+        </label>
+        <div class="control bluesnap-hosted-control card-number">
+            <div class="ccn" data-bluesnap="ccn"></div>
+            <div class="cctype">
+                <img id="cctype-icon" data-bind="attr: {src: card().src, alt: card().alt}"/>
+            </div>
+        </div>
+        <div style="display: none" id="ccn-validation-empty" class="bluesnap-hosted-validation-msg invalid"><!-- ko i18n: 'Credit Card Number is a required field'--><!-- /ko --></div>
+        <div style="display: none" id="ccn-validation-invalid" class="bluesnap-hosted-validation-msg invalid"><!-- ko i18n: 'Invalid Credit Card Number'--><!-- /ko --></div>
+    </div>
+    <div class="field number required" data-bind="visible: underSSL()">
+        <label data-bind="attr: {for: getCode() + '_expiration'}" class="label">
+            <span><!-- ko i18n: 'Expiration Date'--><!-- /ko --></span>
+        </label>
+        <div class="control bluesnap-hosted-control exp">
+            <div data-bluesnap="exp"></div>
+        </div>
+        <div style="display: none" id="exp-validation-empty" class="bluesnap-hosted-validation-msg invalid"><!-- ko i18n: 'Expiry Date is a required field'--><!-- /ko --></div>
+        <div style="display: none" id="exp-validation-invalid" class="bluesnap-hosted-validation-msg invalid"><!-- ko i18n: 'Invalid Expiry Date'--><!-- /ko --></div>
+    </div>
+    <div class="field number required" data-bind="visible: underSSL()">
+        <label data-bind="attr: {for: getCode() + '_cvv'}" class="label">
+            <span><!-- ko i18n: 'CVV'--><!-- /ko --></span>
+        </label>
+        <div class="control bluesnap-hosted-control cvv _with-tooltip">
+            <div data-bluesnap="cvv"></div>
+            <div class="field-tooltip toggle">
+                            <span class="field-tooltip-action action-cvv"
+                                  tabindex="0"
+                                  data-toggle="dropdown"
+                                  data-bind="attr: {title: $t('What is this?')}, mageInit: {'dropdown':{'activeClass': '_active'}}">
+                                <span><!-- ko i18n: 'What is this?'--><!-- /ko --></span>
+                            </span>
+                <div class="field-tooltip-content"
+                     data-target="dropdown"
+                     data-bind="html: getCvvImageHtml()">
+                </div>
+            </div>
+        </div>
+        <div style="display: none" id="cvv-validation-empty" class="bluesnap-hosted-validation-msg invalid"><!-- ko i18n: 'CVV is a required field'--><!-- /ko --></div>
+        <div style="display: none" id="cvv-validation-invalid" class="bluesnap-hosted-validation-msg invalid"><!-- ko i18n: 'Invalid CVV'--><!-- /ko --></div>
+    </div>
+</fieldset>
+
+<script type="text/x-magento-init">
+    {
+        "#payment_form_<?php /* @noEscape */ echo $methodCode ?>": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "bluesnap_hostedfields": {
+                        "component": "Bluesnap_Payment/js/view/payment/multishipping/hosted-fields",
+                        "paymentConfig": <?php echo $block->getPaymentConfig() ?>,
+                        "code": "<?php echo $block->getCode() ?>",
+                        "tokenUrl": "<?php echo $block->getTokenUrl() ?>",
+                        "isCustomerLoggedIn": <?php echo $block->isCustomerLoggedIn() ?>,
+                        "cardImages": <?php echo $block->getCardImages() ?>,
+                        "currencySwitchUrl": "<?php echo $block->getCurrencyChangeUrl() ?>"
+                    }
+                }
+            }
+        }
+    }
+</script>
+

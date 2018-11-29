@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
+    <update handle="2columns-left"/>
+
+    <referenceContainer name="main.content.container" htmlClass="container container-fluid-custom-mobile-padding">
+        <container name="blog.content.row" htmlTag="div" htmlClass="row flex-sm-row-reverse">
+            <container name="blog.columns.main.col" htmlClass="col-sm-12 col-md-8 col-lg-9" htmlTag="div" />
+            <container name="blog.columns.left.col" htmlClass="col-sm-12 col-md-4 col-lg-3 leftColumn" htmlTag="div"/>
+        </container>
+    </referenceContainer>
+
+    <move element="blog.columns.main.col" destination="blog.content.row" before="-"/>
+    <move element="blog.columns.left.col" destination="blog.content.row" after="blog.columns.main.col" />
+    <move element="main" destination="blog.columns.main.col"/>
+    <move element="div.sidebar.main" destination="blog.columns.left.col"/>
+    <move element="div.sidebar.additional" destination="blog.columns.left.col"/>
+
+</layout>

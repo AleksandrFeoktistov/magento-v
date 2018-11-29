@@ -1,0 +1,16 @@
+<?php
+$loader = $this->helper('Ecomwares\Wokiee\Helper\Data')->getSystemValue('wokiee_settings/general/show_load');
+?>
+<?php if($loader): ?>
+<div id="loader-wrapper">
+    <div id="loader">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+</div>
+<?php endif ?>

@@ -1,0 +1,27 @@
+<?php
+$ys_helper = $this->helper('Ecomwares\Wokiee\Helper\Data');
+?>
+<div class="tt-account tt-dropdown-obj">
+    <button class="tt-dropdown-toggle"><i class="icon-f-94"></i></button>
+    <div class="tt-dropdown-menu">
+        <div class="tt-mobile-add">
+            <button class="tt-close"><?= /* @escapeNotVerified */ __('Close') ?></button>
+        </div>
+        <div class="tt-dropdown-inner">
+            <ul>
+                <li><a href="<?php echo $block->getUrl('customer/account'); ?>"><i class="icon-f-94"></i><?php echo __('My Account') ?></a></li>
+                <li><a href="<?php echo $block->getUrl('wishlist'); ?>"><i class="icon-n-072"></i><?php echo __('My Wishlist') ?> <span>(<?php echo $ys_helper->getWishlistCount(); ?>)</span></a></li>
+                <li><a href="<?php echo $ys_helper->getCompareListUrl(); ?>"><i class="icon-n-08"></i><?php echo __('Compare') ?> <span>(<?php echo $ys_helper->getCompareListCount(); ?>)</span></a></li>
+                <li><a href="<?php echo $block->getUrl('checkout'); ?>"><i class="icon-f-68"></i><?php echo __('Checkout') ?></a></li>
+                <?php
+                if($ys_helper->isLoggedIn()) {
+                    ?>
+                    <li><a href="<?php echo $block->getUrl('customer/account/logout'); ?>"><i class="icon-f-77"></i><?php echo __('Log Out') ?></a></li>
+                <?php } else { ?>
+                    <li><a href="<?php echo $block->getUrl('customer/account/login'); ?>"><i class="icon-f-76"></i><?php echo __('Log In') ?></a></li>
+                    <li><a href="<?php echo $block->getUrl('customer/account/create'); ?>"><i class="icon-Vector"></i><?php echo __('Create an account') ?></a></li>
+                <?php } ?>
+            </ul>
+        </div>
+    </div>
+</div>
