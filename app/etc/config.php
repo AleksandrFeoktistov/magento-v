@@ -133,6 +133,8 @@ return [
         'Mageplaza_LayeredNavigation' => 1,
         'TNW_Stripe' => 1,
         'Temando_Shipping' => 1,
+        'Vendor_one' => 1,
+        'Vendor_two' => 1,
         'Vertex_Tax' => 1,
         'WeltPixel_Backend' => 1,
         'WeltPixel_Quickview' => 1
